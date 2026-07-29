@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from itertools import combinations
 
 import networkx as nx
 
@@ -54,11 +55,20 @@ def _is_three_vertex_connected(graph: NetworkXGraph) -> bool:
     both ``Graph`` and ``MultiGraph`` objects for the remaining operations, so
     no simple-graph projection is needed.
     """
-    if graph.is_directed() or graph.number_of_nodes() < 4:
+    nodes = tuple(graph.nodes())
+    if graph.is_directed() or len(nodes) < 4:
         return False
     if not nx.is_connected(graph):
         return False
-    return nx.node_connectivity(graph) >= 3
+
+    for cut_size in (1, 2):
+        for removed in combinations(nodes, cut_size):
+            remaining = graph.subgraph(
+                node for node in nodes if node not in removed
+            )
+            if not nx.is_connected(remaining):
+                return False
+    return True
 
 
 def validate_barnette_graph(source: GraphInput) -> ValidationResult:
@@ -74,9 +84,11 @@ def validate_barnette_graph(source: GraphInput) -> ValidationResult:
     in-degree plus out-degree. NetworkX bipartiteness ignores edge direction and
     multiplicity but rejects a loop. Its planarity test explicitly tests the
     underlying loop-free simple skeleton, because direction, loops, and parallel
-    copies do not change topological planarity. Three-vertex-connectivity is
-    evaluated directly for undirected ``Graph`` and ``MultiGraph`` inputs;
-    directed inputs fail that undirected property without being projected.
+    copies do not change topological planarity. Three-vertex-connectivity requires
+    at least four vertices and is tested from its definition on the original
+    undirected graph: deleting any set of fewer than three vertices must leave it
+    connected. Native subgraph views retain loops and multiplicity; directed
+    inputs fail that undirected property without being projected.
     """
     graph = load_graph(source)
     reasons: list[str] = []

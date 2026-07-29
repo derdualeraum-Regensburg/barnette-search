@@ -98,3 +98,110 @@ def test_directed_graph_is_rejected_without_skipping_other_checks() -> None:
         THREE_CONNECTED_REASON,
     ]
 
+
+def test_oriented_cube_uses_original_directed_degrees() -> None:
+    cube = nx.cubical_graph()
+    graph = nx.DiGraph()
+    graph.add_nodes_from(cube)
+    graph.add_edges_from(cube.edges())
+
+    result = validate_barnette_graph(graph)
+
+    assert all(degree == 3 for _, degree in graph.degree())
+    assert result.number_of_edges == 12
+    assert result.rejection_reasons == [UNDIRECTED_REASON, THREE_CONNECTED_REASON]
+
+
+def test_multidigraph_reports_repeated_ordered_arcs() -> None:
+    cube = nx.cubical_graph()
+    graph = nx.MultiDiGraph()
+    graph.add_nodes_from(cube)
+    graph.add_edges_from(cube.edges())
+    first_edge = next(iter(cube.edges()))
+    graph.add_edge(*first_edge)
+
+    result = validate_barnette_graph(graph)
+
+    assert result.number_of_edges == 13
+    assert result.rejection_reasons == [
+        UNDIRECTED_REASON,
+        PARALLEL_EDGE_REASON,
+        CUBIC_REASON,
+        THREE_CONNECTED_REASON,
+    ]
+
+
+def test_reciprocal_multidigraph_arcs_are_not_parallel() -> None:
+    graph = nx.MultiDiGraph([(0, 1), (1, 0)])
+
+    result = validate_barnette_graph(graph)
+
+    assert result.number_of_edges == 2
+    assert PARALLEL_EDGE_REASON not in result.rejection_reasons
+    assert UNDIRECTED_REASON in result.rejection_reasons
+
+
+def test_repeated_self_loop_is_both_a_loop_and_a_parallel_edge() -> None:
+    graph = nx.MultiGraph()
+    graph.add_edge(0, 0)
+    graph.add_edge(0, 0)
+
+    result = validate_barnette_graph(graph)
+
+    assert result.number_of_edges == 2
+    assert SELF_LOOP_REASON in result.rejection_reasons
+    assert PARALLEL_EDGE_REASON in result.rejection_reasons
+
+
+def test_parallel_multiplicity_counts_toward_cubic_degree() -> None:
+    graph = nx.MultiGraph()
+    graph.add_edges_from([(0, 1), (0, 1), (0, 1)])
+
+    result = validate_barnette_graph(graph)
+
+    assert dict(graph.degree()) == {0: 3, 1: 3}
+    assert result.rejection_reasons == [
+        PARALLEL_EDGE_REASON,
+        THREE_CONNECTED_REASON,
+    ]
+
+
+def test_self_loop_counts_twice_toward_cubic_degree() -> None:
+    graph = nx.Graph([(0, 0), (0, 1), (1, 1)])
+
+    result = validate_barnette_graph(graph)
+
+    assert dict(graph.degree()) == {0: 3, 1: 3}
+    assert result.rejection_reasons == [
+        SELF_LOOP_REASON,
+        BIPARTITE_REASON,
+        THREE_CONNECTED_REASON,
+    ]
+
+
+def test_non_simple_nonplanar_skeleton_is_still_nonplanar() -> None:
+    graph = nx.MultiGraph(nx.complete_bipartite_graph(3, 3))
+    graph.add_edge(0, 3)
+
+    result = validate_barnette_graph(graph)
+
+    assert result.rejection_reasons == [
+        PARALLEL_EDGE_REASON,
+        CUBIC_REASON,
+        PLANAR_REASON,
+    ]
+
+
+def test_three_connectivity_uses_vertex_deletions_not_edge_multiplicity() -> None:
+    graph = nx.MultiGraph(nx.cycle_graph(4))
+    graph.add_edge(0, 1)
+    graph.add_edge(2, 3)
+
+    result = validate_barnette_graph(graph)
+
+    assert all(degree == 3 for _, degree in graph.degree())
+    assert result.rejection_reasons == [
+        PARALLEL_EDGE_REASON,
+        THREE_CONNECTED_REASON,
+    ]
+
