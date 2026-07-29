@@ -83,3 +83,32 @@ def test_reference_count_mismatch_is_a_hard_failure(
         enumeration.enumerate_vertex_count(
             8, plantri_version=version, output_directory=tmp_path / "output"
         )
+
+
+def test_edge_flexibility_output_does_not_overwrite_hamiltonicity_results(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    embedded = _embedded_cube()
+    monkeypatch.setattr(
+        enumeration,
+        "stream_barnette_graphs",
+        lambda version, order: _FakeStream([embedded]),
+    )
+    output = tmp_path / "output"
+    output.mkdir()
+    original = output / "barnette_08.jsonl"
+    original.write_text("original Hamiltonicity result\n", encoding="utf-8")
+    executable = tmp_path / "plantri"
+    executable.write_bytes(b"fake")
+    version = PlantriVersion(executable, "5.8", "0" * 64, "")
+
+    summary = enumeration.enumerate_edge_flexibility_vertex_count(
+        8,
+        plantri_version=version,
+        output_directory=output,
+        overwrite=True,
+    )
+    assert original.read_text(encoding="utf-8") == "original Hamiltonicity result\n"
+    assert summary.generated_count == 1
+    assert summary.graphs_satisfying_complete_property == 1
+    assert (output / "barnette_08.edge_flexibility.jsonl").is_file()

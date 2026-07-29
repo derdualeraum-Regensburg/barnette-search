@@ -223,9 +223,10 @@ default binary `planar_code` stream retains clockwise adjacency orders. The
 Python wrapper drains stderr separately, since plantri writes counts and run
 statistics there, and yields one parsed graph at a time.
 
-For Barnette orders 8 through 24, the program requires the generated class
-counts `1, 0, 1, 1, 2, 2, 8, 8, 32`. These are the `all` column of the guide's
-3-connected plane Eulerian triangulation table at primal orders 6 through 14.
+For Barnette orders 8 through 32, the program requires the generated class
+counts `1, 0, 1, 1, 2, 2, 8, 8, 32, 57, 185, 466, 1543`. These are the `all`
+column of the guide's 3-connected plane Eulerian triangulation table at primal
+orders 6 through 18.
 Every generated graph is independently validated, solved by SAT, solved by
 backtracking through 24 vertices, and every returned certificate is verified.
 Any invalid graph, solver disagreement, duplicate canonical hash, or reference
@@ -237,6 +238,64 @@ encoding statistics, runtimes, certificate hashes, the full command, executable
 hash, and Python/dependency versions. A `run_metadata.json` captures the whole
 run. Interrupted or failed output remains named `.partial`; existing completed
 files are protected unless `--overwrite` is explicitly supplied.
+
+## Same-face edge flexibility
+
+The constrained reference APIs force selected edge variables with SAT
+assumptions or enforce the same conditions in an independent backtracking
+search:
+
+```python
+from barnette_search import (
+    analyze_same_face_edge_flexibility,
+    find_constrained_hamiltonian_cycle,
+    solve_constrained_hamiltonian_cycle_sat,
+)
+
+sat_result = solve_constrained_hamiltonian_cycle_sat(
+    graph,
+    required_edges=((0, 1),),
+    forbidden_edges=((2, 3),),
+)
+reference_cycle = find_constrained_hamiltonian_cycle(
+    graph,
+    required_edges=((0, 1),),
+    forbidden_edges=((2, 3),),
+)
+flexibility = analyze_same_face_edge_flexibility(graph, embedding)
+```
+
+`ConstrainedHamiltonianSatSession` retains only globally valid subtour cuts
+between queries. Required and forbidden edges remain per-query assumptions.
+Every SAT and backtracking certificate is checked by the existing independent
+certificate verifier and by a separate edge-constraint check.
+
+The same-face analysis deduplicates ordered edge pairs across faces while
+retaining every producing face index. Its deterministic greedy cover solves the
+first uncovered pair, then assigns the resulting witness to every other pair it
+certifies. `witness_cover_ratio` is the number of distinct witnesses divided by
+the total number of ordered pairs; `ordered_pairs_per_witness` reports the
+inverse compression measure. Through 24 vertices, every ordered pair is also
+decided by the independent constrained backtracker.
+
+If SAT reports an unsatisfiable pair or the methods disagree, normal processing
+for that graph stops. The analyzer writes the graph and face embedding, exact
+DIMACS queries, a MiniSat22 rerun, the independent backtracking result, and a
+report explicitly marked for manual review.
+
+Run the separate enumeration mode with:
+
+```console
+python -m barnette_search.enumeration \
+  --plantri /path/to/plantri \
+  --vertices 8 10 12 14 16 18 20 22 24 26 28 30 32 \
+  --test-edge-flexibility \
+  --output-dir results/plantri-5.8
+```
+
+It writes `*.edge_flexibility.jsonl`, corresponding summary CSV files, and
+`edge_flexibility_run_metadata.json`. These names are separate from and never
+overwrite the ordinary Hamiltonicity results.
 
 ## Benchmarking
 
