@@ -532,12 +532,48 @@ def _parser() -> argparse.ArgumentParser:
         action="store_true",
         help="write separate exhaustive same-face edge-flexibility results",
     )
+    parser.add_argument("--test-all-edge-pairs", action="store_true")
+    parser.add_argument("--test-three-edge-paths", action="store_true")
+    parser.add_argument(
+        "--output-detail",
+        choices=("summary", "candidates", "full"),
+        default="summary",
+    )
+    parser.add_argument("--retain-top-k", type=int, default=25)
+    parser.add_argument("--compress-results", action="store_true")
+    parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--workers", type=int, default=1)
     return parser
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     """Command-line entry point."""
     arguments = _parser().parse_args(argv)
+    strong_analysis = (
+        arguments.test_all_edge_pairs or arguments.test_three_edge_paths
+    )
+    if strong_analysis:
+        if arguments.test_edge_flexibility:
+            raise ValueError(
+                "same-face and stronger analyses require separate explicit runs"
+            )
+        from .flexibility_enumeration import run_strong_flexibility_enumeration
+
+        run_strong_flexibility_enumeration(
+            arguments.vertices,
+            executable=arguments.plantri,
+            output_directory=arguments.output_dir,
+            test_all_edge_pairs=arguments.test_all_edge_pairs,
+            test_three_edge_paths=arguments.test_three_edge_paths,
+            output_detail=arguments.output_detail,
+            retain_top_k=arguments.retain_top_k,
+            compress_results=arguments.compress_results,
+            resume=arguments.resume,
+            workers=arguments.workers,
+            allow_other_version=arguments.allow_other_version,
+            overwrite=arguments.overwrite,
+        )
+        return 0
     runner = (
         run_edge_flexibility_enumeration
         if arguments.test_edge_flexibility

@@ -297,6 +297,77 @@ It writes `*.edge_flexibility.jsonl`, corresponding summary CSV files, and
 `edge_flexibility_run_metadata.json`. These names are separate from and never
 overwrite the ordinary Hamiltonicity results.
 
+## Strong flexibility and compact results
+
+Two stronger exact analyses are available independently of the same-face mode:
+
+- `analyze_all_edge_pair_flexibility` tests every ordered pair of distinct
+  graph edges.
+- `analyze_three_edge_path_flexibility` tests every simple length-three path,
+  deduplicated against its reversal, by requiring its middle edge and
+  forbidding both outer edges.
+
+Both use deterministic greedy witness covers over a persistent constrained SAT
+session. Returned cycles are checked by the existing certificate verifier and
+by an independent required/forbidden-edge check. Optional pair-by-pair
+cross-validation uses the independent constrained backtracker.
+
+The compact multi-analysis command is:
+
+```console
+python -m barnette_search.enumeration \
+  --vertices 8 10 12 14 16 18 20 22 24 26 28 30 32 \
+  --plantri /path/to/plantri \
+  --output-dir results/strong-flexibility \
+  --test-all-edge-pairs \
+  --test-three-edge-paths \
+  --output-detail summary \
+  --retain-top-k 25 \
+  --compress-results \
+  --workers 6 \
+  --resume
+```
+
+The three output-detail modes are:
+
+- `summary`: compact per-graph metrics without constraint assignments or full
+  witness cycles;
+- `candidates`: summary records plus full details for the union of candidate
+  graphs and top-K extremal rankings;
+- `full`: every constraint-to-witness assignment and witness cycle, intended
+  only for small orders and debugging.
+
+Compressed JSONL uses `.jsonl.gz`; `read_jsonl` transparently reads compressed
+or plain files. Each order has a separate forced checkpoint. A complete output
+is atomically published only after its generated identities and reference count
+match. `--resume` skips completed hashes from a compatible checkpoint. Workers
+operate on compact planar-code records, own independent solver sessions, and
+final records are sorted by plantri generation index.
+
+The `extremal` output contains six separate leaderboards for each analysis,
+reproducible planar-code graphs and embeddings, human-readable reports, and
+order-level minimum/median/mean/p95/p99/maximum tables. Timing leaderboards are
+explicitly marked as machine-dependent.
+
+An UNSAT result or solver disagreement is never automatically classified as a
+counterexample. The review pipeline retains exact graph labels and embedding,
+the constrained Glucose3 and MiniSat22 DIMACS files, structured solver results,
+and an independent constrained-backtracking result for manual review.
+
+## Optional cubhamg benchmarking
+
+`cubhamg` is not downloaded, bundled, or required. This repository does not
+contain verified official cubhamg command documentation, so the wrapper does
+not guess a version or syntax. A caller must provide an explicit executable,
+the documentation reference they verified, command arguments containing an
+`{input}` placeholder, and unambiguous output patterns. Ambiguous output and
+timeouts produce no mathematical conclusion.
+
+`benchmarks/benchmark_cubhamg.py` records executable hashes, separate stdout and
+stderr, timeouts, machine metadata, reference-SAT results, and wall times. Its
+results are benchmark observations only and do not establish algorithmic
+superiority or constitute proofs.
+
 ## Benchmarking
 
 After installing the `sat` or `test` extra, the benchmark script compares median
