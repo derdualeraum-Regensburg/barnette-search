@@ -1,0 +1,12 @@
+{
+  "version": "5.8",
+  "release_date": "2026-03-04",
+  "source_url": "https://users.cecs.anu.edu.au/~bdm/plantri/plantri58.tar.gz",
+  "archive_sha256": "e78a944116fec9f2c9f5e484206276cc2b0043bae803e9815f4b2683614629b8",
+  "plantri_c_sha256": "3f70de5a3cacc78b2ed25b6a257588da94a518d8ae1dae74bcd0bf259cea07e8",
+  "guide_sha256": "79bbe51083318aa22797d5ca1a28cc347bc38a6871c7cf35e057863de3f785fc",
+  "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "windows_patch_sha256": "7ce365bb627d218e72f34ed7fd7de8630ac4b267c99738fd6b3d911a8c6ef692",
+  "windows_build_compiler": "ziglang 0.15.2",
+  "windows_x86_64_executable_sha256": "e2bc2461c8c14224f6baa3344e4ca3e5fdde1a408d4f525c1e24867e968cf9c9"
+}

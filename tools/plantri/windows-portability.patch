@@ -1,0 +1,27 @@
+--- a/plantri.c
++++ b/plantri.c
+@@ -247,8 +247,13 @@
+ 
+ #include <string.h>
+ #include <limits.h>
+ 
+-#define CPUTIME 1          /* Whether to measure the cpu time or not */
++#ifdef _WIN32
++#include <fcntl.h>
++#include <io.h>
++#endif
++
++#define CPUTIME 0          /* Whether to measure the cpu time or not */
+ 
+ #if CPUTIME
+ #include <sys/times.h>
+@@ -20897,5 +20903,9 @@
+ {
+     int i;
++#ifdef _WIN32
++    _setmode(_fileno(stdout),_O_BINARY);
++#endif
++
+ #if CPUTIME
+     struct tms timestruct0,timestruct1;
+ 

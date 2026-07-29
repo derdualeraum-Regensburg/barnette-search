@@ -7,7 +7,8 @@ cubic, bipartite, planar, and 3-vertex-connected.
 The project currently provides a NetworkX-based reference validator and a small
 exact Hamiltonian-cycle solver. The emphasis is correctness and testability, not
 large-instance performance. An independent exact SAT implementation is available
-as an optional extra. ILP, GPU, and plantri support are not implemented.
+as an optional extra. An external plantri 5.8 integration provides reproducible
+small-graph enumeration. ILP and GPU support are not implemented.
 
 ## Installation
 
@@ -186,6 +187,57 @@ disconnected graphs, and vertices of degree below two return an unsatisfiable
 result directly. Directed graphs, self-loops, and actual parallel edges are
 rejected.
 
+## plantri 5.8 enumeration
+
+plantri remains an external program: importing or running this package never
+downloads or builds it. The bundled [official guide](tools/plantri/plantri-guide-5.8.txt)
+is used to pin the command-line semantics, and [setup notes](tools/plantri/README.md)
+record the official source URL, archive digest, Linux/WSL build command, and a
+reproducible native-Windows build. The Windows-only patch disables plantri's
+internal CPU timer because Windows has no `sys/times.h` and puts stdout in
+binary mode to prevent CRLF translation; it does not modify generation code.
+
+Set `PLANTRI_EXECUTABLE` or pass an explicit path. Every invocation executes
+`plantri --help`, requires version 5.8 unless `--allow-other-version` is given,
+and hashes the executable:
+
+```console
+python -m barnette_search.enumeration \
+  --plantri /path/to/plantri \
+  --vertices 8 10 12 14 16 18 20 22 24 \
+  --output-dir results/plantri-5.8
+```
+
+For a requested cubic dual with `N` vertices, its primal triangulation has `T`
+vertices and `2T-4` faces. Since dual vertices correspond to primal faces,
+`N=2T-4`, hence `T=N/2+2`. Odd `N` is therefore rejected. The exact command is:
+
+```text
+plantri -b -c3 -d T -
+```
+
+The official guide defines `-b` (without `-p`) as Eulerian triangulations,
+`-c3` as 3-connected, and states that their duals are 3-connected bipartite
+cubic graphs. `-d` writes the dual and the final `-` selects stdout. plantri's
+default binary `planar_code` stream retains clockwise adjacency orders. The
+Python wrapper drains stderr separately, since plantri writes counts and run
+statistics there, and yields one parsed graph at a time.
+
+For Barnette orders 8 through 24, the program requires the generated class
+counts `1, 0, 1, 1, 2, 2, 8, 8, 32`. These are the `all` column of the guide's
+3-connected plane Eulerian triangulation table at primal orders 6 through 14.
+Every generated graph is independently validated, solved by SAT, solved by
+backtracking through 24 vertices, and every returned certificate is verified.
+Any invalid graph, solver disagreement, duplicate canonical hash, or reference
+count mismatch aborts the run clearly.
+
+Each completed order produces JSONL (one record per graph) and a summary CSV.
+The records include graph/embedding facts, validator and solver outcomes,
+encoding statistics, runtimes, certificate hashes, the full command, executable
+hash, and Python/dependency versions. A `run_metadata.json` captures the whole
+run. Interrupted or failed output remains named `.partial`; existing completed
+files are protected unless `--overwrite` is explicitly supplied.
+
 ## Benchmarking
 
 After installing the `sat` or `test` extra, the benchmark script compares median
@@ -202,6 +254,12 @@ python benchmarks/benchmark_hamiltonian.py --repeats 3
 python -m pytest
 ```
 
+The default suite does not require plantri. To run its marked integration test:
+
+```console
+PLANTRI_EXECUTABLE=/path/to/plantri python -m pytest -m plantri_integration
+```
+
 The validator runs every property check and reports all applicable rejection
 reasons in a deterministic order. NetworkX graph objects are materialized finite
 containers, so accepting such an object (or a decoded graph6 record) supplies
@@ -211,3 +269,7 @@ The backtracking finder has exponential worst-case running time and recursive
 depth proportional to the number of vertices. The SAT formulation can require
 many models, cut rounds, auxiliary variables, and clauses before proving an
 answer. Both implementations are intended only as references for small graphs.
+The embedding-based canonical hash is rigorous for the validated 3-connected
+planar domain, whose sphere embedding is unique up to reflection; it is not
+advertised as a general-purpose graph canonizer. Enumeration remains bounded by
+plantri generation cost, exact-solver cost, and JSONL storage.

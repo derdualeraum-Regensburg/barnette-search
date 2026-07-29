@@ -24,6 +24,9 @@ test = [
 [tool.pytest.ini_options]
 addopts = "-ra --basetemp=.pytest-tmp"
 testpaths = ["tests"]
+markers = [
+    "plantri_integration: requires an explicitly configured plantri 5.8 executable",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
