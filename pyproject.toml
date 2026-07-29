@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "barnette-search"
+version = "0.1.0"
+description = "Reference tools for computational research on Barnette graphs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "networkx>=3.2",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra --basetemp=.pytest-tmp"
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
