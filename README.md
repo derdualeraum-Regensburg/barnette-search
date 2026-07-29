@@ -6,15 +6,17 @@ cubic, bipartite, planar, and 3-vertex-connected.
 
 The project currently provides a NetworkX-based reference validator and a small
 exact Hamiltonian-cycle solver. The emphasis is correctness and testability, not
-large-instance performance. SAT, ILP, GPU, and external solver integrations are
-not implemented.
+large-instance performance. An independent exact SAT implementation is available
+as an optional extra. ILP, GPU, and plantri support are not implemented.
 
 ## Installation
 
-Python 3.10 or newer is required. From the repository root, create and activate
-a virtual environment if desired, then install the package and test tools:
+Python 3.10 or newer is required. Install the base package, optional SAT support,
+or the complete development test environment with:
 
 ```console
+python -m pip install -e .
+python -m pip install -e ".[sat]"
 python -m pip install -e ".[test]"
 ```
 
@@ -44,6 +46,23 @@ cycle = find_hamiltonian_cycle(graph)
 
 assert cycle is not None
 assert verify_hamiltonian_cycle(graph, cycle)
+```
+
+Use the independent SAT implementation through either its cycle-only or
+structured API:
+
+```python
+from barnette_search import (
+    find_hamiltonian_cycle_sat,
+    solve_hamiltonian_cycle_sat,
+)
+
+cycle = find_hamiltonian_cycle_sat(graph)
+result = solve_hamiltonian_cycle_sat(graph)
+
+print(result.satisfiable)
+print(result.solver_name)
+print(result.number_of_subtour_iterations)
 ```
 
 Graph6 data can be supplied as a string or bytes. A graph6 file can be supplied
@@ -126,6 +145,57 @@ length, closure, vertex set and uniqueness, unknown vertices, and every cycle
 edge. Invalid certificates return `False`; unsupported graph domains raise the
 same input exceptions as the finder.
 
+## Exact SAT solver
+
+The optional SAT implementation is independent of the backtracking search and
+never calls it. It uses the existing certificate verifier only after extracting
+a candidate Hamiltonian cycle. Install it with the `sat` extra; without that
+extra, invoking the SAT API raises an explanatory `ImportError` while the rest
+of the package remains importable.
+
+For a graph with `m` edges, primary variables 1 through `m` correspond one-to-one
+with the undirected edges. At every vertex, PySAT's
+`CardEnc.equals(..., bound=2, encoding=EncType.seqcounter)` requires exactly two
+incident edge variables. The sequential-counter encoding was chosen as a small,
+deterministic reference encoding; it introduces auxiliary variables, so the
+total variable count can exceed `m`.
+
+An initial satisfying assignment is a spanning 2-factor and can contain multiple
+cycles. After each model, the implementation extracts every selected-edge
+component. For every distinct component cut, it incrementally adds the PySAT
+cardinality constraint
+`sum(delta(S)) >= 2`, then re-solves with Glucose3. Every Hamiltonian cycle enters
+and leaves any nonempty proper vertex subset, so it uses at least two edges of
+that cut. The constraint therefore preserves every Hamiltonian cycle while
+excluding the current disconnected 2-factor. A cut containing fewer than two
+available graph edges is represented by an empty clause because its requirement
+is immediately impossible. Complementary components share the same cut and
+therefore the same inequality.
+
+`HamiltonianSatResult` reports:
+
+- `number_of_edge_variables`: primary input-edge variables;
+- `number_of_variables`: final primary plus cardinality-auxiliary variables;
+- `number_of_clauses`: all emitted initial and incremental CNF clauses;
+- `number_of_subtour_iterations`: model-refinement rounds that added cuts; and
+- `number_of_subtour_constraints`: unique component-cut inequalities added.
+
+The SAT input domain matches the reference finder: finite, undirected,
+structurally simple NetworkX graphs. Empty graphs, graphs of order one or two,
+disconnected graphs, and vertices of degree below two return an unsatisfiable
+result directly. Directed graphs, self-loops, and actual parallel edges are
+rejected.
+
+## Benchmarking
+
+After installing the `sat` or `test` extra, the benchmark script compares median
+backtracking and SAT runtimes on fixed graph families and seeded random graphs.
+It verifies outcomes but makes no timing assertions:
+
+```console
+python benchmarks/benchmark_hamiltonian.py --repeats 3
+```
+
 ## Running tests
 
 ```console
@@ -137,6 +207,7 @@ reasons in a deterministic order. NetworkX graph objects are materialized finite
 containers, so accepting such an object (or a decoded graph6 record) supplies
 the finiteness condition.
 
-The Hamiltonian finder has exponential worst-case running time and recursive
-depth proportional to the number of vertices. It is intended only as a reference
-for small graphs.
+The backtracking finder has exponential worst-case running time and recursive
+depth proportional to the number of vertices. The SAT formulation can require
+many models, cut rounds, auxiliary variables, and clauses before proving an
+answer. Both implementations are intended only as references for small graphs.

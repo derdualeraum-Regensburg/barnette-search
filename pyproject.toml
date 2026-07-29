@@ -13,8 +13,12 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+sat = [
+    "python-sat>=1.8.dev1,<2",
+]
 test = [
     "pytest>=8",
+    "python-sat>=1.8.dev1,<2",
 ]
 
 [tool.pytest.ini_options]
