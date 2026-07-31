@@ -8,6 +8,9 @@ __pycache__/
 results/
 build/
 dist/
+paper/generated/*
+!paper/generated/.gitkeep
+!paper/generated/main.pdf
 # Externes Zeichenprogramm von Gunnar Brinkmann
 /tools/planar_draw.c
 /tools/planar_draw.exe

@@ -1,0 +1,63 @@
+\section{Computational method}
+\label{sec:method}
+
+\subsection{Census generation and graph validation}
+
+Complete non-isomorphic censuses were generated with plantri 5.8
+\citep{plantri58}.  For target order \(n\), the dual generation command has the
+form
+\begin{center}
+\texttt{plantri -b -c3 -d T -}, \qquad \(T=n/2+2\).
+\end{center}
+The binary \texttt{planar\_code} stream retains the rotation system.  Each
+record was checked for the requested order and edge count, simplicity,
+cubicity, bipartiteness, planarity, 3-connectivity, and Euler and face
+arithmetic.  Canonical hashes were computed from the sphere embedding; graph6,
+planar code, canonical edge lists, rotations, and faces were retained in the
+certificates.  Generation indices were required to be contiguous and canonical
+hashes unique.  Census completeness was never inferred from a retained
+candidate subset.
+
+The plantri command, version, executable digest, environment, worker count, and
+runtime were recorded per order.  At most four workers were used.  Expensive
+stages used deterministic ordering, atomic checkpoints, and resumable output.
+
+\subsection{Hamiltonian cycles and separating covers}
+
+For a cubic graph of order \(n\), there are \(m=3n/2\) edges and therefore
+\(m(m-1)\) ordered edge-pair requirements.  At order 36 this is
+\(54\cdot53=2,862\) requirements per graph.  Every emitted cycle was checked
+for closure, vertex uniqueness, spanning, and edge validity before it was used
+as a set-cover column.
+
+For the smaller censuses, the complete undirected Hamiltonian-cycle universe
+was enumerated for every graph and the set-cover problem was solved exactly.
+For larger censuses, the pipeline first constructed deterministic separating
+covers for every graph and ranked the difficult tail.  Once a candidate value
+\(k\) had an exact lower and upper certificate, a competitor needed only a
+verified cover of size at most \(k\), or at most \(k-1\) to establish uniqueness.
+Complete-universe enumeration and exact optimization were then restricted to
+graphs that could still attain the maximum.  A timeout or incomplete universe
+was not accepted as a conclusion.
+
+\subsection{Three levels of evidence}
+
+The proof pipeline deliberately separates the following objects.
+\begin{description}
+  \item[Solver output.] A proposed cycle, cover, optimum, or infeasibility
+    result produced by a search or optimization implementation.
+  \item[Emitted certificate.] Canonically encoded graphs and explicit cycles,
+    together with either packing requirements or a certified complete cycle
+    universe suitable for exhaustive exclusion.
+  \item[Independent verification.] A standalone Python standard-library
+    program reparses the artifacts, checks graph and cycle structure, evaluates
+    every ordered requirement, checks lower certificates, order summaries, and
+    SHA-256 manifests, and does not import the project, NetworkX, plantri, SAT,
+    or optimization packages.
+\end{description}
+
+For every nonmaximizer the final package contains an independently verified
+cover strictly smaller than the maximum at that order.  For every maximizer it
+contains an exact primal certificate and either a matching packing or a
+complete-universe exhaustive lower proof.  Thus a greedy witness count is never
+reported as \(\hsep(G)\).

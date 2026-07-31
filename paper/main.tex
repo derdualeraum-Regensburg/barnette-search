@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\graphicspath{{figures/}}
+\setlist{nosep}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{computationalresult}[theorem]{Computational Result}
+\theoremstyle{remark}
+\newtheorem*{statusnote}{Status note}
+
+\crefname{computationalresult}{computational result}{computational results}
+\Crefname{computationalresult}{Computational result}{Computational results}
+\crefname{observation}{observation}{observations}
+\Crefname{observation}{Observation}{Observations}
+
+\newcommand{\Hcal}{\mathcal{H}}
+\newcommand{\Ccal}{\mathcal{C}}
+\newcommand{\hsep}{\operatorname{hsep}}
+\newcommand{\MB}{M_{\mathrm B}}
+\newcommand{\Dab}{D(a,b)}
+
+\title{Hamiltonian Edge Separation in Barnette Graphs:\\
+Certified Extremal Values and a Double-Ladder Family}
+\author{Thomas Bauer}
+\date{Draft of \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/preliminaries}
+\input{sections/computational_method}
+\input{sections/extremal_sequence}
+\input{sections/double_ladders}
+\input{sections/hamiltonian_cycles}
+\input{sections/conjectures}
+\input{sections/reproducibility}
+\input{sections/conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{../bibliography}
+
+\end{document}

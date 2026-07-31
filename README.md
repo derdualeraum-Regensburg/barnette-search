@@ -411,6 +411,48 @@ general lower-bound lifting argument has been established. Predictions for
 orders 38 and 40 are likewise emitted with an explicit unproved warning; the
 analysis does not enumerate or optimize either order.
 
+## Prospective double-ladder prediction test
+
+`tools/test_double_ladder_predictions.py` performs a preregistered,
+graph-specific test of the Hamiltonian-cycle and hsep formulas on three family
+members beyond the certified census range. The prediction lock is written
+before any new graph construction or Hamiltonian calculation. Starting from the
+certified `D(9,7)` artifact, the producer constructs each target only through
+the certified four-vertex facial square insertion.
+
+| graph | order | complete Hamiltonian universe | exact hsep |
+|---|---:|---:|---:|
+| `D(9,9)` | 40 | 86 | 60 |
+| `D(11,9)` | 44 | 104 | 71 |
+| `D(11,11)` | 48 | 126 | 84 |
+
+Both preregistered formulas match all three graphs. Each exact hsep value has
+an explicit separating family and a matching packing lower certificate. A
+standalone standard-library verifier reconstructs every expansion, independently
+re-enumerates the complete Hamiltonian universe through perfect matchings,
+checks the structural cycle classes, verifies every ordered edge-pair
+requirement, and validates the manifests.
+
+```console
+python tools/test_double_ladder_predictions.py --resume
+python E:\barnette-results\double-ladder-prediction-test\verify_double_ladder_predictions.py ^
+  E:\barnette-results\double-ladder-prediction-test --check-manifest
+```
+
+The immutable package is written to
+`E:\barnette-results\double-ladder-prediction-test`; resumable checkpoints are
+kept separately in `E:\barnette-results\double-ladder-prediction-test-work`.
+No complete census was run at orders 40, 44, or 48. Consequently these results
+do not establish `M_B(40)`, `M_B(44)`, or `M_B(48)`, and do not prove that the
+three graphs are extremal.
+
+## Manuscript draft
+
+The LaTeX sources and a compiled PDF of the current technical manuscript are in
+[`paper/`](paper/). The manuscript keeps finite certification, ordinary proof,
+structural observation, and conjecture visibly separate; it is a draft and does
+not make a novelty claim.
+
 ## Optional cubhamg benchmarking
 
 `cubhamg` is not downloaded, bundled, or required. This repository does not

@@ -1,0 +1,148 @@
+\section{The double-ladder family}
+\label{sec:double-ladders}
+
+Let \(L_a=P_{a+1}\mathbin{\square}K_2\) be a ladder with vertices
+\(A_i^r\), where \(0\le i\le a\) and \(r\in\{0,1\}\).  Its rungs are
+\(A_i^0A_i^1\), and its rails are \(A_i^rA_{i+1}^r\).  Define a second,
+disjoint ladder \(L_b\) on vertices \(B_j^r\).
+
+\begin{definition}[Double ladder]
+\label{def:double-ladder}
+For positive integers \(a,b\), the graph \(D(a,b)\) consists of \(L_a\) and
+\(L_b\) together with the four connector edges
+\begin{equation}
+\label{eq:connectors}
+ A_0^0B_0^0,\qquad
+ A_0^1B_b^0,\qquad
+ A_a^0B_0^1,\qquad
+ A_a^1B_b^1.
+\end{equation}
+Thus
+\[
+ |V(D(a,b))|=2(a+b)+4.
+\]
+\end{definition}
+
+\subsection{The square insertion}
+
+Suppose \(uvyxu\) is a facial quadrilateral, so that \(uv\) and \(xy\) are
+opposite edges.  Replace \(uv\) by \(u p q v\), replace \(xy\) by
+\(x r s y\), and add \(pr\) and \(qs\).  The four new vertices induce the
+facial cycle \(p q s r p\).  In a ladder cell this operation replaces one
+cell by three and increases the ladder length by two.
+
+\begin{lemma}[Preservation under facial square insertion]
+\label{lem:square-preservation}
+Let \(G\) be a simple, planar, bipartite, cubic, 3-connected graph, and apply
+the preceding operation to opposite edges of a facial quadrilateral.  The
+resulting graph \(G^+\) has the same five properties.
+\end{lemma}
+
+\begin{proof}
+The four terminals are distinct and the inserted vertices are new, so
+simplicity is immediate.  Drawing the three-cell ladder inside the old face
+proves planarity.  Each old terminal loses one edge and gains one edge; every
+new vertex has two neighbours on the inserted 4-cycle and one old terminal.
+Thus cubicity is preserved.  If the facial quadrilateral is
+\(uvyxu\), then \(u,y\) lie in one bipartition class and \(v,x\) in the other.
+The unique alternating coloring along the two new length-three paths makes
+both \(pr\) and \(qs\) bichromatic, proving bipartiteness.
+
+It remains to prove 3-connectivity.  Let \(S\subseteq V(G^+)\) with
+\(|S|\le2\), and call \(p,q,r,s\) the new vertices.  If \(S\) contains no new
+vertex, paths in the connected graph \(G-S\) lift through the two intact
+replacement paths; the intact inner 4-cycle is attached to every surviving
+terminal.  If \(S\) contains exactly one new vertex, at most one old vertex is
+deleted.  The graph obtained from \(G\) by deleting that old vertex is
+2-connected and hence has no bridge.  Delete, if necessary, the one old edge
+whose replacement path contains the removed new vertex.  The remaining old
+vertices are still connected, and the other three new vertices form a path
+attached to at least two surviving terminals.  Finally, if two new vertices
+are deleted, no old vertex is deleted.  A 3-vertex-connected graph is
+3-edge-connected, so \(G-\{uv,xy\}\) is connected.  Every remaining new
+vertex has its own terminal edge into this connected old core.  Hence
+\(G^+-S\) is connected in all cases, and \(G^+\) is 3-connected.
+\end{proof}
+
+\begin{theorem}
+\label{thm:double-ladder-barnette}
+For all odd integers \(a,b\ge1\), the graph \(D(a,b)\) is a Barnette graph.
+\end{theorem}
+
+\begin{proof}
+The graph \(D(1,1)\) is isomorphic to the cube.  Increasing either odd
+parameter by two is exactly the facial square insertion of
+\cref{lem:square-preservation} in a cell of the corresponding ladder.  Starting
+from \(D(1,1)\), repeated insertions therefore reach every pair of positive odd
+parameters while preserving all Barnette properties.
+\end{proof}
+
+\subsection{Certified occurrences and face structure}
+
+\begin{computationalresult}[Certified double-ladder recurrence]
+\label{res:double-ladder-recurrence}
+Exact graph isomorphisms identify the unique maximizers at orders divisible by
+four as follows:
+\[
+\begin{array}{c|cccccccc}
+n&8&12&16&20&24&28&32&36\\ \hline
+G_n&D(1,1)&D(3,1)&D(3,3)&D(5,3)&D(5,5)&D(7,5)&D(7,7)&D(9,7).
+\end{array}
+\]
+All seven consecutive transitions have reconstructible expansion certificates
+whose reconstructed edge set is exactly the certified target and whose reduced
+canonical hash is exactly the certified source.
+\end{computationalresult}
+
+\begin{proposition}[Face pattern in the recursive embedding]
+\label{prop:double-ladder-faces}
+For odd positive \(a,b\), the embedding obtained from the cube by the square
+insertions above has \(a+b\) designated ladder-cell faces, all quadrilateral,
+together with two faces of length \(a+3\) and two faces of length \(b+3\).
+When \(a=1\) or \(b=1\), the corresponding two cap faces are themselves
+quadrilateral.
+\end{proposition}
+
+\begin{proof}
+For \(D(1,1)\), the two designated cells and four cap faces are the six faces
+of the cube.  Increasing \(a\) by two replaces one designated cell by three,
+adding two quadrilateral cells.  The two cap boundaries running along the
+modified (a)-ladder each acquire two edges; the other two cap boundaries are
+unchanged.  This is precisely the claimed update.  The argument for \(b\) is
+identical, so induction proves the formula.
+\end{proof}
+
+For the certified members from \(D(3,3)\) onward, the two sets of designated
+cells are exactly the two path components of the quadrilateral face-adjacency
+graph.  At orders 8 and 12, additional quadrilateral cap faces make this
+face-adjacency description degenerate, although the abstract double-ladder
+definition remains valid.
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{ccc}
+\includegraphics[width=.29\textwidth]{d11.png} &
+\includegraphics[width=.29\textwidth]{d53.png} &
+\includegraphics[width=.29\textwidth]{d55.png} \\
+\(D(1,1)\) & \(D(5,3)\) & \(D(5,5)\) \\[3pt]
+\includegraphics[width=.29\textwidth]{d75.png} &
+\includegraphics[width=.29\textwidth]{d77.png} &
+\includegraphics[width=.29\textwidth]{d97.png} \\
+\(D(7,5)\) & \(D(7,7)\) & \(D(9,7)\)
+\end{tabular}
+\caption{Selected certified double-ladder maximizers.  Layouts were produced
+from the certified planar embeddings; geometry is used only for presentation,
+while all structural identifications were made from abstract edges and rotation
+systems.}
+\label{fig:double-ladders}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.62\textwidth]{square_insertion_d55.png}
+\caption{Annotated \(D(5,5)\).  Blue edges are rails, red edges are rungs,
+orange edges are terminal attachments, and the highlighted four-vertex tile is
+a certified square insertion.  The inverse operation deletes the tile and
+restores the two opposite rail edges.}
+\label{fig:square-insertion}
+\end{figure}

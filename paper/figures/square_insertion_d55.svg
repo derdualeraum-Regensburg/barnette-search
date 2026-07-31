@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img">
+  <title>Barnie maximizer n=24, M_B(24)=24, rank=3</title>
+  <desc>Canonical graph SHA-256 5a3354bd7a56777958901762cb161560b5dc0a7e76ddbf5a3a59405ea7561425; structurally faithful planar drawing generated from the certified planar_code embedding.</desc>
+  <rect width="900" height="900" fill="white" />
+  <g id="ladder-face-highlights" stroke="none" fill-opacity="0.22">
+    <polygon points="198.490,583.194 319.418,569.335 369.467,665.434 194.499,717.929" fill="#64b5f6" />
+    <polygon points="192.389,489.170 300.701,487.529 319.418,569.335 198.490,583.194" fill="#64b5f6" />
+    <polygon points="192.389,489.170 192.389,410.830 300.701,412.471 300.701,487.529" fill="#64b5f6" />
+    <polygon points="192.389,410.830 198.490,316.806 319.418,330.665 300.701,412.471" fill="#64b5f6" />
+    <polygon points="198.490,316.806 194.499,182.071 369.467,234.566 319.418,330.665" fill="#64b5f6" />
+    <polygon points="45.000,855.000 855.000,855.000 855.000,45.000 45.000,45.000" fill="#9575cd" />
+    <polygon points="855.000,855.000 710.008,658.570 710.008,241.430 855.000,45.000" fill="#9575cd" />
+    <polygon points="710.008,658.570 600.745,592.516 600.745,307.484 710.008,241.430" fill="#9575cd" />
+    <polygon points="516.198,576.452 516.198,323.548 600.745,307.484 600.745,592.516" fill="#9575cd" />
+    <polygon points="439.194,577.343 439.194,322.657 516.198,323.548 516.198,576.452" fill="#9575cd" />
+    <polygon points="192.389,489.170 192.389,410.830 300.701,412.471 300.701,487.529" fill="#ffeb3b" fill-opacity="0.65" />
+  </g>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="192.389" y1="489.170" x2="198.490" y2="583.194" />
+    <line x1="192.389" y1="489.170" x2="192.389" y2="410.830" />
+    <line x1="192.389" y1="489.170" x2="300.701" y2="487.529" />
+    <line x1="198.490" y1="583.194" x2="319.418" y2="569.335" />
+    <line x1="198.490" y1="583.194" x2="194.499" y2="717.929" />
+    <line x1="192.389" y1="410.830" x2="198.490" y2="316.806" />
+    <line x1="192.389" y1="410.830" x2="300.701" y2="412.471" />
+    <line x1="300.701" y1="487.529" x2="319.418" y2="569.335" />
+    <line x1="300.701" y1="487.529" x2="300.701" y2="412.471" />
+    <line x1="319.418" y1="569.335" x2="369.467" y2="665.434" />
+    <line x1="194.499" y1="717.929" x2="369.467" y2="665.434" />
+    <line x1="194.499" y1="717.929" x2="45.000" y2="855.000" />
+    <line x1="198.490" y1="316.806" x2="194.499" y2="182.071" />
+    <line x1="198.490" y1="316.806" x2="319.418" y2="330.665" />
+    <line x1="300.701" y1="412.471" x2="319.418" y2="330.665" />
+    <line x1="369.467" y1="665.434" x2="439.194" y2="577.343" />
+    <line x1="45.000" y1="855.000" x2="855.000" y2="855.000" />
+    <line x1="45.000" y1="855.000" x2="45.000" y2="45.000" />
+    <line x1="194.499" y1="182.071" x2="45.000" y2="45.000" />
+    <line x1="194.499" y1="182.071" x2="369.467" y2="234.566" />
+    <line x1="319.418" y1="330.665" x2="369.467" y2="234.566" />
+    <line x1="439.194" y1="577.343" x2="439.194" y2="322.657" />
+    <line x1="439.194" y1="577.343" x2="516.198" y2="576.452" />
+    <line x1="855.000" y1="855.000" x2="710.008" y2="658.570" />
+    <line x1="855.000" y1="855.000" x2="855.000" y2="45.000" />
+    <line x1="45.000" y1="45.000" x2="855.000" y2="45.000" />
+    <line x1="369.467" y1="234.566" x2="439.194" y2="322.657" />
+    <line x1="439.194" y1="322.657" x2="516.198" y2="323.548" />
+    <line x1="516.198" y1="576.452" x2="516.198" y2="323.548" />
+    <line x1="516.198" y1="576.452" x2="600.745" y2="592.516" />
+    <line x1="710.008" y1="658.570" x2="600.745" y2="592.516" />
+    <line x1="710.008" y1="658.570" x2="710.008" y2="241.430" />
+    <line x1="855.000" y1="45.000" x2="710.008" y2="241.430" />
+    <line x1="516.198" y1="323.548" x2="600.745" y2="307.484" />
+    <line x1="600.745" y1="592.516" x2="600.745" y2="307.484" />
+    <line x1="710.008" y1="241.430" x2="600.745" y2="307.484" />
+  </g>
+  <g fill="#111">
+    <circle id="v1" data-vertex="1" cx="192.389" cy="489.170" r="5.5" />
+    <circle id="v2" data-vertex="2" cx="198.490" cy="583.194" r="5.5" />
+    <circle id="v3" data-vertex="3" cx="192.389" cy="410.830" r="5.5" />
+    <circle id="v4" data-vertex="4" cx="300.701" cy="487.529" r="5.5" />
+    <circle id="v5" data-vertex="5" cx="319.418" cy="569.335" r="5.5" />
+    <circle id="v6" data-vertex="6" cx="194.499" cy="717.929" r="5.5" />
+    <circle id="v7" data-vertex="7" cx="198.490" cy="316.806" r="5.5" />
+    <circle id="v8" data-vertex="8" cx="300.701" cy="412.471" r="5.5" />
+    <circle id="v9" data-vertex="9" cx="369.467" cy="665.434" r="5.5" />
+    <circle id="v10" data-vertex="10" cx="45.000" cy="855.000" r="5.5" />
+    <circle id="v11" data-vertex="11" cx="194.499" cy="182.071" r="5.5" />
+    <circle id="v12" data-vertex="12" cx="319.418" cy="330.665" r="5.5" />
+    <circle id="v13" data-vertex="13" cx="439.194" cy="577.343" r="5.5" />
+    <circle id="v14" data-vertex="14" cx="855.000" cy="855.000" r="5.5" />
+    <circle id="v15" data-vertex="15" cx="45.000" cy="45.000" r="5.5" />
+    <circle id="v16" data-vertex="16" cx="369.467" cy="234.566" r="5.5" />
+    <circle id="v17" data-vertex="17" cx="439.194" cy="322.657" r="5.5" />
+    <circle id="v18" data-vertex="18" cx="516.198" cy="576.452" r="5.5" />
+    <circle id="v19" data-vertex="19" cx="710.008" cy="658.570" r="5.5" />
+    <circle id="v20" data-vertex="20" cx="855.000" cy="45.000" r="5.5" />
+    <circle id="v21" data-vertex="21" cx="516.198" cy="323.548" r="5.5" />
+    <circle id="v22" data-vertex="22" cx="600.745" cy="592.516" r="5.5" />
+    <circle id="v23" data-vertex="23" cx="710.008" cy="241.430" r="5.5" />
+    <circle id="v24" data-vertex="24" cx="600.745" cy="307.484" r="5.5" />
+  </g>
+  <g id="ladder-edge-annotations" fill="none" stroke-linecap="round">
+    <line x1="198.490" y1="583.194" x2="194.499" y2="717.929" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="192.389" y1="489.170" x2="198.490" y2="583.194" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="192.389" y1="489.170" x2="192.389" y2="410.830" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="192.389" y1="410.830" x2="198.490" y2="316.806" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="198.490" y1="316.806" x2="194.499" y2="182.071" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="319.418" y1="569.335" x2="369.467" y2="665.434" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="300.701" y1="487.529" x2="319.418" y2="569.335" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="300.701" y1="487.529" x2="300.701" y2="412.471" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="300.701" y1="412.471" x2="319.418" y2="330.665" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="319.418" y1="330.665" x2="369.467" y2="234.566" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="194.499" y1="717.929" x2="369.467" y2="665.434" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="198.490" y1="583.194" x2="319.418" y2="569.335" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="192.389" y1="489.170" x2="300.701" y2="487.529" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="192.389" y1="410.830" x2="300.701" y2="412.471" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="198.490" y1="316.806" x2="319.418" y2="330.665" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="194.499" y1="182.071" x2="369.467" y2="234.566" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="194.499" y1="717.929" x2="45.000" y2="855.000" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <line x1="194.499" y1="182.071" x2="45.000" y2="45.000" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <line x1="369.467" y1="665.434" x2="439.194" y2="577.343" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <line x1="369.467" y1="234.566" x2="439.194" y2="322.657" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <line x1="45.000" y1="855.000" x2="855.000" y2="855.000" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="855.000" y1="855.000" x2="710.008" y2="658.570" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="710.008" y1="658.570" x2="600.745" y2="592.516" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="516.198" y1="576.452" x2="600.745" y2="592.516" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="439.194" y1="577.343" x2="516.198" y2="576.452" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="45.000" y1="45.000" x2="855.000" y2="45.000" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="855.000" y1="45.000" x2="710.008" y2="241.430" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="710.008" y1="241.430" x2="600.745" y2="307.484" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="516.198" y1="323.548" x2="600.745" y2="307.484" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="439.194" y1="322.657" x2="516.198" y2="323.548" stroke="#1565c0" stroke-width="3.25" stroke-opacity="0.72" />
+    <line x1="45.000" y1="855.000" x2="45.000" y2="45.000" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="855.000" y1="855.000" x2="855.000" y2="45.000" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="710.008" y1="658.570" x2="710.008" y2="241.430" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="600.745" y1="592.516" x2="600.745" y2="307.484" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="516.198" y1="576.452" x2="516.198" y2="323.548" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="439.194" y1="577.343" x2="439.194" y2="322.657" stroke="#c62828" stroke-width="4.0" stroke-opacity="0.88" />
+    <line x1="194.499" y1="717.929" x2="45.000" y2="855.000" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <line x1="194.499" y1="182.071" x2="45.000" y2="45.000" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <line x1="369.467" y1="665.434" x2="439.194" y2="577.343" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <line x1="369.467" y1="234.566" x2="439.194" y2="322.657" stroke="#ef6c00" stroke-width="4.0" stroke-opacity="0.9" />
+    <circle cx="192.389" cy="489.170" r="10" stroke="#2e7d32" stroke-width="4" fill="none" />
+    <circle cx="192.389" cy="410.830" r="10" stroke="#2e7d32" stroke-width="4" fill="none" />
+    <circle cx="300.701" cy="487.529" r="10" stroke="#2e7d32" stroke-width="4" fill="none" />
+    <circle cx="300.701" cy="412.471" r="10" stroke="#2e7d32" stroke-width="4" fill="none" />
+  </g>
+  <metadata>{"canonical_graph_hash":"5a3354bd7a56777958901762cb161560b5dc0a7e76ddbf5a3a59405ea7561425","inserted_vertices_artifact_labels":[0,2,3,7],"ladder_face_counts":[5,5],"legend":{"attachments/end caps":"orange","inserted tile":"yellow/green","quadrilateral 3-belt":"purple","rails":"blue","rungs":"red"},"schema":"barnie-ladder-figure-v1"}</metadata>
+</svg>

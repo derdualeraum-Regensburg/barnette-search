@@ -1,0 +1,7 @@
+$pdf_mode = 1;
+$interaction = 'nonstopmode';
+$halt_on_error = 1;
+$out_dir = 'generated';
+$aux_dir = 'generated';
+$bibtex_use = 2;
+$pdflatex = 'pdflatex -interaction=nonstopmode -halt-on-error -file-line-error %O %S';

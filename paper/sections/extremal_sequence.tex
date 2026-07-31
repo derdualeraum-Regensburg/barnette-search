@@ -1,0 +1,50 @@
+\section{The certified finite extremal sequence}
+\label{sec:sequence}
+
+\begin{computationalresult}[Certified values through order 36]
+\label{res:sequence}
+The complete Plantri 5.8 censuses and independent certificate verification give
+the values in \cref{tab:extremal-sequence}.  Across the nonempty orders, 22,263
+non-isomorphic graphs were audited.  Every maximum and tie count was
+independently verified, and every nonmaximizer has a verified separating cover
+strictly below the maximum of its order.
+\end{computationalresult}
+
+\begin{table}[htbp]
+\centering
+\caption{Certified Barnette Hamiltonian edge-separation extrema.  The last
+column is the number of undirected Hamiltonian cycles in each maximizer; within
+every tied order all maximizers have the displayed count.}
+\label{tab:extremal-sequence}
+\input{tables/extremal_sequence}
+\end{table}
+
+Every cubic graph has even order, since the degree-sum identity gives
+\(3|V|=2|E|\).  Hence all odd orders from 9 through 35 are impossible.  The
+complete order-10 Plantri census is empty.  These undefined entries are not
+optimization failures.
+
+The order-36 statement is especially useful as a regression target:
+\[
+ \MB(36)=49,
+\]
+with a unique maximizer of canonical hash
+\begin{center}
+\small\nolinkurl{2f96ada16c46cd2bd038b97d5af44f46ed14522cba1edf3fa041d66e02107bcc}.
+\end{center}
+Its complete universe contains 68 undirected Hamiltonian cycles.  A 49-cycle
+primal certificate and a 49-requirement packing certificate prove its exact
+value.  All 15,373 competitors have independently checked covers of size at
+most 48.
+
+Matching packings certify the displayed maximizers at orders
+\(8,12,16,20,24,28,32,36\).  At orders \(14,18,22,26,30,34\), at least one
+displayed exact result uses exhaustive set-cover exclusion over a certified
+complete cycle universe instead.  This distinction concerns the form of the
+lower certificate, not the exactness of the result.
+
+\begin{statusnote}
+\Cref{res:sequence} is an exhaustive finite computational theorem about the
+listed orders.  It is not a proof of any formula for arbitrary \(n\), nor does
+it assert anything about orders 38 or 40.
+\end{statusnote}

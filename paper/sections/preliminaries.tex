@@ -1,0 +1,89 @@
+\section{Definitions and certificate principles}
+\label{sec:preliminaries}
+
+All graphs in this manuscript are finite and undirected.  A Hamiltonian cycle
+is regarded as an undirected edge set; reversal and cyclic rotation do not
+produce new cycles.
+
+\begin{definition}[Barnette graph]
+A \emph{Barnette graph} is a simple, planar, bipartite, cubic, and
+3-vertex-connected graph.
+\end{definition}
+
+Let \(\Hcal(G)\) denote the set of undirected Hamiltonian cycles of a
+Hamiltonian graph \(G\).
+
+\begin{definition}[Hamiltonian edge separation]
+For distinct edges \(e,f\in E(G)\), a Hamiltonian cycle \(C\) \emph{covers} the
+ordered requirement \((e,f)\) if \(e\in C\) and \(f\notin C\).  A family
+\(\Ccal\subseteq\Hcal(G)\) is \emph{Hamiltonian edge-separating} if it covers
+every ordered pair of distinct edges.  Define
+\begin{equation}
+\label{eq:hsep-definition}
+ \hsep(G)=
+ \min\left\{ |\Ccal|:
+ \begin{array}{l}
+ \Ccal\subseteq\Hcal(G),\\[-2pt]
+ \text{for all distinct }e,f\in E(G),
+ \text{ some }C\in\Ccal\text{ has }e\in C, f\notin C
+ \end{array}
+ \right\}.
+\end{equation}
+\end{definition}
+
+\begin{definition}[Barnette extremal sequence]
+For an order at which the relevant values are defined, put
+\begin{equation}
+\label{eq:MB-definition}
+ \MB(n)=\max\{\hsep(G):G\text{ is a Barnette graph and }|V(G)|=n\}.
+\end{equation}
+If no Barnette graph of order \(n\) exists, \(\MB(n)\) is undefined.  In the
+certified range every graph in every nonempty census is Hamiltonian, so
+\cref{eq:MB-definition} is unambiguous there.
+\end{definition}
+
+Given an ordered family \(C_1,\ldots,C_k\), associate with an edge \(e\) its
+incidence signature
+\[
+ \sigma(e)=\{i:e\in C_i\}\subseteq\{1,\ldots,k\}.
+\]
+
+\begin{proposition}[Signature antichain]
+\label{prop:signature-antichain}
+A family \(C_1,\ldots,C_k\) is Hamiltonian edge-separating if and only if the
+edge signatures form an antichain: for all distinct \(e,f\), neither
+\(\sigma(e)\subseteq\sigma(f)\) nor \(\sigma(f)\subseteq\sigma(e)\).
+\end{proposition}
+
+\begin{proof}
+The requirement \((e,f)\) is covered exactly when some index belongs to
+\(\sigma(e)\setminus\sigma(f)\).  Covering both ordered requirements
+\((e,f)\) and \((f,e)\) is therefore equivalent to incomparability of the two
+signatures.
+\end{proof}
+
+This gives the usual Sperner-type counting obstruction.  The computation also
+records a stronger incidence/LYM bound that uses cubicity,
+\(|E(G)|=3|V(G)|/2\), and the fact that every Hamiltonian cycle has exactly
+\(|V(G)|\) edges.  These general bounds are kept separate from graph-specific
+optimality certificates.
+
+\begin{lemma}[Primal and packing certificates]
+\label{lem:certificate-principle}
+If \(k\) explicit Hamiltonian cycles cover every ordered edge-pair requirement,
+then \(\hsep(G)\le k\).  If there are \(k\) requirements such that every
+Hamiltonian cycle covers at most one of them, then \(\hsep(G)\ge k\).
+Consequently, matching certificates prove \(\hsep(G)=k\).
+\end{lemma}
+
+\begin{proof}
+The first statement is the definition.  For the second, each of the \(k\)
+requirements must be assigned to a selected cycle that covers it, while no
+selected cycle can receive two requirements.  Hence at least \(k\) cycles are
+necessary.
+\end{proof}
+
+When no matching packing is available, a lower bound in this project is called
+independently certified only if a standalone verifier checks a complete
+Hamiltonian-cycle universe and exhaustively excludes every cover below the
+claimed value.

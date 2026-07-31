@@ -1,0 +1,63 @@
+\section{Reproducibility and independent verification}
+\label{sec:reproducibility}
+
+The source repository contains the producer, structural analysis, tests, and
+standalone-verifier source.  Large immutable result packages remain outside the
+repository.  The manuscript itself contains only the compact table and selected
+figure files needed to compile it.
+
+The global standard-library verifier checked all 29 order packages from 8
+through 36, including the 14 nonempty orders, 266 manifest-listed files, every
+cycle certificate, every ordered edge-pair cover, all lower certificates, and
+the global summaries.  Its recorded runtime was 655.989 seconds.  The producer
+runtimes recorded across the orders sum to 5,186.661 seconds; those values mix
+fresh production and the imported order-36 workflow and are provided as audit
+metadata rather than a hardware-independent benchmark.
+
+The principal immutable identifiers used for this draft are
+\begin{center}
+\scriptsize
+\begin{tabular}{ll}
+\toprule
+package & SHA-256 of \texttt{SHA256SUMS.txt} \\
+\midrule
+certified sequence &
+\nolinkurl{2a0a27cbb2c5dcefca3173293dc1fbfb21b55a69cdd366da3ab3b30a2842affa}\\
+maximizer gallery &
+\nolinkurl{a7a3ec48ece3d06191e3543f996f23b5c2d978978dc9634dcff2679746c23aa4}\\
+ladder analysis &
+\nolinkurl{17b1a8219321fc70ac8146f17e29d8b836c90862ec96248429141869e252a67e}\\
+prospective double-ladder test &
+\nolinkurl{6bd843dfbe9f3eb1aa3213511ce28091efc7567f7d7565f0aa980943b05713a1}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The ladder-analysis manifest contains 30 entries, all of which were rechecked
+before drafting.  It binds the structural tool and module hashes to the
+analysis output without modifying the certified sequence or gallery inputs.
+
+The repository test run associated with this draft collected 185 tests:
+180 passed and five environment-gated external integrations were skipped.  The
+skipped tests require explicitly configured plantri or cubhamg executables and
+do not replace the standalone certificate verification described above.
+
+The prospective package locks its predictions in a read-only JSON record with
+SHA-256
+\nolinkurl{e8ba381dd163c59941db81f65b71b70d6d78cdb7cfd6f6a41ba4828fe25c89fb}.
+Its standalone verifier passed all three constructions, complete universes,
+structural classifications, primal covers, matching lower certificates, and
+local and global manifests.
+
+The planar layouts in this manuscript derive from certified rotation systems
+using Gunnar Brinkmann's external drawing program.  The wrapper checked that
+the vertices and edges recovered from every generated drawing exactly match the
+corresponding certified graph.  Use of that program does not imply endorsement,
+collaboration, or coauthorship.
+
+\subsection*{Draft AI-assistance disclosure}
+
+AI tools assisted with software development, data analysis, drafting, and
+language editing.  All mathematical certificate packages are independently
+checkable.  The author remains responsible for the definitions, claims, proofs,
+source verification, interpretation of computational evidence, and final
+manuscript.

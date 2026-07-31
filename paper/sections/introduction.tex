@@ -1,0 +1,53 @@
+\section{Introduction}
+\label{sec:introduction}
+
+A family of Hamiltonian cycles can be viewed as a binary measurement system on
+the edges of a graph: an edge receives one bit for every cycle, indicating
+whether the cycle contains it.  Requiring every ordered pair \((e,f)\) to be
+separated asks for a coordinate at which the signature of \(e\) is one and that
+of \(f\) is zero.  This requirement is stronger than mere distinctness of the
+signatures and leads naturally to an antichain condition.
+
+This manuscript develops that question for Barnette graphs, namely simple,
+planar, bipartite, cubic, and 3-connected graphs.  Its first purpose is to state
+precisely what has been established by a finite computer-assisted proof.  Its
+second purpose is to isolate a recurrent double-ladder structure among the
+certified extremal examples.  The manuscript deliberately distinguishes four
+levels of evidence:
+\begin{enumerate}[label=(\roman*)]
+  \item ordinary mathematical propositions proved in the text;
+  \item finite computational results supported by explicit, independently
+        checkable certificates;
+  \item structural observations verified on the certified finite data; and
+  \item empirical formulas and conjectures beyond the certified range.
+\end{enumerate}
+
+The certified computation gives all extremal values from order 8 through order
+36 whenever the Barnette census is nonempty.  The order-10 census is empty and
+odd orders are impossible for cubic graphs.  At the nonempty orders, exact
+upper certificates are Hamiltonian edge-separating families, while lower bounds
+are supplied either by packing requirements or by exhaustive exclusion over a
+certified complete Hamiltonian-cycle universe.  Importantly, no greedy cover
+size is used as an exact value.
+
+The structurally recurring examples are denoted by \(D(a,b)\).  Two ladder
+strips are joined by four fixed terminal edges.  The certified unique
+maximizers at orders (8,12,16,20,24,28,32,36) are respectively
+\[
+ D(1,1),D(3,1),D(3,3),D(5,3),D(5,5),D(7,5),D(7,7),D(9,7).
+\]
+The tied extremal graphs at orders (22,26,30,34) have a different face
+structure and are not forced into this uniform family.
+
+\paragraph{Literature-review status.}
+\textbf{TODO:} A systematic peer-reviewed literature review is required before
+any novelty claim is made.  It must cover separating and completely separating
+systems, edge separation by cycles, Hamiltonian-cycle covers, Barnette graph
+generation and census results, and reducible configurations or expansion
+operations.  The notation \(\hsep\) and the descriptive name used here are
+therefore provisional.
+
+The remainder of the paper defines the invariant and its certificate logic,
+describes the census and verification pipeline, states the certified extremal
+sequence, analyzes the double-ladder family, and separates established results
+from open conjectures.
