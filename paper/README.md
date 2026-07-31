@@ -60,7 +60,9 @@ hashes are stated in `sections/reproducibility.tex`.
 - **Proved in the draft:** the signature-antichain equivalence; the primal and
   packing certificate principle; preservation of Barnette properties under the
   specified facial square insertion; and the Barnette property and face formula
-  for `D(a,b)` with positive odd parameters.
+  for `D(a,b)` with positive odd parameters. The repository's subsequent
+  packing-lift analysis additionally proves the symbolic lower bound
+  `hsep(D(a,b)) >= ((a+2)(b+2)-1)/2` for odd `a,b >= 3`.
 - **Exhaustively certified finite results:** the complete extremal sequence on
   nonempty orders 8--36, all maximizers and ties, the eight census-range
   double-ladder identifications, seven exact family expansions, the finite
@@ -70,7 +72,8 @@ hashes are stated in `sections/reproducibility.tex`.
 - **Structurally verified observations:** strict ladder components, the local
   tile-state classification on the emitted complete universes, and the 25 tied
   expansion links.
-- **Empirical or conjectural:** the general formula for `hsep(D(a,b))`, the
+- **Empirical or conjectural:** equality in the general formula for
+  `hsep(D(a,b))`, the
   parameterized Hamiltonian-cycle formula beyond analyzed members, extremality
   beyond order 36, and the order-38 extremal extrapolation. The three
   prospective graph-specific formula predictions passed, but this is not a
@@ -80,10 +83,10 @@ hashes are stated in `sections/reproducibility.tex`.
 
 1. Have a graph theorist audit the direct 3-connectivity proof and the precise
    embedding convention in the face proposition.
-2. Turn the observed Hamiltonian tile states into a parameterized recurrence
-   proof, including all six two-connector boundary cases.
-3. Prove or refute the empirical hsep formula and construct symbolic primal and
-   lower-certificate lifts under square insertion.
+2. Have the parameterized rail/rung recurrence and all six two-connector
+   boundary cases independently audited.
+3. Construct a symbolic primal lift matching the now-proved lower-certificate
+   lift, or refute equality in the empirical hsep formula.
 4. Classify the tied branch by finite boundary states.
 5. Perform a systematic peer-reviewed literature review covering separating
    systems, completely separating systems, edge separation by cycles,

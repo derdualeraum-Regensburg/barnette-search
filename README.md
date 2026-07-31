@@ -404,12 +404,18 @@ python tools/analyze_ladder_family.py ^
 
 For the unique maximizers at orders divisible by four, the certified graphs form
 a double-ladder family `D(a,b)` connected by one fixed square insertion. The
-complete certified cycle universes satisfy `|H(D(a,b))| = ab + 5`. The observed
-closed formula for `hsep(D(a,b))` is reported as empirical rather than as a
-general theorem: the existing certificates prove the individual values, but no
-general lower-bound lifting argument has been established. Predictions for
-orders 38 and 40 are likewise emitted with an explicit unproved warning; the
-analysis does not enumerate or optimize either order.
+complete certified cycle universes satisfy `|H(D(a,b))| = ab + 5`. A
+subsequent packing-certificate analysis proves the general lower bound
+
+```text
+hsep(D(a,b)) >= ((a+2)(b+2)-1)/2
+```
+
+for odd `a,b >= 3`, together with a square-insertion lift of the lower
+certificate. Equality remains conjectural because a general separating family
+of the same size is not yet known. Predictions for orders 38 and 40 are still
+emitted with an explicit unproved warning; the analysis does not enumerate or
+optimize either order.
 
 ## Prospective double-ladder prediction test
 
@@ -445,6 +451,44 @@ kept separately in `E:\barnette-results\double-ladder-prediction-test-work`.
 No complete census was run at orders 40, 44, or 48. Consequently these results
 do not establish `M_B(40)`, `M_B(44)`, or `M_B(48)`, and do not prove that the
 three graphs are extremal.
+
+## Double-ladder packing lift
+
+`tools/analyze_double_ladder_packings.py` analyzes only the four immutable,
+complete Hamiltonian universes
+
+```text
+D(9,7) -> D(9,9) -> D(11,9) -> D(11,11).
+```
+
+Every stored optimal packing consists of four connector-exception singletons,
+all boundary-turn singletons, and a domino tiling of the odd-by-odd interior
+turn grid after removing one majority-parity cell. The solver-selected
+packings are not uniformly nested: the certified path-aware overlaps are
+`26/49`, `34/60`, and `71/71`, and exhaustive automorphism alignment improves
+the first two only to `33/49` and `46/60`. A deterministic alternative packing
+is fully nested in all three transitions.
+
+Increasing `b` by two adds four boundary singletons and `a-2` dominoes, hence
+`a+2` requirements. Increasing `a` by two analogously adds `b+2`. The three
+finite increments are therefore `11`, `11`, and `13`. See
+[`docs/double_ladder_packing_lift.md`](docs/double_ladder_packing_lift.md) for
+the precise construction, proof status, hashes, and verification commands.
+
+```console
+python tools/analyze_double_ladder_packings.py ^
+  --sequence-root E:\barnette-results\barnie-sequence ^
+  --prediction-root E:\barnette-results\double-ladder-prediction-test ^
+  --output-root E:\barnette-results\double-ladder-packing-lift ^
+  --repo .
+python tools/verify_double_ladder_packing_lift.py ^
+  E:\barnette-results\double-ladder-packing-lift --check-manifest
+```
+
+The producer performs no census generation, graph search, Hamiltonian-cycle
+enumeration, or unrestricted hsep optimization. The large immutable source
+and output packages remain outside the repository and are bound by SHA-256
+manifests.
 
 ## Manuscript draft
 

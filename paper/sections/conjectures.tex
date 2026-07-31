@@ -56,11 +56,45 @@ The formula does not match the two degenerate initial members \(D(1,1)\) and
 For odd \(a,b\ge3\), equation \cref{eq:empirical-hsep} holds.
 \end{conjecture}
 
-This conjecture is not a consequence of the finite expansion certificates.
-In the five primary packing certificates at orders 20 through 36, exactly
-\(k-2\) packing requirements have both edges internal to the ladders, while the
-remaining two have only their included edge internal.  No invariant placement
-or certificate-lifting theorem has yet been found.
+The lower-bound half of the conjecture now has a symbolic certificate.
+
+\begin{theorem}[Double-ladder packing lift]
+\label{thm:packing-lift}
+For odd \(a,b\ge3\),
+\[
+ \hsep(D(a,b))\ge \frac{(a+2)(b+2)-1}{2}.
+\]
+Increasing \(b\) by two admits a path-aware packing lift with exactly \(a+2\)
+additional requirements; increasing \(a\) by two analogously adds \(b+2\).
+\end{theorem}
+
+\begin{proof}
+Use the cycle classes in \cref{thm:cycle-formula}.  Four ordered edge
+comparisons isolate the connector exceptions, and endpoint-rung versus
+alternating-rail comparisons isolate all \(2a+2b-4\) boundary turn cycles.
+After deleting one majority-color cell, tile the odd
+\((a-2)\times(b-2)\) interior turn grid by dominoes.  A domino joining
+\(T(p-1,j)\) to \(T(p,j)\) is represented by the requirement consisting of
+rung \(p\) of the first ladder and either rail of cell \(j\) of the second;
+the symmetric construction represents a domino in the other direction.
+The incidence description in \cref{thm:cycle-formula} shows that its coverage
+set is exactly those two turn cycles.  The exception, boundary, and domino
+supports are therefore pairwise disjoint.  Their number is
+\[
+ 4+(2a+2b-4)+\frac{(a-2)(b-2)-1}{2}
+ =\frac{(a+2)(b+2)-1}{2}.
+\]
+
+Under a square insertion, represent either deleted rail by the corresponding
+edge of its certified three-edge replacement path and anchor the four exception
+requirements on the other ladder.  The two new turn-grid columns contribute
+four boundary singletons and \(a-2\) interior dominoes, hence \(a+2\).  The
+row insertion is symmetric.
+\end{proof}
+
+This theorem supplies only the lower certificate.  The equality conjecture
+still requires a separating family of the same cardinality for arbitrary
+parameters.
 
 \begin{conjecture}[Extremal continuation]
 Balanced or nearly balanced double ladders continue to be extremal at larger

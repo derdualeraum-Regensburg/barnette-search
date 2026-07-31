@@ -43,17 +43,42 @@ With exactly two connectors, the four observed Hamiltonian connector words are
 each with one forced completion for odd ladder lengths.  The remaining words
 \(1001\) and \(0110\) do not occur in the certified complete universes.
 
-\begin{observation}[Status of the general count]
-\label{obs:cycle-formula-status}
-The emitted state data exhaustively establish \cref{res:cycle-counts} for the
-eight analyzed members.  They strongly suggest that the same degree recurrence
-is a symbolic proof for all positive odd \(a,b\), but the present artifact
-package checks complete finite universes rather than a separately formalized
-parameterized recurrence.  Accordingly, this manuscript does not yet promote
-\(|\Hcal(D(a,b))|=ab+5\) to a theorem for the infinite family.  The smaller
-certified members support the count but not the detailed state classification.
-\end{observation}
+\begin{theorem}[Hamiltonian cycles of the double ladder]
+\label{thm:cycle-formula}
+For odd \(a,b\ge3\), the Hamiltonian cycles of \(D(a,b)\) are one all-rails
+cycle, the \(ab\) cycles with one turn in each ladder, and four two-connector
+exceptions.  In particular,
+\[
+ |\Hcal(D(a,b))|=ab+5.
+\]
+\end{theorem}
 
-\textbf{Proof TODO.} Formalize the rail/rung degree recurrence for arbitrary
-odd lengths, prove that multiple turns create a separate cycle, and verify the
-six two-connector boundary cases without reference to enumerated examples.
+\begin{proof}
+For a ladder of length \(m\), put binary variables \(x_{t,s}\) on rail \(s\)
+of cell \(t\), \(y_t\) on rung \(t\), and \(c_{0,s},c_{m,s}\) on its endpoint
+connectors.  At an internal vertex the degree-two equation is
+\[
+ x_{t-1,s}+x_{t,s}+y_t=2,
+\]
+with the analogous endpoint equations including \(c_{0,s}\) or \(c_{m,s}\).
+Subtracting the equations on the two rails gives
+\(d_t=-d_{t-1}\), where \(d_t=x_{t,0}-x_{t,1}\).  Thus the endpoint connector
+bits determine the alternating rail difference, after which every rung is
+forced.
+
+If all four connectors are selected, \(d_0=0\), so the two rail choices agree
+in every cell.  A zero rail pair forces the two bounding rungs.  Two such zero
+pairs enclose a separate cycle, so a connected spanning solution has either no
+zero pair or one.  The two ladders must have the same type: one straight and
+one turned produces two components.  Hence there is one all-rails cycle and
+one cycle for each independent pair of turn positions.
+
+If exactly two connectors are selected, applying
+\(d_t=(-1)^t d_0\) at the far endpoint and using odd \(m\) leaves the four
+connector words \(1100,0011,1010,0101\).  In each case the recurrence has one
+completion: one ladder uses all rungs and alternating rails, while the other
+uses all rails and only the appropriate endpoint rung.  The remaining words
+close a component before all vertices are reached.  The connector cut must be
+crossed a positive even number of times, so zero, one, and three connectors
+cannot yield a Hamiltonian cycle.  These cases exhaust the recurrence.
+\end{proof}
