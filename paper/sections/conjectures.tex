@@ -1,18 +1,18 @@
-\section{Tied orders, empirical laws, and conjectures}
+\section{Tied orders and open extremal conjectures}
 \label{sec:conjectures}
 
-\subsection{Tied maximizers}
+\subsection{Tied maximizers in the certified range}
 
 The extremal behavior at orders congruent to two modulo four is structurally
 different from the uniform double-ladder recurrence.
 
 \begin{computationalresult}[Certified tied-order structure]
 \label{res:tied-structure}
-Every one of the 17 tied maximizers at orders (22,26,30,34) contains a
+Every one of the 17 tied maximizers at orders \(22,26,30,34\) contains a
 3-cycle component in the face-adjacency graph induced by quadrilateral faces,
 as well as at least one strict ladder component.  The full quadrilateral
-component signatures are pairwise distinct within each order and reproduce the
-tie counts (2,5,3,7).
+component signatures are pairwise distinct within each order and reproduce
+the tie counts \(2,5,3,7\).
 
 Twenty-five exact square-gadget certificates link these graphs to earlier
 examples.  Thirteen links are literal ladder-cell insertions.  In the other
@@ -29,106 +29,31 @@ be members of one \(D(a,b)\) recurrence.
 \end{tabular}
 \caption{The two certified order-22 maximizers.  Purple marks the
 quadrilateral 3-cycle component; blue and red distinguish ladder rails and
-rungs.  Their different component signatures illustrate why the tied branch is
-not identified with a single double-ladder skeleton.}
+rungs.  Their different component signatures illustrate why the tied branch
+is not identified with a single double-ladder skeleton.}
 \label{fig:tied-order-22}
 \end{figure}
 
-\subsection{Empirical hsep formula}
+\subsection{Open extremal continuation}
 
-The six independently certified values from orders 16 through 36 agree with
-\begin{equation}
-\label{eq:empirical-hsep}
- \hsep(D(a,b))=\frac{ab+2a+2b+3}{2}.
-\end{equation}
-The supporting parameter pairs and values are
-\[
-\begin{array}{c|rrrrrr}
-(a,b)&(3,3)&(5,3)&(5,5)&(7,5)&(7,7)&(9,7)\\ \hline
-\hsep&12&17&24&31&40&49.
-\end{array}
-\]
-The formula does not match the two degenerate initial members \(D(1,1)\) and
-\(D(3,1)\).
-
-\begin{conjecture}[Double-ladder hsep formula]
-\label{conj:hsep-formula}
-For odd \(a,b\ge3\), equation \cref{eq:empirical-hsep} holds.
-\end{conjecture}
-
-The lower-bound half of the conjecture now has a symbolic certificate.
-
-\begin{theorem}[Double-ladder packing lift]
-\label{thm:packing-lift}
-For odd \(a,b\ge3\),
-\[
- \hsep(D(a,b))\ge \frac{(a+2)(b+2)-1}{2}.
-\]
-Increasing \(b\) by two admits a path-aware packing lift with exactly \(a+2\)
-additional requirements; increasing \(a\) by two analogously adds \(b+2\).
-\end{theorem}
-
-\begin{proof}
-Use the cycle classes in \cref{thm:cycle-formula}.  Four ordered edge
-comparisons isolate the connector exceptions, and endpoint-rung versus
-alternating-rail comparisons isolate all \(2a+2b-4\) boundary turn cycles.
-After deleting one majority-color cell, tile the odd
-\((a-2)\times(b-2)\) interior turn grid by dominoes.  A domino joining
-\(T(p-1,j)\) to \(T(p,j)\) is represented by the requirement consisting of
-rung \(p\) of the first ladder and either rail of cell \(j\) of the second;
-the symmetric construction represents a domino in the other direction.
-The incidence description in \cref{thm:cycle-formula} shows that its coverage
-set is exactly those two turn cycles.  The exception, boundary, and domino
-supports are therefore pairwise disjoint.  Their number is
-\[
- 4+(2a+2b-4)+\frac{(a-2)(b-2)-1}{2}
- =\frac{(a+2)(b+2)-1}{2}.
-\]
-
-Under a square insertion, represent either deleted rail by the corresponding
-edge of its certified three-edge replacement path and anchor the four exception
-requirements on the other ladder.  The two new turn-grid columns contribute
-four boundary singletons and \(a-2\) interior dominoes, hence \(a+2\).  The
-row insertion is symmetric.
-\end{proof}
-
-This theorem supplies only the lower certificate.  The equality conjecture
-still requires a separating family of the same cardinality for arbitrary
-parameters.
+For each order divisible by four through 36, the unique certified maximizer is
+the balanced or nearly balanced double ladder listed in Computational
+Result~\ref{res:double-ladder-recurrence}.  The exact value of \(\hsep(D(a,b))\) is
+now known for all odd \(a,b\ge3\), but this does not compare \(D(a,b)\) with
+all other Barnette graphs at the same order.
 
 \begin{conjecture}[Extremal continuation]
-Balanced or nearly balanced double ladders continue to be extremal at larger
-orders divisible by four, and eventually are uniquely extremal there.
+\label{conj:extremal-continuation}
+At orders divisible by four beyond the certified census range, the balanced
+or nearly balanced double ladder is the unique Barnette graph maximizing
+Hamiltonian edge separation.
 \end{conjecture}
 
-Even if \cref{conj:hsep-formula} is true, it does not prove this extremal
-statement; all competing Barnette graphs at a given order would still need an
-upper certificate.
-
-\begin{computationalresult}[Prospective double-ladder test]
-\label{res:prospective-ladders}
-Before constructing or analyzing any new graph, the formulas predicted
-\[
-\begin{array}{c|rr}
-G & |\Hcal(G)| & \hsep(G)\\ \hline
-D(9,9) & 86 & 60\\
-D(11,9) & 104 & 71\\
-D(11,11) & 126 & 84.
-\end{array}
-\]
-The prediction lock was then left unchanged.  Each graph was constructed from
-the certified (D(9,7)) member by successive four-vertex square insertions.
-For all three graphs, a path-based enumeration and an independent exhaustive
-perfect-matching enumeration produced the predicted complete Hamiltonian
-universe.  Each predicted \(\hsep\) value has an explicit primal cover and a
-matching packing of the same size, checked by a standard-library verifier.
-\end{computationalresult}
-
-Thus the two family formulas survive three genuinely prospective tests, but a
-finite continuation does not prove \cref{conj:hsep-formula}.  No order-40,
-order-44, or order-48 census or extremal certification was performed.  In
-particular, this manuscript does not claim values for \(\MB(40)\),
-\(\MB(44)\), or \(\MB(48)\).  A separate linear fit to only
-the three tied-order values at (26,30,34) predicts \(\MB(38)=39\); because the
-tied expansion graph branches and merges, that extrapolation is considered
-especially weak.  No order-38 computation is reported here.
+Proving Conjecture~\ref{conj:extremal-continuation} requires order-level arguments or
+complete competing-graph certificates; the exact family formula
+\cref{eq:exact-double-ladder} alone is insufficient.  In particular, this
+manuscript does not claim \(\MB(40)=60\).  The previously recorded linear
+fit to the three tied-order values at \(26,30,34\), which predicts
+\(\MB(38)=39\), remains an especially weak extrapolation rather than a
+conjecture supported by a transfer proof.  No order-38 computation is reported
+here.

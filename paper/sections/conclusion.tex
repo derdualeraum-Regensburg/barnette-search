@@ -7,25 +7,29 @@ order-36 value 49.  Its proof objects are explicit: upper certificates are
 Hamiltonian-cycle families, and lower certificates are either packings or
 complete-universe exhaustive exclusions checked by a standalone verifier.
 
-The finite maximizers reveal two distinct structural regimes.  The unique
-maximizers at orders divisible by four lie in the explicitly defined
-double-ladder family and are connected by one facial square insertion.  The
-tied orders instead exhibit a quadrilateral 3-cycle component and a branching
-collection of ladder and cap expansions.  These facts are certified over the
-analyzed graphs.  A rail/rung recurrence proves the general Hamiltonian-cycle
-classification, and a monomer--domino packing construction proves the lower
-bound half of the proposed hsep formula with a square-insertion lift.  Equality,
-and the suggested extremal continuation, remain open until matching primal
-constructions and new order-level certificates are supplied.  Three
-prediction-locked tests beyond
-the census range confirm the graph-specific formulas for (D(9,9)),
-(D(11,9)), and (D(11,11)), but do not establish that any of those graphs is
-extremal at its order.
+That computation exposed a structural double-ladder recurrence.  A rail/rung
+recurrence now proves that \(D(a,b)\), for odd \(a,b\ge3\), has one all-rails
+cycle, \(ab\) turn cycles, and four connector exceptions.  The resulting
+coordinate system supports two matching symbolic constructions.  Exception
+and boundary singletons together with an interior domino tiling form a packing
+of \(((a+2)(b+2)-1)/2\) requirements.  The four exceptions, all boundary
+turns, and one interior parity class form a separating family of the same
+size; its rail, rung, and connector signatures are pairwise incomparable.
+Thus the exact formula
+\[
+ \hsep(D(a,b))=\frac{(a+2)(b+2)-1}{2}
+\]
+holds throughout this infinite family.
 
-The immediate mathematical priorities are to obtain an independent audit of
-the general ladder recurrence and lower-certificate lift, construct matching
-primal hsep certificates under square insertion, and classify the tied boundary
-states.  Before circulation as a research claim,
-the manuscript also requires expert review of the direct 3-connectivity proof
-and a systematic literature review of all related separation notions and graph
-operations.
+The three prediction-locked graphs beyond order 36 provide prospective finite
+confirmation of the cycle and edge-separation formulas, but no census-level
+claim at orders 40, 44, or 48.  Likewise, the exact family theorem does not
+prove that balanced double ladders remain extremal among all Barnette graphs.
+That continuation, and a structural explanation of the tied boundary-state
+branch at orders congruent to two modulo four, remain open.
+
+Before circulation as a novelty claim, the manuscript still requires a
+systematic literature review of related separation systems, cycle-separation
+parameters, Barnette censuses, and graph-expansion operations.  Independent
+expert review of the symbolic case analysis and the direct 3-connectivity
+argument also remains desirable.

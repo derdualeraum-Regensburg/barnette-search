@@ -1,0 +1,39 @@
+\section{Prospective confirmations beyond order 36}
+\label{sec:prospective}
+
+The double-ladder formulas were tested prospectively before their general
+proofs were completed.  A timestamped, read-only prediction record froze the
+following values before any of the three target graphs was constructed or
+analyzed:
+\[
+\begin{array}{c|rr}
+G & |\Hcal(G)| & \hsep(G)\\ \hline
+D(9,9) & 86 & 60\\
+D(11,9) & 104 & 71\\
+D(11,11) & 126 & 84.
+\end{array}
+\]
+
+\begin{computationalresult}[Prediction-locked double-ladder test]
+\label{res:prospective-ladders}
+All six frozen values were subsequently confirmed exactly.  Each graph was
+obtained from the certified \(D(9,7)\) by the specified facial square
+insertions.  For each target, a path-based enumerator and an independent
+perfect-matching/complement enumerator produced identical complete normalized
+Hamiltonian-cycle universes.  Explicit primal and matching packing
+certificates established the three displayed \(\hsep\) values, and the
+standard-library verifier passed every graph, cycle, ordered edge-pair, lower
+certificate, and manifest check.
+\end{computationalresult}
+
+Historically, these were genuinely prospective checks of both formulas.
+Mathematically, the Hamiltonian-cycle values now also follow from
+\cref{thm:cycle-formula}, and the \(\hsep\) values from
+\cref{thm:exact-double-ladder}.  The computations remain useful independent
+finite checks of the symbolic descriptions and of three square-insertion
+lifts.
+
+No complete Barnette census was run at order 40, 44, or 48 for this test.
+Accordingly, Computational Result~\ref{res:prospective-ladders} proves neither
+\(\MB(40)=60\) nor any value of \(\MB(44)\) or \(\MB(48)\); it makes no
+order-level extremal claim.

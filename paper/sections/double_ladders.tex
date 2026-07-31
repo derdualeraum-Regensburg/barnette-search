@@ -31,6 +31,16 @@ opposite edges.  Replace \(uv\) by \(u p q v\), replace \(xy\) by
 facial cycle \(p q s r p\).  In a ladder cell this operation replaces one
 cell by three and increases the ladder length by two.
 
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.43\textwidth]{square_insertion_d55.png}
+\caption{Annotated \(D(5,5)\).  Blue edges are rails, red edges are rungs,
+orange edges are terminal attachments, and the highlighted four-vertex tile is
+a certified square insertion.  The inverse operation deletes the tile and
+restores the two opposite rail edges.}
+\label{fig:square-insertion}
+\end{figure}
+
 \begin{lemma}[Preservation under facial square insertion]
 \label{lem:square-preservation}
 Let \(G\) be a simple, planar, bipartite, cubic, 3-connected graph, and apply
@@ -118,16 +128,16 @@ graph.  At orders 8 and 12, additional quadrilateral cap faces make this
 face-adjacency description degenerate, although the abstract double-ladder
 definition remains valid.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \begin{tabular}{ccc}
-\includegraphics[width=.29\textwidth]{d11.png} &
-\includegraphics[width=.29\textwidth]{d53.png} &
-\includegraphics[width=.29\textwidth]{d55.png} \\
+\includegraphics[width=.24\textwidth]{d11.png} &
+\includegraphics[width=.24\textwidth]{d53.png} &
+\includegraphics[width=.24\textwidth]{d55.png} \\
 \(D(1,1)\) & \(D(5,3)\) & \(D(5,5)\) \\[3pt]
-\includegraphics[width=.29\textwidth]{d75.png} &
-\includegraphics[width=.29\textwidth]{d77.png} &
-\includegraphics[width=.29\textwidth]{d97.png} \\
+\includegraphics[width=.24\textwidth]{d75.png} &
+\includegraphics[width=.24\textwidth]{d77.png} &
+\includegraphics[width=.24\textwidth]{d97.png} \\
 \(D(7,5)\) & \(D(7,7)\) & \(D(9,7)\)
 \end{tabular}
 \caption{Selected certified double-ladder maximizers.  Layouts were produced
@@ -135,14 +145,4 @@ from the certified planar embeddings; geometry is used only for presentation,
 while all structural identifications were made from abstract edges and rotation
 systems.}
 \label{fig:double-ladders}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=.62\textwidth]{square_insertion_d55.png}
-\caption{Annotated \(D(5,5)\).  Blue edges are rails, red edges are rungs,
-orange edges are terminal attachments, and the highlighted four-vertex tile is
-a certified square insertion.  The inverse operation deletes the tile and
-restores the two opposite rail edges.}
-\label{fig:square-insertion}
 \end{figure}

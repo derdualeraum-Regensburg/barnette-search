@@ -56,6 +56,12 @@ The proof pipeline deliberately separates the following objects.
     or optimization packages.
 \end{description}
 
+The standalone verifier checks the emitted census records and their internal
+consistency; it does not independently prove the enumerative completeness of
+plantri.  The finite census-completeness claim rests on the recorded complete
+plantri invocation together with contiguous output and the subsequent record
+audits.
+
 For every nonmaximizer the final package contains an independently verified
 cover strictly smaller than the maximum at that order.  For every maximizer it
 contains an exact primal certificate and either a matching packing or a

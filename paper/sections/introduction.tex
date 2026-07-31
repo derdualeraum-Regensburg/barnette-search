@@ -18,8 +18,9 @@ levels of evidence:
   \item ordinary mathematical propositions proved in the text;
   \item finite computational results supported by explicit, independently
         checkable certificates;
-  \item structural observations verified on the certified finite data; and
-  \item empirical formulas and conjectures beyond the certified range.
+  \item prospective computations whose values were frozen before evaluation;
+        and
+  \item open extremal conjectures beyond the certified census range.
 \end{enumerate}
 
 The certified computation gives all extremal values from order 8 through order
@@ -39,6 +40,18 @@ maximizers at orders (8,12,16,20,24,28,32,36) are respectively
 The tied extremal graphs at orders (22,26,30,34) have a different face
 structure and are not forced into this uniform family.
 
+The finite pattern leads to an infinite-family theorem.  A rail/rung
+recurrence classifies all Hamiltonian cycles of \(D(a,b)\) for odd
+\(a,b\ge3\).  A symbolic packing supplies a lower bound for \(\hsep\), while a
+boundary-plus-parity family of Hamiltonian cycles supplies a matching upper
+bound through an incidence-signature antichain.  Consequently,
+\[
+ \hsep(D(a,b))=\frac{(a+2)(b+2)-1}{2}
+ \qquad(a,b\ge3\text{ odd}).
+\]
+This settles the invariant on the double-ladder family, not its extremality
+among all Barnette graphs of the same order.
+
 \paragraph{Literature-review status.}
 \textbf{TODO:} A systematic peer-reviewed literature review is required before
 any novelty claim is made.  It must cover separating and completely separating
@@ -49,5 +62,5 @@ therefore provisional.
 
 The remainder of the paper defines the invariant and its certificate logic,
 describes the census and verification pipeline, states the certified extremal
-sequence, analyzes the double-ladder family, and separates established results
-from open conjectures.
+sequence, analyzes the double-ladder family, proves matching symbolic bounds,
+and separates prospective confirmations from open extremal conjectures.

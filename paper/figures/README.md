@@ -22,3 +22,8 @@ The SVGs remain the presentation masters; the PNGs permit ordinary
 
 All layouts ultimately derive from Gunnar Brinkmann's external drawing program
 as documented by the immutable gallery. No external C source is copied here.
+
+The packing grid, separating-family grid, and square-insertion lift are drawn
+directly in `sections/exact_hsep.tex` with TikZ from the symbolic turn-cell
+coordinates. They are mathematical schematics, not graph-layout or generated
+illustration assets.

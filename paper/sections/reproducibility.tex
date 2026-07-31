@@ -23,21 +23,29 @@ package & SHA-256 of \texttt{SHA256SUMS.txt} \\
 \midrule
 certified sequence &
 \nolinkurl{2a0a27cbb2c5dcefca3173293dc1fbfb21b55a69cdd366da3ab3b30a2842affa}\\
-maximizer gallery &
-\nolinkurl{a7a3ec48ece3d06191e3543f996f23b5c2d978978dc9634dcff2679746c23aa4}\\
+order-36 subpackage &
+\nolinkurl{6aaa43a275ecbbedd25586fc244140ddfb7f107e14025b2bfd1da34af417d00d}\\
 ladder analysis &
 \nolinkurl{17b1a8219321fc70ac8146f17e29d8b836c90862ec96248429141869e252a67e}\\
 prospective double-ladder test &
 \nolinkurl{6bd843dfbe9f3eb1aa3213511ce28091efc7567f7d7565f0aa980943b05713a1}\\
+packing-lift output &
+\nolinkurl{188800bd2a8b0835216f6fa9c78eb4673e5b3bc24d1dc216bc3a7d619986f31e}\\
+primal-lift output &
+\nolinkurl{bd5fdc3e3a160b8339fa412d4c1decf2113919cf1f4f6c2dc8856b474aeb37d1}\\
 \bottomrule
 \end{tabular}
 \end{center}
-The ladder-analysis manifest contains 30 entries, all of which were rechecked
-before drafting.  It binds the structural tool and module hashes to the
-analysis output without modifying the certified sequence or gallery inputs.
+The six manifests contain respectively 266, 9, 30, 50, 25, and 13 entries.
+Every listed file digest was rechecked before this revision, without modifying
+any package.  The packing- and primal-lift source inventories bind their
+outputs to the order-36, ladder-analysis, and prospective source artifacts.
+Their recorded independent-verification results are \texttt{pass}; the primal
+package verifies 2,862, 3,540, 4,290, and 5,112 ordered edge requirements for
+the four finite double ladders.
 
-The repository test run associated with this draft collected 185 tests:
-180 passed and five environment-gated external integrations were skipped.  The
+The current repository test run collected 191 tests: 186 passed and five
+environment-gated external integrations were skipped.  The
 skipped tests require explicitly configured plantri or cubhamg executables and
 do not replace the standalone certificate verification described above.
 

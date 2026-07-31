@@ -62,10 +62,12 @@ The requirement \((e,f)\) is covered exactly when some index belongs to
 signatures.
 \end{proof}
 
-This gives the usual Sperner-type counting obstruction.  The computation also
-records a stronger incidence/LYM bound that uses cubicity,
-\(|E(G)|=3|V(G)|/2\), and the fact that every Hamiltonian cycle has exactly
-\(|V(G)|\) edges.  These general bounds are kept separate from graph-specific
+In particular, if \(G\) has \(m\) edges and \(k\) selected cycles, Sperner's
+theorem gives the necessary inequality
+\[
+ m\le \binom{k}{\lfloor k/2\rfloor}.
+\]
+This general counting obstruction is kept separate from graph-specific
 optimality certificates.
 
 \begin{lemma}[Primal and packing certificates]

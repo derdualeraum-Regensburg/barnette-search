@@ -1,0 +1,392 @@
+\section{Exact edge separation for double ladders}
+\label{sec:exact-hsep}
+
+Throughout this section, let \(a,b\ge3\) be odd.  In ladder \(A\), write
+\(r_A(p)=A_p^0A_p^1\) for rung \(p\), \(0\le p\le a\), and
+\(\ell_A(i,s)=A_i^sA_{i+1}^s\) for rail \(s\) of cell \(i\),
+\(0\le i<a\).  Use \(r_B(q)\) and \(\ell_B(j,s)\) analogously.  Denote
+the all-rails cycle by \(R\), the cycle turning in cell \(i\) of \(A\) and
+cell \(j\) of \(B\) by \(T(i,j)\), and the four exceptional cycles from
+\cref{thm:cycle-formula} by
+\[
+ X_{0011},\quad X_{1100},\quad X_{0101},\quad X_{1010}.
+\]
+The subscripts record connector words in the order of \cref{eq:connectors}.
+
+\subsection{A symbolic packing lower bound}
+
+We first construct ordered edge requirements whose cycle supports are
+pairwise disjoint.  Four requirements isolate the four exceptional cycles.
+One concrete choice, anchored on ladder \(A\), is
+\begin{equation}
+\label{eq:exception-requirements}
+ (r_A(0),r_A(1)),\quad (r_A(a),r_A(a-1)),\quad
+ (\ell_A(0,0),\ell_A(0,1)),\quad
+ (\ell_A(0,1),\ell_A(0,0)).
+\end{equation}
+The incidence recurrence in \cref{thm:cycle-formula} shows directly that the
+four supports are distinct singleton sets, one for each \(X\)-cycle.
+
+Next isolate every boundary turn.  For \(0\le j<b\), use
+\begin{equation}
+\label{eq:horizontal-boundary-requirements}
+ (r_A(0),\ell_B(j,j\bmod2)),\qquad
+ (r_A(a),\ell_B(j,1-j\bmod2)).
+\end{equation}
+They have singleton supports \(\{T(0,j)\}\) and
+\(\{T(a-1,j)\}\), respectively.  For \(1\le i\le a-2\), the symmetric
+requirements
+\begin{equation}
+\label{eq:vertical-boundary-requirements}
+ (r_B(0),\ell_A(i,i\bmod2)),\qquad
+ (r_B(b),\ell_A(i,1-i\bmod2))
+\end{equation}
+have supports \(\{T(i,0)\}\) and \(\{T(i,b-1)\}\).  The parity choice in
+\cref{eq:horizontal-boundary-requirements,eq:vertical-boundary-requirements}
+ensures that an exceptional cycle containing the endpoint rung also contains
+the excluded rail, so no exceptional cycle enters a boundary support.
+
+It remains to handle the interior turn grid.  For \(0<p<a\),
+\cref{thm:cycle-formula} gives
+\begin{equation}
+\label{eq:domino-support-a}
+ \operatorname{supp}(r_A(p),\ell_B(j,s))
+   =\{T(p-1,j),T(p,j)\},
+\end{equation}
+and, symmetrically, for \(0<q<b\),
+\begin{equation}
+\label{eq:domino-support-b}
+ \operatorname{supp}(r_B(q),\ell_A(i,s))
+   =\{T(i,q-1),T(i,q)\}.
+\end{equation}
+Here either rail side \(s\in\{0,1\}\) may be used.  These requirements are
+dominoes in the \((a-2)\times(b-2)\) grid of interior turns.
+
+Delete its far corner \(T(a-2,b-2)\), which belongs to the majority parity
+class.  In each interior \(B\)-column, pair the \(A\)-rows
+\(1\)--\(2\), \(3\)--\(4\), \(\ldots\), \((a-4)\)--\((a-3)\).
+In the remaining row \(a-2\), pair the \(B\)-columns in the same way.  This
+tiles every remaining interior cell and leaves precisely the deleted corner.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.48cm,y=.48cm,font=\scriptsize]
+  \foreach \i in {0,...,6}{
+    \foreach \j in {0,...,6}{
+      \ifnum\i=0 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+      \ifnum\i=6 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+      \ifnum\j=0 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+      \ifnum\j=6 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+    }
+  }
+  \foreach \j in {1,...,5}{
+    \foreach \i in {1,3}{
+      \fill[blue!14] (\i,\j) rectangle ++(2,1);
+      \draw[blue!70!black,very thick] (\i,\j) rectangle ++(2,1);
+    }
+  }
+  \foreach \j in {1,3}{
+    \fill[blue!14] (5,\j) rectangle ++(1,2);
+    \draw[blue!70!black,very thick] (5,\j) rectangle ++(1,2);
+  }
+  \fill[white] (5,5) rectangle ++(1,1);
+  \draw[red!75!black,very thick] (5,5) rectangle ++(1,1);
+  \draw[red!75!black,thick] (5.18,5.18)--(5.82,5.82)
+                              (5.18,5.82)--(5.82,5.18);
+  \draw[step=1,black!65] (0,0) grid (7,7);
+  \node[rotate=90] at (-.7,3.5) {\(A\)-turn coordinate};
+  \node at (3.5,-.65) {\(B\)-turn coordinate};
+  \node[align=left,anchor=west] at (7.45,5.8)
+    {boundary singleton\\support};
+  \draw[-{Latex[length=2mm]},orange!80!black] (7.35,5.55)--(6.55,5.55);
+  \node[align=left,anchor=west] at (7.45,3.5)
+    {interior domino\\support};
+  \draw[-{Latex[length=2mm]},blue!70!black] (7.35,3.25)--(5.7,3.25);
+  \node[align=left,anchor=west] at (7.45,1.2)
+    {omitted majority-\\parity cell};
+  \draw[-{Latex[length=2mm]},red!75!black] (7.35,1.35)--(5.65,5.35);
+\end{tikzpicture}
+\caption{The packing construction, shown for a \(7\times7\) turn grid.
+Orange boundary cells and the four exceptional cycles have singleton support;
+blue rectangles are pairwise disjoint two-turn supports.  The construction for
+general odd \(a,b\) is the same row-first domino tiling with one majority-parity
+interior cell omitted.}
+\label{fig:packing-grid}
+\end{figure}
+
+\begin{theorem}[Symbolic packing bound]
+\label{thm:packing-lift}
+For odd \(a,b\ge3\),
+\[
+ \hsep(D(a,b))\ge \frac{(a+2)(b+2)-1}{2}.
+\]
+\end{theorem}
+
+\begin{proof}
+The four supports in \cref{eq:exception-requirements}, the boundary singleton
+supports, and the domino supports in
+\cref{eq:domino-support-a,eq:domino-support-b} are mutually disjoint: they
+partition all Hamiltonian-cycle classes except \(R\) and the deleted interior
+turn.  The all-rails cycle covers none of the chosen requirements.  Thus every
+Hamiltonian cycle covers at most one chosen requirement.  Their number is
+\[
+ 4+(2a+2b-4)+\frac{(a-2)(b-2)-1}{2}
+ =\frac{(a+2)(b+2)-1}{2}.
+\]
+The packing half of \cref{lem:certificate-principle} proves the claim.
+\end{proof}
+
+\subsection{A symbolic separating-family upper bound}
+
+Define
+\begin{align}
+\label{eq:symbolic-family}
+ \Ccal(a,b)={}&\{X_{0011},X_{1100},X_{0101},X_{1010}\}\notag\\
+ &\cup\{T(i,j):i\in\{0,a-1\}\text{ or }j\in\{0,b-1\}\}\notag\\
+ &\cup\{T(i,j):0<i<a-1,\ 0<j<b-1,\ i+j\text{ odd}\}.
+\end{align}
+There are \(2a+2b-4\) boundary turns.  The odd parity class of the odd by
+odd interior grid has \(((a-2)(b-2)-1)/2\) cells, and hence
+\begin{equation}
+\label{eq:symbolic-family-size}
+ |\Ccal(a,b)|=4+(2a+2b-4)+\frac{(a-2)(b-2)-1}{2}
+ =\frac{(a+2)(b+2)-1}{2}.
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+  \foreach \i in {0,...,6}{
+    \foreach \j in {0,...,6}{
+      \ifnum\i=0 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+      \ifnum\i=6 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+      \ifnum\j=0 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+      \ifnum\j=6 \fill[orange!35] (\i,\j) rectangle ++(1,1);\fi
+      \ifnum\i>0\ifnum\i<6\ifnum\j>0\ifnum\j<6
+        \pgfmathtruncatemacro{\parity}{mod(\i+\j,2)}
+        \ifnum\parity=1 \fill[violet!28] (\i,\j) rectangle ++(1,1);\fi
+      \fi\fi\fi\fi
+    }
+  }
+  \draw[step=1,black!65] (0,0) grid (7,7);
+  \foreach \i in {0,...,6}{
+    \foreach \j in {0,...,6}{
+      \ifnum\i=0 \node at (\i+.5,\j+.5) {\(\bullet\)};\fi
+      \ifnum\i=6 \node at (\i+.5,\j+.5) {\(\bullet\)};\fi
+      \ifnum\j=0 \node at (\i+.5,\j+.5) {\(\bullet\)};\fi
+      \ifnum\j=6 \node at (\i+.5,\j+.5) {\(\bullet\)};\fi
+      \ifnum\i>0\ifnum\i<6\ifnum\j>0\ifnum\j<6
+        \pgfmathtruncatemacro{\parity}{mod(\i+\j,2)}
+        \ifnum\parity=1 \node at (\i+.5,\j+.5) {\(\bullet\)};\fi
+      \fi\fi\fi\fi
+    }
+  }
+  \node[rotate=90] at (-.7,3.5) {\(i\)};
+  \node at (3.5,-.65) {\(j\)};
+  \node[align=left,anchor=west] at (7.5,5.7)
+    {all boundary\\turns};
+  \draw[-{Latex[length=2mm]},orange!80!black] (7.4,5.5)--(6.55,5.5);
+  \node[align=left,anchor=west] at (7.5,3.3)
+    {interior turns\\with \(i+j\) odd};
+  \draw[-{Latex[length=2mm]},violet!80!black] (7.4,3.1)--(5.6,3.5);
+  \node[align=left,anchor=west] at (7.5,1.1)
+    {plus four\\\(X\)-cycles};
+\end{tikzpicture}
+\caption{Turn cycles selected by \(\Ccal(a,b)\), again illustrated on a
+\(7\times7\) grid.  Every boundary turn is selected, as is one checkerboard
+class of interior turns; the four connector-exception cycles are added
+separately.}
+\label{fig:separating-grid}
+\end{figure}
+
+We prove that this family separates by giving both directed witnesses for
+every pair of edge types.  Let \(P\) be its selected turn cycles.  Write
+\(R_i=\{T(i,j)\in P\}\), \(K_j=\{T(i,j)\in P\}\), and
+\[
+ N_A(p)=\{p-1,p\}\cap\{0,\ldots,a-1\},
+ \qquad
+ N_B(q)=\{q-1,q\}\cap\{0,\ldots,b-1\}.
+\]
+On the turn coordinates of an edge signature, every connector has all of
+\(P\); an \(A\)-rail in cell \(i\) has \(P\setminus R_i\); an \(A\)-rung
+\(p\) has precisely the selected turns whose first coordinate is in
+\(N_A(p)\).  The corresponding statements for ladder \(B\) use columns.
+
+For the four exception coordinates, abbreviate
+\(B_0=X_{0011}\), \(B_1=X_{1100}\),
+\(A_0=X_{0101}\), and \(A_1=X_{1010}\).  An \(A\)-rail contains
+\(B_0,B_1\) and exactly one of \(A_0,A_1\), determined by its side and cell
+parity.  An internal \(A\)-rung contains \(A_0,A_1\); an endpoint rung also
+contains one of \(B_0,B_1\).  Interchanging \(A\) and \(B\) gives the other
+ladder.  In connector order \cref{eq:connectors}, the four exception parts of
+the connector signatures are
+\begin{equation}
+\label{eq:connector-signatures}
+ \{B_1,A_1\},\quad\{B_1,A_0\},\quad
+ \{B_0,A_1\},\quad\{B_0,A_0\}.
+\end{equation}
+
+\begin{theorem}[Symbolic separating family]
+\label{thm:separating-family}
+For odd \(a,b\ge3\), the edge signatures induced by \(\Ccal(a,b)\) are
+pairwise incomparable.  Consequently,
+\[
+ \hsep(D(a,b))\le \frac{(a+2)(b+2)-1}{2}.
+\]
+\end{theorem}
+
+\begin{proof}
+We exhaust the eight edge-type combinations.  In every case we identify a
+cycle in each of \(\sigma(e)\setminus\sigma(f)\) and
+\(\sigma(f)\setminus\sigma(e)\).
+
+\begin{enumerate}[label=\arabic*.,leftmargin=*]
+\item \emph{Two connectors.}  The four sets in
+\cref{eq:connector-signatures} are distinct and have size two.  Each of two
+such sets therefore has an exception coordinate absent from the other.
+
+\item \emph{A connector and a rail.}  A selected boundary turn in the rail's
+omitted row or column belongs to the connector but not the rail.  A rail has
+three exception coordinates---both opposite-ladder exceptions and one
+alternating same-ladder exception---whereas a connector has only two; the
+unused opposite-ladder exception belongs to the rail alone.
+
+\item \emph{A connector and a rung.}  Since \(a,b\ge3\), there is a boundary
+row or column outside the rung's one- or two-cell neighbourhood.  A boundary
+turn there belongs only to the connector.  The rung contains both
+same-ladder exceptions, while the connector contains exactly one of them, so
+the other exception gives the reverse witness.
+
+\item \emph{Two rails.}  The two sides of one cell have the same turn
+coordinates but opposite alternating exception coordinates.  Rails in
+different cells of one ladder are distinguished in both directions by
+selected boundary turns in their two omitted rows or columns.  For rails on
+different ladders, choose a boundary point in the omitted column but outside
+the omitted row, and then one in the omitted row but outside the omitted
+column.  Both are selected and give the two directions.
+
+\item \emph{Two rungs of one ladder.}  If their neighbourhoods are not
+nested, a selected boundary turn in each set difference gives both witnesses.
+The only nested pairs are
+\(N_A(0)\subset N_A(1)\) and
+\(N_A(a)\subset N_A(a-1)\), and their \(B\)-analogues.  There the endpoint
+rung has an additional exception coordinate, while a turn in the internal
+rung's extra neighbouring cell gives the reverse witness.
+
+\item \emph{Rungs of different ladders.}  Their two-element exception cores
+are \(\{A_0,A_1\}\) and \(\{B_0,B_1\}\).  An endpoint rung can add at most
+one coordinate from the other core, so each signature retains an exception
+absent from the other.
+
+\item \emph{A rail and a rung of the same ladder.}  The rail contains both
+opposite-ladder exceptions and only one same-ladder exception.  The rung
+contains both same-ladder exceptions and at most one opposite-ladder
+exception.  Each therefore has an exception absent from the other.
+
+\item \emph{A rail of one ladder and a rung of the other.}  Consider an
+\(A\)-rail in row \(i\) and a \(B\)-rung with neighbourhood \(N_B(q)\).
+Choose a boundary row different from \(i\) and a boundary column outside
+\(N_B(q)\).  The corresponding selected turn belongs to the rail but not the
+rung.  Conversely choose \(j\in N_B(q)\) so that \(T(i,j)\) is selected.
+If \(i\) is a boundary row, every \(j\) works.  If \(i\) is interior, an
+endpoint neighbourhood supplies a boundary column, while an internal
+two-column neighbourhood contains exactly one column of the required parity.
+Then \(T(i,j)\) belongs to the rung but is omitted by the rail.  The other
+orientation is symmetric.
+\end{enumerate}
+
+The cases include endpoint rungs and both rail sides.  A square insertion
+introduces only new rails and rungs with the same indexed incidences, so it
+introduces no additional edge type or boundary case.  Thus all distinct edge
+signatures are incomparable.  Apply
+\cref{prop:signature-antichain,eq:symbolic-family-size}.
+\end{proof}
+
+\subsection{The exact formula and its lift}
+
+\begin{theorem}[Exact double-ladder formula]
+\label{thm:exact-double-ladder}
+For all odd integers \(a,b\ge3\),
+\begin{equation}
+\label{eq:exact-double-ladder}
+ \boxed{\displaystyle
+ \hsep(D(a,b))=\frac{(a+2)(b+2)-1}{2}.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The lower bound is \cref{thm:packing-lift}; the upper bound is
+\cref{thm:separating-family}.  Their cardinalities agree.
+\end{proof}
+
+Both certificates lift locally under square insertion.  For example, under
+\(b\mapsto b+2\), keep column zero and shift every old positive column by two.
+The two new columns contribute four boundary cycles and one selected parity
+cycle in each of the \(a-2\) interior rows, for a net increase of \(a+2\).
+For the packing, the same strip contributes four boundary singletons and
+\(a-2\) dominoes.  The \(a\mapsto a+2\) rule is symmetric and adds \(b+2\).
+At the level of graph edges, turns at the expanded cell and two alternating
+exceptions require the uniform local replacement inside the new square
+gadget; all other cycles lift by replacing subdivided rails with their
+three-edge paths.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.43cm,y=.43cm,font=\scriptsize]
+  \begin{scope}
+    \foreach \i in {0,...,6}{
+      \foreach \j in {0,...,4}{
+        \ifnum\i=0 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\i=6 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\j=0 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\j=4 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\i>0\ifnum\i<6\ifnum\j>0\ifnum\j<4
+          \pgfmathtruncatemacro{\parity}{mod(\i+\j,2)}
+          \ifnum\parity=1 \fill[violet!24] (\j,\i) rectangle ++(1,1);\fi
+        \fi\fi\fi\fi
+      }
+    }
+    \draw[step=1,black!60] (0,0) grid (5,7);
+    \node at (2.5,-.75) {\(a\times b\)};
+  \end{scope}
+  \draw[-{Latex[length=3mm]},thick] (5.7,3.5)--(7.0,3.5)
+    node[midway,above] {insert two cells};
+  \begin{scope}[xshift=8cm]
+    \foreach \i in {0,...,6}{
+      \foreach \j in {0,...,6}{
+        \ifnum\i=0 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\i=6 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\j=0 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\j=6 \fill[orange!28] (\j,\i) rectangle ++(1,1);\fi
+        \ifnum\i>0\ifnum\i<6\ifnum\j>0\ifnum\j<6
+          \pgfmathtruncatemacro{\parity}{mod(\i+\j,2)}
+          \ifnum\parity=1 \fill[violet!24] (\j,\i) rectangle ++(1,1);\fi
+        \fi\fi\fi\fi
+        \ifnum\j>0\ifnum\j<3
+          \ifnum\i=0 \fill[green!45!black] (\j,\i) rectangle ++(1,1);\fi
+          \ifnum\i=6 \fill[green!45!black] (\j,\i) rectangle ++(1,1);\fi
+          \ifnum\i>0\ifnum\i<6
+            \pgfmathtruncatemacro{\newparity}{mod(\i+\j,2)}
+            \ifnum\newparity=1 \fill[green!45!black] (\j,\i) rectangle ++(1,1);\fi
+          \fi\fi
+        \fi\fi
+      }
+    }
+    \draw[step=1,black!60] (0,0) grid (7,7);
+    \draw[green!45!black,very thick] (1,0) rectangle (3,7);
+    \node at (3.5,-.75) {\(a\times(b+2)\)};
+    \node[align=center,anchor=west] at (7.5,3.5)
+      {new selected turns:\\[2pt]\(4+(a-2)=a+2\)};
+    \draw[-{Latex[length=2mm]},green!45!black,thick]
+      (7.35,3.2)--(2.6,3.2);
+  \end{scope}
+\end{tikzpicture}
+\caption{The separating-family lift for \(b\mapsto b+2\), illustrated with
+\(a=7\).  Green cells are precisely the new selected turns: four boundary
+turns and one parity turn in each interior row.  The packing lift has the same
+increment, with the interior additions represented by domino supports.}
+\label{fig:family-lift}
+\end{figure}
+
+The theorem concerns \(D(a,b)\) itself.  It does not assert that these graphs
+maximize \(\hsep\) among all Barnette graphs of their orders.
