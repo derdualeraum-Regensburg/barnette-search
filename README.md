@@ -1,14 +1,22 @@
 # Barnette Search
 
-This is a small Python research project for checking whether finite graph inputs
-satisfy the supplied definition of a **Barnette graph**: undirected, simple,
-cubic, bipartite, planar, and 3-vertex-connected.
+This Python research project studies finite **Barnette graphs**: undirected,
+simple, cubic, bipartite, planar, and 3-vertex-connected graphs. Its main
+computational invariant is Hamiltonian edge separation, described precisely in
+[`docs/hsep.md`](docs/hsep.md).
 
-The project currently provides a NetworkX-based reference validator and a small
-exact Hamiltonian-cycle solver. The emphasis is correctness and testability, not
-large-instance performance. An independent exact SAT implementation is available
-as an optional extra. An external plantri 5.8 integration provides reproducible
-small-graph enumeration. ILP and GPU support are not implemented.
+The repository provides independent graph validation, exact backtracking and SAT
+Hamiltonian-cycle solvers, reproducible plantri 5.8 enumeration, certificate
+generation and verification, and structural analysis tools. Correctness,
+deterministic output, and independently verifiable certificates take priority
+over runtime. ILP and GPU support are not implemented.
+
+The complete certified census through order 36 establishes the Barnette
+Hamiltonian edge-separation extremal sequence on orders 8 through 36. In
+particular, `M_B(36) = 49`, uniquely attained by the graph with canonical hash
+`2f96ada16c46cd2bd038b97d5af44f46ed14522cba1edf3fa041d66e02107bcc`.
+The immutable proof artifacts are intentionally stored outside this source
+repository; the analysis tools consume them read-only.
 
 ## Installation
 
@@ -353,6 +361,55 @@ An UNSAT result or solver disagreement is never automatically classified as a
 counterexample. The review pipeline retains exact graph labels and embedding,
 the constrained Glucose3 and MiniSat22 DIMACS files, structured solver results,
 and an independent constrained-backtracking result for manual review.
+
+## Certified maximizer gallery
+
+The gallery tools render every certified maximizer, including every member of a
+tie, without generating graphs or recomputing Hamiltonian edge-separation
+values. Gunnar Brinkmann's external `planar_draw` source and executable are not
+redistributed by this repository. See
+[`docs/maximizer_gallery.md`](docs/maximizer_gallery.md) for the pinned drawing
+options, Windows compatibility include, deterministic resume behavior, and
+artifact checks.
+
+```console
+python tools/render_all_maximizers.py ^
+  --sequence-root E:\barnette-results\barnie-sequence ^
+  --gallery-root E:\barnette-results\barnie-sequence\gallery ^
+  --engine E:\barnette-results\barnie-gallery-toolchain\planar_draw.exe ^
+  --engine-source tools\planar_draw.c ^
+  --compiler path\to\gcc.exe ^
+  --compat-include tools\planar_draw_compat
+```
+
+The renderer verifies that the vertices and edges parsed from each drawing are
+exactly those in the corresponding certified graph record. It writes an index,
+report, environment metadata, commands log, per-drawing resume sidecars, and a
+SHA-256 manifest outside the repository.
+
+## Ladder-family structural analysis
+
+`tools/analyze_ladder_family.py` performs a read-only structural analysis of the
+certified sequence and gallery artifacts. It identifies strict quadrilateral
+ladder components, constructs reconstructible four-vertex square-expansion
+certificates, classifies Hamiltonian cycles by local ladder-cell states, and
+separately records observations about tied maximizers.
+
+```console
+python tools/analyze_ladder_family.py ^
+  --sequence-root E:\barnette-results\barnie-sequence ^
+  --gallery-root E:\barnette-results\barnie-sequence\gallery ^
+  --output-root E:\barnette-results\barnie-sequence\ladder-analysis
+```
+
+For the unique maximizers at orders divisible by four, the certified graphs form
+a double-ladder family `D(a,b)` connected by one fixed square insertion. The
+complete certified cycle universes satisfy `|H(D(a,b))| = ab + 5`. The observed
+closed formula for `hsep(D(a,b))` is reported as empirical rather than as a
+general theorem: the existing certificates prove the individual values, but no
+general lower-bound lifting argument has been established. Predictions for
+orders 38 and 40 are likewise emitted with an explicit unproved warning; the
+analysis does not enumerate or optimize either order.
 
 ## Optional cubhamg benchmarking
 

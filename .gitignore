@@ -8,3 +8,6 @@ __pycache__/
 results/
 build/
 dist/
+# Externes Zeichenprogramm von Gunnar Brinkmann
+/tools/planar_draw.c
+/tools/planar_draw.exe
