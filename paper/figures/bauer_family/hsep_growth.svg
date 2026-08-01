@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img">
+  <title>Hsep Growth</title>
+  <desc>Composite plate from the verified individual double-ladder layouts.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="context-stroke"/></marker></defs>
+  <rect x="0.000" y="0.000" width="1500.000" height="900.000" fill="#FFFFFF"/>
+  <text x="750.000" y="55.000" font-family="Arial, Helvetica, sans-serif" font-size="32.000" fill="#172033" text-anchor="middle" font-weight="bold">Exact hsep growth in the double-ladder sequence</text>
+  <line x1="125.000" y1="690.000" x2="1430.000" y2="690.000" stroke="#172033" stroke-width="2.500" stroke-linecap="round"/>
+  <line x1="125.000" y1="135.000" x2="125.000" y2="690.000" stroke="#172033" stroke-width="2.500" stroke-linecap="round"/>
+  <line x1="125.000" y1="690.000" x2="1430.000" y2="690.000" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="696.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">0</text>
+  <line x1="125.000" y1="628.333" x2="1430.000" y2="628.333" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="634.333" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">10</text>
+  <line x1="125.000" y1="566.667" x2="1430.000" y2="566.667" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="572.667" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">20</text>
+  <line x1="125.000" y1="505.000" x2="1430.000" y2="505.000" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="511.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">30</text>
+  <line x1="125.000" y1="443.333" x2="1430.000" y2="443.333" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="449.333" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">40</text>
+  <line x1="125.000" y1="381.667" x2="1430.000" y2="381.667" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="387.667" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">50</text>
+  <line x1="125.000" y1="320.000" x2="1430.000" y2="320.000" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="326.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">60</text>
+  <line x1="125.000" y1="258.333" x2="1430.000" y2="258.333" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="264.333" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">70</text>
+  <line x1="125.000" y1="196.667" x2="1430.000" y2="196.667" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="202.667" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">80</text>
+  <line x1="125.000" y1="135.000" x2="1430.000" y2="135.000" stroke="#CBD5E1" stroke-width="1.000" stroke-linecap="round" stroke-dasharray="3 7"/>
+  <text x="107.000" y="141.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="end">90</text>
+  <polyline points="125.000,653.000 255.500,640.667 386.000,616.000 516.500,585.167 647.000,542.000 777.500,498.833 908.000,443.333 1038.500,387.833 1169.000,320.000 1299.500,252.167 1430.000,172.000" fill="none" stroke="#15803D" stroke-width="4.000" stroke-linejoin="round"/>
+  <circle cx="125.000" cy="653.000" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="125.000" y="636.000" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">6</text>
+  <circle cx="255.500" cy="640.667" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="255.500" y="623.667" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">8</text>
+  <circle cx="386.000" cy="616.000" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="386.000" y="599.000" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">12</text>
+  <circle cx="516.500" cy="585.167" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="516.500" y="568.167" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">17</text>
+  <circle cx="647.000" cy="542.000" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="647.000" y="525.000" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">24</text>
+  <circle cx="777.500" cy="498.833" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="777.500" y="481.833" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">31</text>
+  <circle cx="908.000" cy="443.333" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="908.000" y="426.333" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">40</text>
+  <circle cx="1038.500" cy="387.833" r="8.500" fill="#FFFFFF" stroke="#15803D" stroke-width="3.000"/>
+  <text x="1038.500" y="370.833" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">49</text>
+  <circle cx="1169.000" cy="320.000" r="8.500" fill="#15803D" stroke="#15803D" stroke-width="3.000"/>
+  <text x="1169.000" y="303.000" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">60</text>
+  <circle cx="1299.500" cy="252.167" r="8.500" fill="#15803D" stroke="#15803D" stroke-width="3.000"/>
+  <text x="1299.500" y="235.167" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">71</text>
+  <circle cx="1430.000" cy="172.000" r="8.500" fill="#15803D" stroke="#15803D" stroke-width="3.000"/>
+  <text x="1430.000" y="155.000" font-family="Arial, Helvetica, sans-serif" font-size="16.000" fill="#15803D" text-anchor="middle" font-weight="bold">84</text>
+  <text x="125.000" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">8</text>
+  <text x="125.000" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(1,1)</text>
+  <text x="255.500" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">12</text>
+  <text x="255.500" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(3,1)</text>
+  <text x="386.000" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">16</text>
+  <text x="386.000" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(3,3)</text>
+  <text x="516.500" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">20</text>
+  <text x="516.500" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(5,3)</text>
+  <text x="647.000" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">24</text>
+  <text x="647.000" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(5,5)</text>
+  <text x="777.500" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">28</text>
+  <text x="777.500" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(7,5)</text>
+  <text x="908.000" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">32</text>
+  <text x="908.000" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(7,7)</text>
+  <text x="1038.500" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">36</text>
+  <text x="1038.500" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(9,7)</text>
+  <text x="1169.000" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">40</text>
+  <text x="1169.000" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(9,9)</text>
+  <text x="1299.500" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">44</text>
+  <text x="1299.500" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(11,9)</text>
+  <text x="1430.000" y="721.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#172033" text-anchor="middle">48</text>
+  <text x="1430.000" y="747.000" font-family="Arial, Helvetica, sans-serif" font-size="15.000" fill="#64748B" text-anchor="middle">D(11,11)</text>
+  <text x="777.500" y="790.000" font-family="Arial, Helvetica, sans-serif" font-size="20.000" fill="#172033" text-anchor="middle" font-weight="bold">order n</text>
+  <line x1="260.000" y1="835.000" x2="315.000" y2="835.000" stroke="#15803D" stroke-width="4.000" stroke-linecap="round"/>
+  <text x="330.000" y="841.000" font-family="Arial, Helvetica, sans-serif" font-size="18.000" fill="#172033" text-anchor="start">exact hsep</text>
+  <text x="1080.000" y="875.000" font-family="Arial, Helvetica, sans-serif" font-size="17.000" fill="#64748B" text-anchor="start">open marker = certified census maximizer</text>
+</svg>
