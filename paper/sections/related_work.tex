@@ -1,0 +1,46 @@
+\section{Related work}
+\label{sec:related-work}
+
+\paragraph{Separating systems and antichains.}
+Separating systems on a finite ground set are classical
+\citep{Katona1966,Dickson1969}.  In an ordinary separating system, the
+incidence signatures of distinct elements need only be distinct.  Complete separation
+requires, for every ordered pair \((e,f)\), a test containing \(e\) and
+avoiding \(f\).  Equivalently, all incidence signatures must be pairwise
+incomparable, connecting the problem directly with Sperner theory and minimal
+completely separating systems \citep{Dickson1969,Spencer1970}.  The signature
+argument in Proposition~\ref{prop:signature-antichain} is precisely this classical
+equivalence after the admissible tests have been restricted to Hamiltonian
+cycles.
+
+\paragraph{Graph-structured separators.}
+Graph-specific separating systems have a longer history; \citet{Cai1984}, for
+example, studied separating systems of graphs.  We cite that work only as
+related graph-specific context and do not assert that its definition coincides
+with \(\hsep\).  A substantial line of work asks for edge separation by paths
+\citep{FalgasRavryEtAl2014,BaloghEtAl2016,BonamyEtAl2023,Letzter2024}.
+These problems use the same or a closely related directed separation
+condition, but admit paths rather than Hamiltonian cycles as tests.  Recent
+cycle-separation work allows arbitrary cycles or subdivisions of \(K_4\)
+\citep{BotlerNaia2025}; this is a much larger admissible family than the
+Hamiltonian cycles of a fixed graph.  Cycle-identification problems, such as
+those studied for hypercubes and tori by \citet{HonkalaKarpovskyLitsyn2003},
+generally seek distinct nonempty signatures.  Distinctness is weaker than the
+pairwise incomparability required by \(\hsep\).
+
+\paragraph{Hamiltonicity and Barnette graphs.}
+Hamiltonian cycles in cubic 3-connected bipartite planar graphs were studied
+computationally and structurally by \citet{HoltonManvelMcKay1985}.  Because the
+complement of a Hamiltonian cycle in a cubic graph is a perfect matching,
+Observation~\ref{obs:matching-formulation} also places the present parameter near matching
+formulations of Barnette's conjecture \citep{GorskySteinerWiederrecht2023}.
+Broader perspectives on that conjecture are given by \citet{AltEtAl2016}.
+Our finite census uses the planar-graph generation methods of
+\citet{BrinkmannMcKay2007} and Plantri 5.8 \citep{plantri58}.
+
+The underlying notions of complete separation, antichain signatures, and edge
+separation by unrestricted paths or cycles are therefore not new.  The
+specific restriction here is that every admissible test must be a Hamiltonian
+cycle of the given graph.  To the best of our knowledge, strong edge separation
+under this restriction has not previously been investigated; this cautious
+assessment is not an absolute novelty claim.

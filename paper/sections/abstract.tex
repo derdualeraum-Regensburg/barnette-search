@@ -1,27 +1,21 @@
-For a Hamiltonian graph \(G\), we study the minimum number \(\hsep(G)\) of
-Hamiltonian cycles needed to distinguish every ordered pair of distinct edges:
-for each \((e,f)\), some selected cycle must contain \(e\) and avoid \(f\).
-We report an exhaustively certified finite computation over all 22,263
-non-isomorphic Barnette graphs of orders at most 36.  The resulting extremal
-values are independently checked by explicit Hamiltonian-cycle covers and
-matching lower certificates or complete-universe exclusion.  In particular,
-the maximum at order 36 is 49 and is attained uniquely by the graph with
-canonical hash
-{\scriptsize\nolinkurl{2f96ada16c46cd2bd038b97d5af44f46ed14522cba1edf3fa041d66e02107bcc}}.
-The unique maximizers at orders divisible by four form, over the certified
-range, a double-ladder family linked by a fixed four-vertex square insertion.
-We define this family, prove its Hamiltonian-cycle classification, and prove
-for all odd \(a,b\ge3\) the exact formula
+We study the Hamiltonian strong edge-separation number \(\hsep(G)\).
+Abstractly, it is the minimum size of a completely separating subfamily of the
+Hamiltonian-cycle hypergraph of \(G\): for every ordered pair of distinct edges
+\((e,f)\), some selected cycle contains \(e\) and avoids \(f\).  An exhaustive
+certificate audit covers all 22,263 non-isomorphic Barnette graphs through
+order 36.  Exact upper and lower certificates establish every maximizer, while
+verified strict upper certificates exclude all competitors.
+At orders divisible by four in this range, the unique maximizers
+form a double-ladder family related by a four-vertex square insertion.  We
+define this family, classify its Hamiltonian cycles, and prove for all odd
+\(a,b\ge3\) that
 \[
  \hsep(D(a,b))=\frac{(a+2)(b+2)-1}{2}.
 \]
-The lower bound is a packing of ordered edge requirements whose supports are
-exception singletons, boundary-turn singletons, and disjoint interior
-dominoes.  The matching upper bound selects the four connector-exception
-cycles, every boundary turn, and one parity class of interior turns; the
-resulting edge-incidence signatures form an antichain.  Three values frozen
-before computation and later certified for \(D(9,9)\), \(D(11,9)\), and
-\(D(11,11)\) provide prospective finite confirmation.  They do not prove
-extremality at orders 40, 44, or 48: general extremality of balanced double
-ladders remains open.  The terminology and its relationship to prior
-separation notions also remain subject to a systematic literature review.
+Matching symbolic constructions prove the two bounds: a packing of ordered
+edge requirements gives the lower bound, while a boundary-plus-parity family
+of Hamiltonian cycles gives the upper bound through an antichain of incidence
+signatures.  Independently verified, prediction-locked computations confirm
+three larger family members.  These checks do not establish order-level
+extremality beyond the census range; whether balanced double ladders remain
+globally extremal after order 36 is open.

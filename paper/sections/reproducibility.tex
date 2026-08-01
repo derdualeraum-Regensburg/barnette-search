@@ -1,71 +1,37 @@
 \section{Reproducibility and independent verification}
 \label{sec:reproducibility}
 
-The source repository contains the producer, structural analysis, tests, and
-standalone-verifier source.  Large immutable result packages remain outside the
-repository.  The manuscript itself contains only the compact table and selected
-figure files needed to compile it.
+Plantri 5.8 generated the complete non-isomorphic Barnette censuses through
+order 36: 22,263 graphs across the nonempty orders.  Retained artifacts include
+canonical graph records, planar embeddings, cycle universes where required,
+separating families, and lower certificates.
 
-The global standard-library verifier checked all 29 order packages from 8
-through 36, including the 14 nonempty orders, 266 manifest-listed files, every
-cycle certificate, every ordered edge-pair cover, all lower certificates, and
-the global summaries.  Its recorded runtime was 655.989 seconds.  The producer
-runtimes recorded across the orders sum to 5,186.661 seconds; those values mix
-fresh production and the imported order-36 workflow and are provided as audit
-metadata rather than a hardware-independent benchmark.
+A standalone Python standard-library verifier reparses the artifacts without
+project, graph, or optimization libraries and checks graph and cycle structure,
+ordered edge-pair covers, lower certificates, summaries, and manifests.  It
+does not independently prove Plantri's enumerative completeness; that premise
+rests on the recorded complete invocations, contiguous output, and record
+audits.
 
-The principal immutable identifiers used for this draft are
-\begin{center}
-\scriptsize
-\begin{tabular}{ll}
-\toprule
-package & SHA-256 of \texttt{SHA256SUMS.txt} \\
-\midrule
-certified sequence &
-\nolinkurl{2a0a27cbb2c5dcefca3173293dc1fbfb21b55a69cdd366da3ab3b30a2842affa}\\
-order-36 subpackage &
-\nolinkurl{6aaa43a275ecbbedd25586fc244140ddfb7f107e14025b2bfd1da34af417d00d}\\
-ladder analysis &
-\nolinkurl{17b1a8219321fc70ac8146f17e29d8b836c90862ec96248429141869e252a67e}\\
-prospective double-ladder test &
-\nolinkurl{6bd843dfbe9f3eb1aa3213511ce28091efc7567f7d7565f0aa980943b05713a1}\\
-packing-lift output &
-\nolinkurl{188800bd2a8b0835216f6fa9c78eb4673e5b3bc24d1dc216bc3a7d619986f31e}\\
-primal-lift output &
-\nolinkurl{bd5fdc3e3a160b8339fa412d4c1decf2113919cf1f4f6c2dc8856b474aeb37d1}\\
-\bottomrule
-\end{tabular}
-\end{center}
-The six manifests contain respectively 266, 9, 30, 50, 25, and 13 entries.
-Every listed file digest was rechecked before this revision, without modifying
-any package.  The packing- and primal-lift source inventories bind their
-outputs to the order-36, ladder-analysis, and prospective source artifacts.
-Their recorded independent-verification results are \texttt{pass}; the primal
-package verifies 2,862, 3,540, 4,290, and 5,112 ordered edge requirements for
-the four finite double ladders.
+The four distinct scopes are certificate verification, the census-completeness
+premise, software regression, and figure/layout verification.  Of 203 current
+repository tests, 198 passed and five environment-gated Plantri or cubhamg
+integrations were skipped; these skips do not replace certificate checks.
 
-The current repository test run collected 191 tests: 186 passed and five
-environment-gated external integrations were skipped.  The
-skipped tests require explicitly configured plantri or cubhamg executables and
-do not replace the standalone certificate verification described above.
+The layouts were initialized from certified planar embeddings using Gunnar
+Brinkmann's drawing program and then refined under explicit structural
+constraints.  The abstract graphs, rotation systems, face boundaries, and edge
+sets were independently verified.  Use of the program does not imply
+endorsement, collaboration, or coauthorship.
 
-The prospective package locks its predictions in a read-only JSON record with
-SHA-256
-\nolinkurl{e8ba381dd163c59941db81f65b71b70d6d78cdb7cfd6f6a41ba4828fe25c89fb}.
-Its standalone verifier passed all three constructions, complete universes,
-structural classifications, primal covers, matching lower certificates, and
-local and global manifests.
-
-The planar layouts in this manuscript derive from certified rotation systems
-using Gunnar Brinkmann's external drawing program.  The wrapper checked that
-the vertices and edges recovered from every generated drawing exactly match the
-corresponding certified graph.  Use of that program does not imply endorsement,
-collaboration, or coauthorship.
+The accompanying repository contains the producer, structural analysis, tests,
+standalone verifier, and manuscript.  Large immutable packages remain external;
+their identifiers, runtimes, manifest statistics, prediction lock, layout
+audit, and order-36 identifier are recorded in
+\texttt{reproducibility\_supplement.tex}.
 
 \subsection*{Draft AI-assistance disclosure}
 
 AI tools assisted with software development, data analysis, drafting, and
-language editing.  All mathematical certificate packages are independently
-checkable.  The author remains responsible for the definitions, claims, proofs,
-source verification, interpretation of computational evidence, and final
-manuscript.
+language editing.  The author is responsible for all definitions, claims,
+proofs, source verification, and interpretations.

@@ -7,7 +7,7 @@ Throughout this section, let \(a,b\ge3\) be odd.  In ladder \(A\), write
 \(0\le i<a\).  Use \(r_B(q)\) and \(\ell_B(j,s)\) analogously.  Denote
 the all-rails cycle by \(R\), the cycle turning in cell \(i\) of \(A\) and
 cell \(j\) of \(B\) by \(T(i,j)\), and the four exceptional cycles from
-\cref{thm:cycle-formula} by
+Theorem~\ref{thm:cycle-formula} by
 \[
  X_{0011},\quad X_{1100},\quad X_{0101},\quad X_{1010}.
 \]
@@ -24,7 +24,7 @@ One concrete choice, anchored on ladder \(A\), is
  (\ell_A(0,0),\ell_A(0,1)),\quad
  (\ell_A(0,1),\ell_A(0,0)).
 \end{equation}
-The incidence recurrence in \cref{thm:cycle-formula} shows directly that the
+The incidence recurrence in Theorem~\ref{thm:cycle-formula} shows directly that the
 four supports are distinct singleton sets, one for each \(X\)-cycle.
 
 Next isolate every boundary turn.  For \(0\le j<b\), use
@@ -47,7 +47,7 @@ ensures that an exceptional cycle containing the endpoint rung also contains
 the excluded rail, so no exceptional cycle enters a boundary support.
 
 It remains to handle the interior turn grid.  For \(0<p<a\),
-\cref{thm:cycle-formula} gives
+Theorem~\ref{thm:cycle-formula} gives
 \begin{equation}
 \label{eq:domino-support-a}
  \operatorname{supp}(r_A(p),\ell_B(j,s))
@@ -133,7 +133,7 @@ Hamiltonian cycle covers at most one chosen requirement.  Their number is
  4+(2a+2b-4)+\frac{(a-2)(b-2)-1}{2}
  =\frac{(a+2)(b+2)-1}{2}.
 \]
-The packing half of \cref{lem:certificate-principle} proves the claim.
+The packing half of Lemma~\ref{lem:certificate-principle} proves the claim.
 \end{proof}
 
 \subsection{A symbolic separating-family upper bound}
@@ -299,7 +299,8 @@ The cases include endpoint rungs and both rail sides.  A square insertion
 introduces only new rails and rungs with the same indexed incidences, so it
 introduces no additional edge type or boundary case.  Thus all distinct edge
 signatures are incomparable.  Apply
-\cref{prop:signature-antichain,eq:symbolic-family-size}.
+Proposition~\ref{prop:signature-antichain} and
+\cref{eq:symbolic-family-size}.
 \end{proof}
 
 \subsection{The exact formula and its lift}
@@ -315,8 +316,8 @@ For all odd integers \(a,b\ge3\),
 \end{theorem}
 
 \begin{proof}
-The lower bound is \cref{thm:packing-lift}; the upper bound is
-\cref{thm:separating-family}.  Their cardinalities agree.
+The lower bound is Theorem~\ref{thm:packing-lift}; the upper bound is
+Theorem~\ref{thm:separating-family}.  Their cardinalities agree.
 \end{proof}
 
 Both certificates lift locally under square insertion.  For example, under

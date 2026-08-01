@@ -1,0 +1,92 @@
+% Companion technical record. This file is intentionally not input by main.tex.
+\section*{Reproducibility supplement}
+
+This companion records detailed identifiers and verification statistics that
+are omitted from the main mathematical narrative.  The immutable result
+packages were read but not modified during the editorial revision.
+
+\subsection*{Certificate packages and runtimes}
+
+The global standard-library verifier checked all 29 order packages from 8
+through 36, including the 14 nonempty orders, every cycle certificate, every
+ordered edge-pair cover, all lower certificates, and the global summaries.  Its
+recorded runtime was 655.989 seconds.  Producer runtimes across the orders sum
+to 5,186.661 seconds; this mixes fresh production with the imported order-36
+workflow and is audit metadata rather than a hardware-independent benchmark.
+
+\begin{center}
+\scriptsize
+\begin{tabular}{lll}
+\toprule
+package & entries & SHA-256 of \texttt{SHA256SUMS.txt} \\
+\midrule
+certified sequence & 266 &
+\nolinkurl{2a0a27cbb2c5dcefca3173293dc1fbfb21b55a69cdd366da3ab3b30a2842affa}\\
+order-36 subpackage & 9 &
+\nolinkurl{6aaa43a275ecbbedd25586fc244140ddfb7f107e14025b2bfd1da34af417d00d}\\
+ladder analysis & 30 &
+\nolinkurl{17b1a8219321fc70ac8146f17e29d8b836c90862ec96248429141869e252a67e}\\
+prospective test & 50 &
+\nolinkurl{6bd843dfbe9f3eb1aa3213511ce28091efc7567f7d7565f0aa980943b05713a1}\\
+packing-lift output & 25 &
+\nolinkurl{188800bd2a8b0835216f6fa9c78eb4673e5b3bc24d1dc216bc3a7d619986f31e}\\
+primal-lift output & 13 &
+\nolinkurl{bd5fdc3e3a160b8339fa412d4c1decf2113919cf1f4f6c2dc8856b474aeb37d1}\\
+layout-study output & 215 &
+\nolinkurl{65b2b4fc671c8889a38edf6188e46a63259a81b0d00a949f81fcee89e3e0d79c}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Every listed digest was rechecked without modifying its package.  The packing-
+and primal-lift source inventories bind their outputs to the order-36,
+ladder-analysis, and prospective artifacts.  Both independent-verification
+results are \texttt{pass}.  The primal package checks 2,862, 3,540, 4,290, and
+5,112 ordered edge requirements for its four finite double ladders.
+
+\subsection*{Order 36 and prediction lock}
+
+The unique order-36 maximizer has canonical hash
+\begin{center}
+\scriptsize
+\nolinkurl{2f96ada16c46cd2bd038b97d5af44f46ed14522cba1edf3fa041d66e02107bcc}.
+\end{center}
+Its complete universe has 68 Hamiltonian cycles.  A 49-cycle primal certificate
+and a 49-requirement packing certificate prove \(\hsep=49\); all 15,373
+competitors have verified covers of size at most 48.
+
+The prospective predictions are locked in a read-only JSON record with SHA-256
+\begin{center}
+\scriptsize
+\nolinkurl{e8ba381dd163c59941db81f65b71b70d6d78cdb7cfd6f6a41ba4828fe25c89fb}.
+\end{center}
+For each of \(D(9,9)\), \(D(11,9)\), and \(D(11,11)\), a path-based enumerator
+and an independent perfect-matching/complement enumerator produced the same
+complete normalized Hamiltonian-cycle universe.  The verifier passed the three
+constructions, cycle universes, structural classifications, primal covers,
+matching lower certificates, and local and global manifests.
+
+\subsection*{Layout study}
+
+The layout study evaluated 12,672 candidate variants and exercised all 400
+cap-selecting directed edges.  The structural face \texttt{B\_rail\_0} was
+selected as the exterior face for all eleven family members.  Constrained
+refinement produced horizontal ladder-A rails, boundary-following ladder B,
+convex outer faces, consistent insertion orientation, and zero crossings.  The
+unweighted family transition cost decreased from 13.6693 for independent
+minima to 1.52964.  Independent verification passed the graph, rotation,
+face-boundary, edge-set, label, crossing, composite, and manifest checks.
+
+The external C source was neither copied nor modified.  Its recorded SHA-256
+remained
+\begin{center}
+\scriptsize
+\nolinkurl{8458e4c5fbadadd109c672233b1e5426d3de4b888ea1299eab1d9860b7e01c7f}.
+\end{center}
+
+\subsection*{Regression tests}
+
+The latest repository run collected 203 tests: 198 passed and five
+environment-gated Plantri or cubhamg integrations were skipped.  These ordinary
+software tests are separate from the standalone mathematical certificate
+verification.

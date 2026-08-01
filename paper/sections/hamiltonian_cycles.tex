@@ -1,47 +1,10 @@
 \section{Hamiltonian-cycle structure}
 \label{sec:hamiltonian-cycles}
 
-The complete Hamiltonian-cycle universes of the five primary double-ladder
-members from orders 20 through 36 were encoded using four connector bits, rung
-bits, two rail strings per ladder, four-bit cell states, and adjacent-cell
-transitions.  Complete universes and cycle counts are also certified for the
-three smaller, face-degenerate members, but those three were not included in
-the detailed tile-state artifact.  The resulting finite pattern is particularly
-simple.
-
-\begin{computationalresult}[Certified cycle counts]
-\label{res:cycle-counts}
-For each certified graph in
-\[
- D(1,1),D(3,1),D(3,3),D(5,3),D(5,5),D(7,5),D(7,7),D(9,7),
-\]
-the complete Hamiltonian-cycle universe has size
-\[
- |\Hcal(D(a,b))|=ab+5.
-\]
-For each of the five state-encoded members from \(D(5,3)\) through \(D(9,7)\),
-every cycle belongs to exactly one of three observed classes: one all-rails
-cycle, \(ab\) cycles determined by one turn cell in each ladder, and four
-two-connector exceptions.
-\end{computationalresult}
-
-Here is the local state mechanism behind the finite classification.  Number the
-connectors in the order displayed in \cref{eq:connectors}.  A cycle crosses the
-four-edge cut between the two ladders an even, nonzero number of times.  With
-all four connectors present, the degree-two equations along one ladder force
-the top and bottom rail decisions to agree cell by cell.  In every certified
-universe, excluding an internal closed component leaves either the all-rails
-state or a single omitted rail pair bounded by two selected rungs.  The latter
-is a turn at one of the ladder cells.  Two straight ladders give the all-rails
-cycle; two turned ladders give one cycle for each independent pair of turn
-positions.
-
-With exactly two connectors, the four observed Hamiltonian connector words are
-\[
- 1100,\qquad 0011,\qquad 1010,\qquad 0101,
-\]
-each with one forced completion for odd ladder lengths.  The remaining words
-\(1001\) and \(0110\) do not occur in the certified complete universes.
+The general classification below agrees with the complete certified
+Hamiltonian-cycle universes of every analyzed double-ladder member, including
+the prediction-locked graphs beyond order 36.  Those finite universes provide
+an independent check of the cycle counts and classes proved here.
 
 \begin{theorem}[Hamiltonian cycles of the double ladder]
 \label{thm:cycle-formula}

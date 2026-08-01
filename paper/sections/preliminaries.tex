@@ -10,10 +10,11 @@ A \emph{Barnette graph} is a simple, planar, bipartite, cubic, and
 3-vertex-connected graph.
 \end{definition}
 
-Let \(\Hcal(G)\) denote the set of undirected Hamiltonian cycles of a
-Hamiltonian graph \(G\).
+For every graph \(G\), let \(\Hcal(G)\) denote its set of undirected Hamiltonian
+cycles; this set is empty when \(G\) is non-Hamiltonian.
 
-\begin{definition}[Hamiltonian edge separation]
+\begin{definition}[Hamiltonian strong edge separation]
+\label{def:hsep}
 For distinct edges \(e,f\in E(G)\), a Hamiltonian cycle \(C\) \emph{covers} the
 ordered requirement \((e,f)\) if \(e\in C\) and \(f\notin C\).  A family
 \(\Ccal\subseteq\Hcal(G)\) is \emph{Hamiltonian edge-separating} if it covers
@@ -29,17 +30,25 @@ every ordered pair of distinct edges.  Define
  \end{array}
  \right\}.
 \end{equation}
+If no Hamiltonian edge-separating family exists, the minimum in
+\cref{eq:hsep-definition} is defined to be \(\infty\).  We call \(\hsep(G)\)
+the \emph{Hamiltonian strong edge-separation number}; this terminology and the
+notation \(\hsep\) are manuscript-specific.  Abstractly, it is the minimum
+cardinality of a completely separating subfamily of the Hamiltonian-cycle
+hypergraph of \(G\).
 \end{definition}
 
 \begin{definition}[Barnette extremal sequence]
-For an order at which the relevant values are defined, put
+For every order at which at least one Barnette graph exists, put
 \begin{equation}
 \label{eq:MB-definition}
  \MB(n)=\max\{\hsep(G):G\text{ is a Barnette graph and }|V(G)|=n\}.
 \end{equation}
-If no Barnette graph of order \(n\) exists, \(\MB(n)\) is undefined.  In the
-certified range every graph in every nonempty census is Hamiltonian, so
-\cref{eq:MB-definition} is unambiguous there.
+The maximum is taken in the extended nonnegative integers, so it remains well
+defined even if some graph has \(\hsep(G)=\infty\).  If no Barnette graph of
+order \(n\) exists, \(\MB(n)\) is undefined.  In the certified range every
+graph in every nonempty census is Hamiltonian, every graph admits a separating
+family, and all displayed values are finite.
 \end{definition}
 
 Given an ordered family \(C_1,\ldots,C_k\), associate with an edge \(e\) its
@@ -47,6 +56,10 @@ incidence signature
 \[
  \sigma(e)=\{i:e\in C_i\}\subseteq\{1,\ldots,k\}.
 \]
+
+The following antichain equivalence for completely separating systems is
+classical; see \citet{Dickson1969,Spencer1970} for the set-system context.  We
+include its specialization and direct proof for Hamiltonian-cycle tests.
 
 \begin{proposition}[Signature antichain]
 \label{prop:signature-antichain}
@@ -62,13 +75,25 @@ The requirement \((e,f)\) is covered exactly when some index belongs to
 signatures.
 \end{proof}
 
-In particular, if \(G\) has \(m\) edges and \(k\) selected cycles, Sperner's
-theorem gives the necessary inequality
+In particular, if \(G\) has \(m\) edges and \(k\) selected cycles, the standard
+Sperner antichain bound gives the necessary inequality
 \[
  m\le \binom{k}{\lfloor k/2\rfloor}.
 \]
-This general counting obstruction is kept separate from graph-specific
-optimality certificates.
+This classical counting obstruction, also underlying separating-system bounds
+\citep{Katona1966,Dickson1969,Spencer1970}, is kept separate from
+graph-specific optimality certificates.
+
+\begin{observation}[Perfect-matching formulation]
+\label{obs:matching-formulation}
+In a cubic graph, the complement of a Hamiltonian cycle is a perfect matching.
+Consequently, Hamiltonian strong edge separation can equivalently be encoded
+by perfect matchings whose complementary 2-factors are Hamiltonian cycles,
+with every edge-incidence bit reversed.  Bitwise reversal preserves pairwise
+incomparability (while reversing containment), so the antichain condition is
+unchanged.  No claim is made that this restricted matching formulation has
+previously been studied.
+\end{observation}
 
 \begin{lemma}[Primal and packing certificates]
 \label{lem:certificate-principle}

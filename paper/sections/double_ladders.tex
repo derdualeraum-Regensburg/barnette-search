@@ -33,11 +33,50 @@ cell by three and increases the ladder length by two.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=.43\textwidth]{square_insertion_d55.png}
-\caption{Annotated \(D(5,5)\).  Blue edges are rails, red edges are rungs,
-orange edges are terminal attachments, and the highlighted four-vertex tile is
-a certified square insertion.  The inverse operation deletes the tile and
-restores the two opposite rail edges.}
+\begin{tikzpicture}[
+  x=.8cm,y=.8cm,
+  vertex/.style={circle,fill=black,inner sep=1.7pt},
+  newvertex/.style={circle,fill=blue!70!black,inner sep=1.9pt},
+  every node/.style={font=\small}
+]
+  \begin{scope}
+    \coordinate (u) at (0,2); \coordinate (v) at (3,2);
+    \coordinate (x) at (0,0); \coordinate (y) at (3,0);
+    \draw[thick] (u)--(x)--(y)--(v)--cycle;
+    \draw[orange!85!black,very thick] (u)--(v) (x)--(y);
+    \node[vertex,label=above left:\(u\)] at (u) {};
+    \node[vertex,label=above right:\(v\)] at (v) {};
+    \node[vertex,label=below left:\(x\)] at (x) {};
+    \node[vertex,label=below right:\(y\)] at (y) {};
+    \node at (1.5,-.75) {before};
+  \end{scope}
+  \draw[-{Latex[length=3mm]},thick] (3.9,1)--(5.2,1)
+    node[midway,above,align=center] {insert four\\vertices};
+  \begin{scope}[xshift=6.1cm]
+    \coordinate (u) at (0,2); \coordinate (p) at (1,2);
+    \coordinate (q) at (2,2); \coordinate (v) at (3,2);
+    \coordinate (x) at (0,0); \coordinate (r) at (1,0);
+    \coordinate (s) at (2,0); \coordinate (y) at (3,0);
+    \fill[blue!10] (p)--(q)--(s)--(r)--cycle;
+    \draw[thick] (u)--(x) (v)--(y);
+    \draw[orange!85!black,very thick]
+      (u)--(p)--(q)--(v) (x)--(r)--(s)--(y);
+    \draw[blue!70!black,very thick] (p)--(r) (q)--(s);
+    \node[vertex,label=above left:\(u\)] at (u) {};
+    \node[vertex,label=above right:\(v\)] at (v) {};
+    \node[vertex,label=below left:\(x\)] at (x) {};
+    \node[vertex,label=below right:\(y\)] at (y) {};
+    \node[newvertex,label=above:\(p\)] at (p) {};
+    \node[newvertex,label=above:\(q\)] at (q) {};
+    \node[newvertex,label=below:\(r\)] at (r) {};
+    \node[newvertex,label=below:\(s\)] at (s) {};
+    \node[blue!70!black] at (1.5,1) {new 4-cycle};
+    \node at (1.5,-.75) {after: ladder length (+2)};
+  \end{scope}
+\end{tikzpicture}
+\caption{Local square insertion.  The opposite facial edges (uv) and
+(xy) (orange, left) are replaced by the paths (upqv) and (xrsy).
+The new edges (pr) and (qs) complete the quadrilateral (pqsrp).}
 \label{fig:square-insertion}
 \end{figure}
 
@@ -82,7 +121,7 @@ For all odd integers \(a,b\ge1\), the graph \(D(a,b)\) is a Barnette graph.
 \begin{proof}
 The graph \(D(1,1)\) is isomorphic to the cube.  Increasing either odd
 parameter by two is exactly the facial square insertion of
-\cref{lem:square-preservation} in a cell of the corresponding ladder.  Starting
+Lemma~\ref{lem:square-preservation} in a cell of the corresponding ladder.  Starting
 from \(D(1,1)\), repeated insertions therefore reach every pair of positive odd
 parameters while preserving all Barnette properties.
 \end{proof}
@@ -103,6 +142,18 @@ All seven consecutive transitions have reconstructible expansion certificates
 whose reconstructed edge set is exactly the certified target and whose reduced
 canonical hash is exactly the certified source.
 \end{computationalresult}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.99\textwidth]{bauer_layout/extended_double_ladder_family.pdf}
+\caption{The double-ladder family through $D(11,11)$.  The members from
+$D(1,1)$ through $D(9,7)$ are the certified unique \(\hsep\)-maximizers
+at the corresponding orders divisible by four through order 36.  The graphs
+$D(9,9)$, $D(11,9)$, and $D(11,11)$ are proved family members with exact
+graph-specific \(\hsep\) values; their global extremality at orders 40, 44,
+and 48 is unproved.}
+\label{fig:double-ladder-family}
+\end{figure}
 
 \begin{proposition}[Face pattern in the recursive embedding]
 \label{prop:double-ladder-faces}
@@ -127,22 +178,3 @@ cells are exactly the two path components of the quadrilateral face-adjacency
 graph.  At orders 8 and 12, additional quadrilateral cap faces make this
 face-adjacency description degenerate, although the abstract double-ladder
 definition remains valid.
-
-\begin{figure}[!htbp]
-\centering
-\begin{tabular}{ccc}
-\includegraphics[width=.24\textwidth]{d11.png} &
-\includegraphics[width=.24\textwidth]{d53.png} &
-\includegraphics[width=.24\textwidth]{d55.png} \\
-\(D(1,1)\) & \(D(5,3)\) & \(D(5,5)\) \\[3pt]
-\includegraphics[width=.24\textwidth]{d75.png} &
-\includegraphics[width=.24\textwidth]{d77.png} &
-\includegraphics[width=.24\textwidth]{d97.png} \\
-\(D(7,5)\) & \(D(7,7)\) & \(D(9,7)\)
-\end{tabular}
-\caption{Selected certified double-ladder maximizers.  Layouts were produced
-from the certified planar embeddings; geometry is used only for presentation,
-while all structural identifications were made from abstract edges and rotation
-systems.}
-\label{fig:double-ladders}
-\end{figure}

@@ -1,8 +1,8 @@
 # Barnette hsep manuscript draft
 
-This directory contains a technically serious initial manuscript draft. It is
-not a submitted paper and makes no novelty claim. Thomas Bauer is the sole
-current author placeholder.
+This directory contains a private-review manuscript draft. It is not a
+submitted paper and makes no absolute novelty claim. Thomas Bauer is the sole
+author.
 
 ## Build
 
@@ -24,23 +24,27 @@ latexmk -pdf main.tex
 
 The `latexmkrc` file places the PDF and auxiliary files in `generated/`. Clean
 with `latexmk -C main.tex`. The manuscript does not read the external result
-directories at build time. On 2026-08-01 the draft compiled successfully with
-MiKTeX 25.12 to a 16-page PDF. The final log contained no undefined citations,
-undefined references, overfull boxes, or underfull boxes, and all pages were
-visually inspected.
+directories at build time. On 2026-08-01 the revised draft compiled from a
+clean state successfully with MiKTeX 25.12 to a 17-page PDF. The final log contained no
+undefined citations, undefined references, overfull boxes, or underfull boxes,
+and all pages were visually inspected.
 
 ## Structure
 
 - `main.tex`: document setup and section order.
-- `sections/`: abstract, definitions, computational method, certified
+- `sections/`: abstract, definitions, related work, computational method, certified
   extremal sequence, double ladders, Hamiltonian structure, exact symbolic
   bounds, prospective confirmations, open conjectures, reproducibility, and
   conclusion.
 - `tables/`: compact data copied from certified summaries.
-- `figures/`: selected small PNG/SVG derivatives copied from immutable gallery
-  outputs; no external drawing source is included.
-- `bibliography.bib`: one software-guide entry verified from the repository and
-  explicit placeholders for the outstanding literature review.
+- `figures/`: the single complete Bauer-family plate used by the manuscript,
+  verified supplementary derivatives, and selected gallery images; no external
+  drawing source is included.
+- `bibliography.bib`: fifteen verified literature and software-guide entries.
+- `reproducibility_supplement.tex`: detailed hashes, runtimes, commands, and
+  layout-verification records kept outside the main narrative.
+- `literature_audit.md`, `figure_audit.md`, and `revision_report.md`: revision
+  audit trails.
 - `generated/`: LaTeX build output only.
 
 ## Immutable external evidence
@@ -57,7 +61,7 @@ E:\barnette-results\double-ladder-primal-lift
 ```
 
 Their result corpora are intentionally not duplicated here. Relevant manifest
-hashes are stated in `sections/reproducibility.tex`.
+hashes are stated in `reproducibility_supplement.tex`.
 
 ## Status of claims
 
@@ -93,11 +97,13 @@ hashes are stated in `sections/reproducibility.tex`.
 3. Classify the tied branch by finite boundary states.
 4. Develop an order-level method for the open balanced-double-ladder extremal
    conjecture.
-5. Perform a systematic peer-reviewed literature review covering separating
-   systems, completely separating systems, edge separation by cycles,
-   Hamiltonian-cycle covers, Barnette censuses, and reducible configurations.
-6. Replace all bibliography TODOs with source-checked entries and adjust the
-   terminology before making any novelty claim.
+5. Obtain and inspect the full text of sources, especially Cai (1984), before
+   making any definition-level comparison beyond the cautious statement in the
+   manuscript.
+6. Extend the literature review before journal submission to cover any
+   Hamiltonian-cycle-specific separation terminology not represented by the
+   verified core bibliography; add Test Cover references if that terminology
+   is reintroduced.
 7. Recompile and inspect every page after substantive revisions, especially for
    overfull boxes, float placement, and bibliography formatting.
 
