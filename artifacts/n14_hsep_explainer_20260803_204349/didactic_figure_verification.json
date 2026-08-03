@@ -1,0 +1,167 @@
+{
+  "canonical_graph_hash": "3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445",
+  "display_matrix": {
+    "arrows_from_cycle_tiles_to_grey_columns": [
+      6,
+      9
+    ],
+    "displayed_cycle_columns": 12,
+    "displayed_signature_cells": 252,
+    "grey_columns_claimed_identical_to_selected_columns": false,
+    "grey_context_columns": [
+      6,
+      9
+    ],
+    "selected_blue_columns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12
+    ]
+  },
+  "embedding": {
+    "all_420_ordered_requirements_have_selected_witnesses": true,
+    "all_graph_panels_derived_by_uniform_scale_and_translation_from_source_coordinates": true,
+    "compact_signature_cells_checked": 252,
+    "cycle_tiles_checked": 12,
+    "diagonal_cells_expected": 21,
+    "graph_vertex_instances_checked": 182,
+    "ordered_pair_witness_cells_checked": 420,
+    "source_coordinate_hash_matches": true,
+    "source_coordinate_sha256": "72d2463d2a0d6b4e49a041d00df810b007dca13cd52fab22cd5544f9f56ae2ca",
+    "unused_cycles_appear_as_witnesses": [],
+    "witness_cycles_used": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12
+    ]
+  },
+  "lower_bound": {
+    "all_subsets_of_size_below_10_certified": true,
+    "certified_subset_count": 4017,
+    "exact_hsep": 10,
+    "statement_no_nine_cycle_selection_suffices_is_supported": true
+  },
+  "ordered_pair_witness_matrix": {
+    "all_witness_cycles_belong_to_certified_selected_10": true,
+    "cell_semantics": "row edge is contained in witness cycle; column edge is avoided",
+    "cycles_6_and_9_used_as_witnesses": false,
+    "diagonal_cells": 21,
+    "edge_columns": 21,
+    "edge_rows": 21,
+    "filled_off_diagonal_cells": 420,
+    "off_diagonal_requirements": 420,
+    "open_requirements_after_removing_cycles_6_and_9": 0,
+    "witness_cycle_indices_used": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12
+    ]
+  },
+  "outputs": {
+    "hsep_n14_explained.pdf": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "8ae12368699928f1f2df4cf48ce24b5662e91f236bf6fd7c8f14257a0a168c43",
+      "size_bytes": 262466
+    },
+    "hsep_n14_explained.png": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "7bf2782ab6f1fd2b22f8513a5cf93f7fb483db95c76c290e735babb831e8ce27",
+      "size_bytes": 174726
+    },
+    "hsep_n14_explained.svg": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "c354cc26e2d65548ec863c3f97933d85597c37143d3ff44d3503ce9d361ed6c7",
+      "size_bytes": 503624
+    },
+    "selected_10_cycles.json": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "2ceb0c469d7415c72e0280d5ebbd37f271bc4ac2a78038e3ad681b08a74ef7f0",
+      "size_bytes": 13984
+    },
+    "signature_matrix.csv": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "05c9b2c65cbbf0cc39c1e6480ab7c0c242c86171f957448532f62cf2ad8ee106",
+      "size_bytes": 908
+    }
+  },
+  "pdf_header_valid": true,
+  "png_dimensions": [
+    2800,
+    2000
+  ],
+  "primal_selection": {
+    "matches_hsep_certificate": true,
+    "selected_cycle_indices_one_based": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12
+    ],
+    "unused_cycle_indices_one_based": [
+      6,
+      9
+    ]
+  },
+  "schema": "barnette-n14-hsep-didactic-figure-verification-v1",
+  "signature_matrix": {
+    "all_signatures_pairwise_incomparable": true,
+    "csv_matches_selected_cycles": true,
+    "distinct_signature_count": 21,
+    "edge_rows": 21,
+    "expected_ordered_edge_pairs": 420,
+    "ordered_edge_pairs_separated": 420,
+    "selected_cycle_columns": 10
+  },
+  "source_directory": "E:\\oneDrive\\Documents\\VSCode\\barnette-search\\artifacts\\n14_all_hamiltonian_cycles_20260803_194908",
+  "source_files": {
+    "cycles.json": {
+      "sha256": "3fab5b1bce629d4a13271e9081d3802603de3f075feb65099f0377796eb61d85",
+      "size_bytes": 19490
+    },
+    "hsep_certificate.json": {
+      "sha256": "eed79702ec822a50c15876d75a0293f9bbd2aa8fee83beb207104b6a03dd4ec1",
+      "size_bytes": 847926
+    },
+    "independent_verification.json": {
+      "sha256": "7c1d141ed3cf3621b87c68d5c9617c702ee94b97f4e625c085ce30d2544115b3",
+      "size_bytes": 1494
+    },
+    "layout.json": {
+      "sha256": "5d74f3cd5a76929a56b780ab42c9a53c422e5d38ce9989e4cd28a58a77caa275",
+      "size_bytes": 3019
+    }
+  },
+  "success": true
+}
