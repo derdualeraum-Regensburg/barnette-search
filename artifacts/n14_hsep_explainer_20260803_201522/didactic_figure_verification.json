@@ -1,0 +1,103 @@
+{
+  "canonical_graph_hash": "3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445",
+  "embedding": {
+    "all_graph_panels_derived_by_uniform_scale_and_translation_from_source_coordinates": true,
+    "cycle_tiles_checked": 12,
+    "graph_vertex_instances_checked": 182,
+    "signature_cells_checked": 210,
+    "source_coordinate_hash_matches": true,
+    "source_coordinate_sha256": "72d2463d2a0d6b4e49a041d00df810b007dca13cd52fab22cd5544f9f56ae2ca"
+  },
+  "lower_bound": {
+    "all_subsets_of_size_below_10_certified": true,
+    "certified_subset_count": 4017,
+    "exact_hsep": 10,
+    "statement_no_nine_cycle_selection_suffices_is_supported": true
+  },
+  "outputs": {
+    "hsep_n14_explained.pdf": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "be573877633e73401f008d5303c6cb66f08e107b6bd8091ee75219bae89c1a83",
+      "size_bytes": 167832
+    },
+    "hsep_n14_explained.png": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "eeebb736bbe7a6203c04bf255348ed5d3409bb97b36f8f785ea733d3af8eed41",
+      "size_bytes": 154678
+    },
+    "hsep_n14_explained.svg": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "b864f2c989995db776f8516820512d1203d8b6cd3a4e40ae2cea302c2259b855",
+      "size_bytes": 289759
+    },
+    "selected_10_cycles.json": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "2ceb0c469d7415c72e0280d5ebbd37f271bc4ac2a78038e3ad681b08a74ef7f0",
+      "size_bytes": 13984
+    },
+    "signature_matrix.csv": {
+      "exists": true,
+      "nonempty": true,
+      "sha256": "05c9b2c65cbbf0cc39c1e6480ab7c0c242c86171f957448532f62cf2ad8ee106",
+      "size_bytes": 908
+    }
+  },
+  "pdf_header_valid": true,
+  "png_dimensions": [
+    2800,
+    2000
+  ],
+  "primal_selection": {
+    "matches_hsep_certificate": true,
+    "selected_cycle_indices_one_based": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12
+    ],
+    "unused_cycle_indices_one_based": [
+      6,
+      9
+    ]
+  },
+  "schema": "barnette-n14-hsep-didactic-figure-verification-v1",
+  "signature_matrix": {
+    "all_signatures_pairwise_incomparable": true,
+    "csv_matches_selected_cycles": true,
+    "distinct_signature_count": 21,
+    "edge_rows": 21,
+    "expected_ordered_edge_pairs": 420,
+    "ordered_edge_pairs_separated": 420,
+    "selected_cycle_columns": 10
+  },
+  "source_directory": "E:\\oneDrive\\Documents\\VSCode\\barnette-search\\artifacts\\n14_all_hamiltonian_cycles_20260803_194908",
+  "source_files": {
+    "cycles.json": {
+      "sha256": "3fab5b1bce629d4a13271e9081d3802603de3f075feb65099f0377796eb61d85",
+      "size_bytes": 19490
+    },
+    "hsep_certificate.json": {
+      "sha256": "eed79702ec822a50c15876d75a0293f9bbd2aa8fee83beb207104b6a03dd4ec1",
+      "size_bytes": 847926
+    },
+    "independent_verification.json": {
+      "sha256": "7c1d141ed3cf3621b87c68d5c9617c702ee94b97f4e625c085ce30d2544115b3",
+      "size_bytes": 1494
+    },
+    "layout.json": {
+      "sha256": "5d74f3cd5a76929a56b780ab42c9a53c422e5d38ce9989e4cd28a58a77caa275",
+      "size_bytes": 3019
+    }
+  },
+  "success": true
+}

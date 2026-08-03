@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\addtolength{\textwidth}{3cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\begin{document}
+\begin{center}
+\begin{tikzpicture}[scale=0.07]
+\def\vertexscale{0.90}
+\node [circle,black,draw,scale=\vertexscale,fill=black] (1) at (-19.35341,-48.25813) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (2) at (5.86519,-10.15880) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (3) at (29.91017,-51.80593) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (4) at (-50.00000,-86.60254) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (5) at (-5.86519,10.15880) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (6) at (51.46947,-7.36852) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (7) at (50.00000,-86.60254) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (8) at (-100.00000,-0.00000) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (9) at (-51.46947,7.36852) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (10) at (19.35341,48.25813) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (11) at (100.00000,0.00000) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (12) at (-50.00000,86.60254) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (13) at (-29.91017,51.80593) {};
+\node [circle,black,draw,scale=\vertexscale,fill=black] (14) at (50.00000,86.60254) {};
+\draw [black] (1) to (4);
+\draw [black] (1) to (2);
+\draw [black] (1) to (3);
+\draw [black] (2) to (6);
+\draw [black] (2) to (5);
+\draw [black] (3) to (7);
+\draw [black] (3) to (6);
+\draw [black] (4) to (8);
+\draw [black] (4) to (7);
+\draw [black] (5) to (10);
+\draw [black] (5) to (9);
+\draw [black] (6) to (11);
+\draw [black] (7) to (11);
+\draw [black] (8) to (9);
+\draw [black] (8) to (12);
+\draw [black] (9) to (13);
+\draw [black] (10) to (14);
+\draw [black] (10) to (13);
+\draw [black] (11) to (14);
+\draw [black] (12) to (13);
+\draw [black] (12) to (14);
+\end{tikzpicture}
+\end{center}
+\end{document}

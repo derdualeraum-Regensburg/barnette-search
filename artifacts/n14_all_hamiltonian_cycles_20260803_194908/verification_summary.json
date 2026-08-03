@@ -1,0 +1,113 @@
+{
+  "barnette_validation": {
+    "number_of_edges": 21,
+    "number_of_vertices": 14,
+    "rejection_reasons": [],
+    "valid": true
+  },
+  "canonical_graph_hash": "3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445",
+  "cycle_validation": {
+    "all_12_passed_every_check": true,
+    "dfs_and_perfect_matching_enumerations_agree": true,
+    "distinct_highlighted_edge_sets": true
+  },
+  "drawing_validation": {
+    "edge_crossing_count": 0,
+    "planar_draw_graph_matches_certificate": true,
+    "pngs_rendered_from_pdfs_using_same_cycle_edge_source": true,
+    "single_shared_coordinate_hash": "72d2463d2a0d6b4e49a041d00df810b007dca13cd52fab22cd5544f9f56ae2ca",
+    "single_shared_embedding": true,
+    "svg_highlights_match_cycles_json": true
+  },
+  "expected_and_observed": {
+    "exact_hsep": {
+      "confirmed": true,
+      "expected": 10,
+      "observed": 10
+    },
+    "nonisomorphic_barnette_graph_count_n14": {
+      "confirmed": true,
+      "expected": 1,
+      "observed": 1
+    },
+    "undirected_hamiltonian_cycle_count": {
+      "confirmed": true,
+      "expected": 12,
+      "observed": 12
+    }
+  },
+  "rasterizer": {
+    "implementation": "dependency-free Python RGB renderer with 2x supersampling and box downsampling",
+    "same_positions_and_edge_sets_as_svg_and_pdf": true
+  },
+  "required_nonempty_files": {
+    "cycle_01.png": true,
+    "cycle_01.svg": true,
+    "cycle_02.png": true,
+    "cycle_02.svg": true,
+    "cycle_03.png": true,
+    "cycle_03.svg": true,
+    "cycle_04.png": true,
+    "cycle_04.svg": true,
+    "cycle_05.png": true,
+    "cycle_05.svg": true,
+    "cycle_06.png": true,
+    "cycle_06.svg": true,
+    "cycle_07.png": true,
+    "cycle_07.svg": true,
+    "cycle_08.png": true,
+    "cycle_08.svg": true,
+    "cycle_09.png": true,
+    "cycle_09.svg": true,
+    "cycle_10.png": true,
+    "cycle_10.svg": true,
+    "cycle_11.png": true,
+    "cycle_11.svg": true,
+    "cycle_12.png": true,
+    "cycle_12.svg": true,
+    "cycles.json": true,
+    "graph_base.svg": true,
+    "hsep_certificate.json": true,
+    "overview_all_12_cycles.png": true
+  },
+  "schema": "barnette-n14-cycle-atlas-verification-v1",
+  "source_certificate_checks": {
+    "census_generated_count_is_one": true,
+    "census_hash_matches": true,
+    "census_reference_count_is_one": true,
+    "embedding_hash_matches": true,
+    "faces_match": true,
+    "rotation_system_matches": true
+  },
+  "source_metadata": {
+    "census_jsonl_sha256": "e9e5f3c51740d11454218da21309c37c5bf2735278a45f7d16b6986f22d11ecf",
+    "census_summary_sha256": "2a0fb11ab27905a0f0200c0b2cdf1930078cdca32dc9f9196ebcc045907121ee",
+    "embedding_sha256": "a9beb27611e7d0a25f63fa3b149a64ecf76605df10f00e3cc9d0ea4d075e4b19",
+    "plantri_command": [
+      "E:\\oneDrive\\Documents\\VSCode\\barnette-search\\.tools\\plantri\\build\\plantri.exe",
+      "-b",
+      "-c3",
+      "-d",
+      "9",
+      "-"
+    ],
+    "plantri_executable_sha256": "e2bc2461c8c14224f6baa3344e4ca3e5fdde1a408d4f525c1e24867e968cf9c9",
+    "plantri_version": "5.8"
+  },
+  "success": true,
+  "tests": {
+    "command": [
+      "C:\\Users\\Thomas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_n14_hamiltonian_atlas.py",
+      "tests/test_planar_code.py",
+      "tests/test_hamiltonian.py",
+      "tests/test_validation.py",
+      "tests/test_maximizer_gallery.py"
+    ],
+    "output": ".................................................................        [100%]\n65 passed in 0.55s",
+    "returncode": 0
+  }
+}

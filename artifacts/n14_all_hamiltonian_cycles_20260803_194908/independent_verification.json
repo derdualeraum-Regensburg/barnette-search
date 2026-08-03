@@ -1,0 +1,52 @@
+{
+  "all_cycles_valid": true,
+  "all_required_images_nonempty": true,
+  "all_svg_coordinates_identical": true,
+  "all_svg_highlights_match_cycles_json": true,
+  "canonical_graph_hash": "3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445",
+  "cycle_count": 12,
+  "cycles_canonically_sorted_and_distinct": true,
+  "file_checks": {
+    "cycle_01.png": true,
+    "cycle_01.svg": true,
+    "cycle_02.png": true,
+    "cycle_02.svg": true,
+    "cycle_03.png": true,
+    "cycle_03.svg": true,
+    "cycle_04.png": true,
+    "cycle_04.svg": true,
+    "cycle_05.png": true,
+    "cycle_05.svg": true,
+    "cycle_06.png": true,
+    "cycle_06.svg": true,
+    "cycle_07.png": true,
+    "cycle_07.svg": true,
+    "cycle_08.png": true,
+    "cycle_08.svg": true,
+    "cycle_09.png": true,
+    "cycle_09.svg": true,
+    "cycle_10.png": true,
+    "cycle_10.svg": true,
+    "cycle_11.png": true,
+    "cycle_11.svg": true,
+    "cycle_12.png": true,
+    "cycle_12.svg": true,
+    "overview_all_12_cycles.png": true
+  },
+  "hsep_certificate": {
+    "exact_hsep": 10,
+    "lower_bound_subsets_verified": 4017,
+    "lower_bound_valid": true,
+    "primal_valid": true
+  },
+  "schema": "barnette-n14-independent-verification-v1",
+  "structural_graph_checks": {
+    "bipartite": true,
+    "connected": true,
+    "cubic": true,
+    "simple": true,
+    "three_vertex_connected": true
+  },
+  "success": true,
+  "svg_coordinate_string_sha256": "ef7d6d73ac25d833a1e8c04e22dd351707ed5c770469e59b8109b29bac1f5bee"
+}

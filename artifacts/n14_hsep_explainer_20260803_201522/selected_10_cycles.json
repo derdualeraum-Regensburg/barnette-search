@@ -1,0 +1,915 @@
+{
+  "canonical_graph_hash": "3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445",
+  "exact_hsep": 10,
+  "schema": "barnette-n14-hsep-selected-cycles-v1",
+  "selected_cycle_indices_one_based": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    10,
+    11,
+    12
+  ],
+  "selected_cycles": [
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        1,
+        4,
+        8,
+        12,
+        9,
+        13,
+        11,
+        7,
+        3,
+        6,
+        10,
+        5,
+        2,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "certificate_sha256": "24786c3a0f60baa9024b5b363fe511893ff064392b8c2f16e66e122914be2a6b",
+      "index": 1,
+      "title": "Hamiltonian cycle 1/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        1,
+        4,
+        9,
+        13,
+        11,
+        12,
+        8,
+        7,
+        3,
+        6,
+        10,
+        5,
+        2,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "certificate_sha256": "becdbd85f9179fe5738fce321e396054e715487f6787cce086b5aefff38b97ea",
+      "index": 2,
+      "title": "Hamiltonian cycle 2/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        1,
+        5,
+        10,
+        13,
+        11,
+        12,
+        9,
+        4,
+        8,
+        7,
+        3,
+        6,
+        2,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "certificate_sha256": "5a00687ecc09334fdd2553b18d9f47f066ec913e5662af49e11345e08ca8e8f2",
+      "index": 3,
+      "title": "Hamiltonian cycle 3/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        1,
+        5,
+        10,
+        13,
+        9,
+        4,
+        8,
+        12,
+        11,
+        7,
+        3,
+        6,
+        2,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "certificate_sha256": "2e59ed94c30c16cc7aa0514dfaebbb7c561b97d19b8b75d2b723db2702923a49",
+      "index": 4,
+      "title": "Hamiltonian cycle 4/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        1,
+        4,
+        8,
+        7,
+        11,
+        12,
+        9,
+        13,
+        10,
+        5,
+        2,
+        6,
+        3,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "certificate_sha256": "fbaa8fb1d5ce9807ac9be4341a4102d17a8ba2cdb77e91763849bc64bd399264",
+      "index": 5,
+      "title": "Hamiltonian cycle 5/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        1,
+        5,
+        2,
+        6,
+        10,
+        13,
+        11,
+        12,
+        9,
+        4,
+        8,
+        7,
+        3,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "certificate_sha256": "47d245fd972fac21d9612b525f2a0a5efd23c0fd44d5ece92b37db11167e7b8b",
+      "index": 7,
+      "title": "Hamiltonian cycle 7/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        1,
+        5,
+        2,
+        6,
+        10,
+        13,
+        9,
+        4,
+        8,
+        12,
+        11,
+        7,
+        3,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "certificate_sha256": "ef1e40519839dcb2885f78069f28ca28713cd00434aa456e577e7ed944904b41",
+      "index": 8,
+      "title": "Hamiltonian cycle 8/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        2,
+        5,
+        1,
+        4,
+        9,
+        12,
+        8,
+        7,
+        11,
+        13,
+        10,
+        6,
+        3,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "certificate_sha256": "fe8a1a995e7cadbf6b9228e6080a89594fffd36b1bf346f7a314b8204dd16634",
+      "index": 10,
+      "title": "Hamiltonian cycle 10/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        2,
+        6,
+        10,
+        5,
+        1,
+        4,
+        8,
+        12,
+        9,
+        13,
+        11,
+        7,
+        3,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "certificate_sha256": "422d9e9d661654f77ec994d919225baf0675dce3b924c9e8337863470e9468bc",
+      "index": 11,
+      "title": "Hamiltonian cycle 11/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    },
+    {
+      "canonical_closed_vertex_sequence": [
+        0,
+        2,
+        6,
+        10,
+        5,
+        1,
+        4,
+        9,
+        13,
+        11,
+        12,
+        8,
+        7,
+        3,
+        0
+      ],
+      "canonical_edge_list": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "certificate_sha256": "e5b0fbe57ad7578193f69b7cca1e542a0690973cb08d8ed406d473bab8e99de1",
+      "index": 12,
+      "title": "Hamiltonian cycle 12/12",
+      "validation": {
+        "all_edges_in_graph": true,
+        "all_vertices_exactly_once": true,
+        "closed": true,
+        "connected": true,
+        "degree_two_at_every_vertex": true,
+        "distinct_vertex_count": 14,
+        "edge_count": 14
+      }
+    }
+  ],
+  "source_hsep_certificate_sha256": "eed79702ec822a50c15876d75a0293f9bbd2aa8fee83beb207104b6a03dd4ec1",
+  "total_undirected_hamiltonian_cycles": 12,
+  "unused_cycle_indices_one_based": [
+    6,
+    9
+  ]
+}
