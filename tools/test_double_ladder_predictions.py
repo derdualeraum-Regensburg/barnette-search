@@ -19,6 +19,7 @@ import tempfile
 from typing import Any
 
 import networkx as nx
+from barnette_search.paths import results_root
 
 from barnette_search.double_ladder_prediction_test import (
     PREDICTIONS,
@@ -238,9 +239,9 @@ def write_csv(path: Path, results: list[dict[str, Any]]) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sequence-root", type=Path, default=Path(r"E:\barnette-results\barnie-sequence"))
-    parser.add_argument("--output-root", type=Path, default=Path(r"E:\barnette-results\double-ladder-prediction-test"))
-    parser.add_argument("--work-root", type=Path, default=Path(r"E:\barnette-results\double-ladder-prediction-test-work"))
+    parser.add_argument("--sequence-root", type=Path, default=results_root() / "barnie-sequence")
+    parser.add_argument("--output-root", type=Path, default=results_root() / "double-ladder-prediction-test")
+    parser.add_argument("--work-root", type=Path, default=results_root() / "double-ladder-prediction-test-work")
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args(argv)
 

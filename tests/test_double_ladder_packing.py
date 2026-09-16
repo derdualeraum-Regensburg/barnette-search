@@ -1,6 +1,8 @@
 """Focused tests for the structural double-ladder packing construction."""
 
-from pathlib import Path
+import pytest
+
+from barnette_search.paths import results_root
 
 from barnette_search.double_ladder_packing import (
     canonical_structural_packing,
@@ -10,8 +12,8 @@ from barnette_search.double_ladder_packing import (
 )
 
 
-SEQUENCE_ROOT = Path(r"E:\barnette-results\barnie-sequence")
-PREDICTION_ROOT = Path(r"E:\barnette-results\double-ladder-prediction-test")
+SEQUENCE_ROOT = results_root() / "barnie-sequence"
+PREDICTION_ROOT = results_root() / "double-ladder-prediction-test"
 
 
 def test_packing_formula_values_and_increments() -> None:
@@ -26,7 +28,7 @@ def test_packing_formula_values_and_increments() -> None:
 
 def test_structural_packings_against_certified_cycle_universes() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        return
+        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
     for dataset in load_chain(SEQUENCE_ROOT, PREDICTION_ROOT):
         packing = canonical_structural_packing(dataset)
         summary = packing_summary(dataset, packing)

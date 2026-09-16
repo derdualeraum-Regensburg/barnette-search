@@ -4,4 +4,10 @@ $halt_on_error = 1;
 $out_dir = 'generated';
 $aux_dir = 'generated';
 $bibtex_use = 2;
+# Git for Windows Perl reports /e/... paths, which native MiKTeX BibTeX
+# cannot resolve. BibTeX runs in generated/, so retain the portable parent
+# lookup in addition to latexmk's automatically constructed search paths.
+if ($^O eq 'msys') {
+    $ENV{'BIBINPUTS'} = '..;' . ($ENV{'BIBINPUTS'} // '');
+}
 $pdflatex = 'pdflatex -interaction=nonstopmode -halt-on-error -file-line-error %O %S';

@@ -1,7 +1,20 @@
 \section{Reproducibility and independent verification}
 \label{sec:reproducibility}
 
-Plantri 5.8 generated the complete non-isomorphic Barnette censuses through
+\paragraph{Public data availability.}
+The original external packages were lost in an accidental deletion of the
+research drive.  Release v0.8.0 provides reconstructed graph packages for all
+55 graphs in the nonempty censuses through order 24, 39 of the 57 graphs at
+order 26, and three graphs at order 32.  Its standard-library release verifier
+checks hashes, graph structure, complete Hamiltonian universes, and matching
+upper and lower proofs.  The order-26 and order-32 sets are incomplete and
+support graph-specific results only.  The original complete evidence through
+order 36 and the prospective and lift packages remain unavailable; historical
+manifest hashes do not substitute for those files.  Downloads and exact
+instructions are maintained in \texttt{docs/data\_availability.md} in the
+\href{https://github.com/derdualeraum-Regensburg/barnette-search}{public repository}.
+
+The original audit recorded Plantri 5.8 generation of the complete non-isomorphic Barnette censuses through
 order 36: 22,263 graphs across the nonempty orders.  Retained artifacts include
 canonical graph records, planar embeddings, cycle universes where required,
 separating families, and lower certificates.
@@ -14,9 +27,20 @@ rests on the recorded complete invocations, contiguous output, and record
 audits.
 
 The four distinct scopes are certificate verification, the census-completeness
-premise, software regression, and figure/layout verification.  Of 203 current
-repository tests, 198 passed and five environment-gated Plantri or cubhamg
-integrations were skipped; these skips do not replace certificate checks.
+premise, software regression, and figure/layout verification.  The public test
+suite explicitly skips missing external datasets and unconfigured Plantri or
+cubhamg integrations.  A legacy benchmark with Windows-only memory telemetry
+is also skipped on other platforms.  These skips do not replace certificate
+checks; release validation records report the actual run and skip counts.
+
+The classification proof also has a separate standard-library regression
+check.  For all 25 ordered pairs \(a,b\in\{3,5,7,9,11\}\), it enumerates
+perfect matchings directly from \(D(a,b)\), retains exactly the connected
+complements, and verifies both the predicted complete Hamiltonian-cycle set
+and matching upper and lower certificates.  A further 75 parameter pairs
+check the constructions without independently enumerating the complete cycle
+universe.  These finite checks support, but do not replace, the general proof
+in Sections~\ref{sec:hamiltonian-cycles} and~\ref{sec:exact-hsep}.
 
 The layouts were initialized from certified planar embeddings using Gunnar
 Brinkmann's drawing program and then refined under explicit structural

@@ -1,0 +1,13 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "networkx": "3.6.1",
+    "python-sat": "1.9.dev7",
+    "matplotlib": "3.11.1",
+    "pytest": "9.1.1",
+    "psutil": "7.0.0",
+    "setuptools": "80.9.0"
+  },
+  "note": "Observed local validation environment, not a cross-platform lock file. CI records its own resolved package versions."
+}

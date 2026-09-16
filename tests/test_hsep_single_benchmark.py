@@ -6,6 +6,7 @@ import importlib.util
 import json
 from pathlib import Path
 import sys
+import pytest
 
 
 ROOT = Path(__file__).parents[1]
@@ -16,16 +17,9 @@ benchmark = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(benchmark)
 
 
+@pytest.mark.skipif(sys.platform != "win32", reason="legacy benchmark telemetry uses Windows peak_wset; core verifiers run on all platforms")
 def test_exact_cube_bundle_round_trips_through_independent_verifier(tmp_path: Path) -> None:
-    planar_code = (
-        ROOT
-        / "results"
-        / "plantri-5.8-strong"
-        / "extremal"
-        / "all_edge_pairs"
-        / "graphs"
-        / "204b8679f3d0425a4964c1b6574ada41a4aecc186316477cf33fa20be1b301ee.planar_code"
-    )
+    planar_code = ROOT / "tests" / "fixtures" / "cube.planar_code"
     output = tmp_path / "cube"
     status = benchmark.main(
         [

@@ -17,31 +17,100 @@ exceptions.  In particular,
 \end{theorem}
 
 \begin{proof}
-For a ladder of length \(m\), put binary variables \(x_{t,s}\) on rail \(s\)
-of cell \(t\), \(y_t\) on rung \(t\), and \(c_{0,s},c_{m,s}\) on its endpoint
-connectors.  At an internal vertex the degree-two equation is
+For a ladder of odd length \(m\), put binary variables \(x_{t,s}\) on rail
+\(s\in\{0,1\}\) of cell \(t\), where \(0\le t<m\), and \(y_t\) on rung
+\(t\), where \(0\le t\le m\).  Let \(c_{0,s},c_{m,s}\) be its endpoint
+connector bits.  A Hamiltonian cycle satisfies the degree-two equations
+\begin{align}
+ x_{0,s}+y_0+c_{0,s}&=2,\label{eq:ladder-left-degree}\\
+ x_{t-1,s}+x_{t,s}+y_t&=2 &&(0<t<m),\label{eq:ladder-inner-degree}\\
+ x_{m-1,s}+y_m+c_{m,s}&=2.\label{eq:ladder-right-degree}
+\end{align}
+Writing \(d_t=x_{t,0}-x_{t,1}\) and subtracting the two side equations gives
 \[
- x_{t-1,s}+x_{t,s}+y_t=2,
+ d_0=c_{0,1}-c_{0,0},\qquad d_t=-d_{t-1},\qquad
+ d_{m-1}=c_{m,1}-c_{m,0}.
 \]
-with the analogous endpoint equations including \(c_{0,s}\) or \(c_{m,s}\).
-Subtracting the equations on the two rails gives
-\(d_t=-d_{t-1}\), where \(d_t=x_{t,0}-x_{t,1}\).  Thus the endpoint connector
-bits determine the alternating rail difference, after which every rung is
-forced.
+Since \(m-1\) is even, a necessary endpoint condition is
+\begin{equation}
+\label{eq:ladder-endpoint-compatibility}
+ c_{0,0}-c_{0,1}=c_{m,0}-c_{m,1}.
+\end{equation}
+The connector bits therefore determine the rail differences.  A difference
+of \(1\) or \(-1\) fixes both binary rail variables, whereas a difference
+of zero leaves the choices \((0,0)\) and \((1,1)\).  Once the rail variables
+are fixed, the degree equations determine every rung.  We impose connectivity
+below to resolve the remaining choices.
 
-If all four connectors are selected, \(d_0=0\), so the two rail choices agree
-in every cell.  A zero rail pair forces the two bounding rungs.  Two such zero
-pairs enclose a separate cycle, so a connected spanning solution has either no
-zero pair or one.  The two ladders must have the same type: one straight and
-one turned produces two components.  Hence there is one all-rails cycle and
-one cycle for each independent pair of turn positions.
+The four connectors form the cut between the two nonempty ladders.  A
+Hamiltonian cycle crosses this cut a positive even number of times, so it
+uses either all four connectors or exactly two.
 
-If exactly two connectors are selected, applying
-\(d_t=(-1)^t d_0\) at the far endpoint and using odd \(m\) leaves the four
-connector words \(1100,0011,1010,0101\).  In each case the recurrence has one
-completion: one ladder uses all rungs and alternating rails, while the other
-uses all rails and only the appropriate endpoint rung.  The remaining words
-close a component before all vertices are reached.  The connector cut must be
-crossed a positive even number of times, so zero, one, and three connectors
-cannot yield a Hamiltonian cycle.  These cases exhaust the recurrence.
+\smallskip\noindent\emph{Four connectors.}
+Here all endpoint bits are one, so \(x_{t,0}=x_{t,1}=z_t\), and
+\[
+ y_0=1-z_0,\qquad y_m=1-z_{m-1},\qquad
+ y_t=2-z_{t-1}-z_t\quad(0<t<m).
+\]
+Adjacent zero values of \(z\) would force a rung value of two and are
+impossible.  If there are at least two zero positions, choose consecutive
+ones \(i<j\) in their ordered list.  Both rails are present in cells
+\(i+1,\ldots,j-1\), and rungs \(i+1\) and \(j\) are present.  These edges
+form a cycle isolated from the rest of the graph by the omitted rail pairs
+in cells \(i\) and \(j\).  Thus each ladder has either no zero position or
+exactly one.
+
+With no zero position, the ladder consists of its two straight rails.
+With one zero position, it consists of two vertex-disjoint paths that together
+span the ladder, each joining the two terminals at one end.  Number the connectors
+\(1,2,3,4\) in the order of \cref{eq:connectors}.  The resulting terminal
+pairings are
+\[
+\begin{array}{c|cc}
+ &\text{straight}&\text{one turn}\\ \hline
+ A&13\mid24&12\mid34\\
+ B&12\mid34&13\mid24
+\end{array}
+\]
+where, for example, \(13\mid24\) pairs terminals 1 with 3 and 2 with 4.
+Different pairings on the two ladders join into a single spanning cycle;
+identical pairings give two components.  Consequently both ladders must be
+straight or both must turn.  The former gives one all-rails cycle \(R\).
+The latter gives one cycle \(T(i,j)\) for each choice of turn cells
+\(0\le i<a\) and \(0\le j<b\), hence exactly \(ab\) cycles.
+
+\smallskip\noindent\emph{Two connectors.}
+There are six connector words of weight two.  For \(1001\) and \(0110\),
+the endpoint differences on ladder \(A\) have opposite signs, violating
+\cref{eq:ladder-endpoint-compatibility}.  Thus these two words cannot even
+satisfy the degree equations.  The four remaining words give the following
+configurations:
+\[
+\begin{array}{c|cc}
+\text{word}& A&B\\ \hline
+0011&\text{all rails, rung }0&\text{alternating rails, all rungs}\\
+1100&\text{all rails, rung }a&\text{alternating rails, all rungs}\\
+0101&\text{alternating rails, all rungs}&\text{all rails, rung }0\\
+1010&\text{alternating rails, all rungs}&\text{all rails, rung }b
+\end{array}
+\]
+To justify uniqueness, in the alternating ladder the rail differences are
+alternately \(1\) and \(-1\).  They fix each rail pair, and the degree
+equations force every rung to be present.  These edges form a single spanning
+path between the two selected connector terminals.
+
+In the other ladder the two selected connectors are at the same end.  The
+endpoint equations at the opposite, connector-free end force its rung and
+both adjacent rails to be present.  All rail differences are zero.  If a
+zero rail pair occurred, the portion from the connector-free end to the
+first such pair would form an isolated cycle.  Connectivity therefore
+forces all rails to be present; the degree equations leave only the rung
+at the connector-free end.  This also gives a single spanning path between
+the selected terminals.  The two connectors join the two paths into one
+Hamiltonian cycle.  Each of the four words therefore has exactly one
+Hamiltonian completion.
+
+The cases exhaust all possible connector selections.  The turn positions
+and connector words distinguish the resulting edge sets, giving precisely
+\(1+ab+4=ab+5\) Hamiltonian cycles.
 \end{proof}

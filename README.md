@@ -11,12 +11,25 @@ generation and verification, and structural analysis tools. Correctness,
 deterministic output, and independently verifiable certificates take priority
 over runtime. ILP and GPU support are not implemented.
 
-The complete certified census through order 36 establishes the Barnette
-Hamiltonian edge-separation extremal sequence on orders 8 through 36. In
-particular, `M_B(36) = 49`, uniquely attained by the graph with canonical hash
-`2f96ada16c46cd2bd038b97d5af44f46ed14522cba1edf3fa041d66e02107bcc`.
-The immutable proof artifacts are intentionally stored outside this source
-repository; the analysis tools consume them read-only.
+**Public research draft; not peer-reviewed.** The original study reported a
+complete certified extremal sequence through order 36, including `M_B(36) = 49`.
+The original external proof packages were lost in an accidental drive deletion.
+This release provides reconstructed certificates for all 55 graphs through
+order 24, 39 of the 57 graphs at order 26, and three individual graphs at order
+32. Results above order 24 do not currently constitute a publicly reproducible
+complete census. See [data availability](docs/data_availability.md) for the
+precise scope, independent verifier, and release downloads.
+
+The general double-ladder formula has a self-contained proof in the
+[manuscript](paper/generated/main.pdf) and independent finite regression checks.
+The loss of the original census files is separate from that symbolic argument.
+
+## License and citation
+
+Original software is MIT licensed. The original manuscript, research figures,
+and research data are CC BY 4.0 where applicable; third-party material retains
+its own terms. See [license scope](LICENSES/README.md),
+[third-party notices](THIRD_PARTY_NOTICES.md), and [CITATION.cff](CITATION.cff).
 
 ## Installation
 
@@ -28,6 +41,12 @@ python -m pip install -e .
 python -m pip install -e ".[sat]"
 python -m pip install -e ".[test]"
 ```
+
+External research data defaults to the ignored `results/` directory. Set
+`BARNETTE_RESULTS_ROOT` to another directory, or use the relevant tool's explicit
+`--sequence-root`, `--prediction-root`, `--census`, or `--output-root` option.
+Examples below use `results/`; tools needing the lost original packages require
+those packages to be recovered or reconstructed first.
 
 ## Usage
 
@@ -374,9 +393,9 @@ artifact checks.
 
 ```console
 python tools/render_all_maximizers.py ^
-  --sequence-root E:\barnette-results\barnie-sequence ^
-  --gallery-root E:\barnette-results\barnie-sequence\gallery ^
-  --engine E:\barnette-results\barnie-gallery-toolchain\planar_draw.exe ^
+  --sequence-root results\barnie-sequence ^
+  --gallery-root results\barnie-sequence\gallery ^
+  --engine results\barnie-gallery-toolchain\planar_draw.exe ^
   --engine-source tools\planar_draw.c ^
   --compiler path\to\gcc.exe ^
   --compat-include tools\planar_draw_compat
@@ -397,25 +416,24 @@ separately records observations about tied maximizers.
 
 ```console
 python tools/analyze_ladder_family.py ^
-  --sequence-root E:\barnette-results\barnie-sequence ^
-  --gallery-root E:\barnette-results\barnie-sequence\gallery ^
-  --output-root E:\barnette-results\barnie-sequence\ladder-analysis
+  --sequence-root results\barnie-sequence ^
+  --gallery-root results\barnie-sequence\gallery ^
+  --output-root results\barnie-sequence\ladder-analysis
 ```
 
 For the unique maximizers at orders divisible by four, the certified graphs form
 a double-ladder family `D(a,b)` connected by one fixed square insertion. The
-complete certified cycle universes satisfy `|H(D(a,b))| = ab + 5`. A
-subsequent packing-certificate analysis proves the general lower bound
+complete certified cycle universes satisfy `|H(D(a,b))| = ab + 5`. The
+manuscript proves the general cycle classification and combines a symbolic
+packing with a separating family of the same size to establish
 
 ```text
-hsep(D(a,b)) >= ((a+2)(b+2)-1)/2
+hsep(D(a,b)) = ((a+2)(b+2)-1)/2
 ```
 
-for odd `a,b >= 3`, together with a square-insertion lift of the lower
-certificate. Equality remains conjectural because a general separating family
-of the same size is not yet known. Predictions for orders 38 and 40 are still
-emitted with an explicit unproved warning; the analysis does not enumerate or
-optimize either order.
+for odd `a,b >= 3`. Global extremality beyond the certified census remains
+conjectural. The structural analysis still labels its order-level predictions
+for 38 and 40 as unproved and does not enumerate or optimize either order.
 
 ## Prospective double-ladder prediction test
 
@@ -441,13 +459,13 @@ requirement, and validates the manifests.
 
 ```console
 python tools/test_double_ladder_predictions.py --resume
-python E:\barnette-results\double-ladder-prediction-test\verify_double_ladder_predictions.py ^
-  E:\barnette-results\double-ladder-prediction-test --check-manifest
+python results\double-ladder-prediction-test\verify_double_ladder_predictions.py ^
+  results\double-ladder-prediction-test --check-manifest
 ```
 
 The immutable package is written to
-`E:\barnette-results\double-ladder-prediction-test`; resumable checkpoints are
-kept separately in `E:\barnette-results\double-ladder-prediction-test-work`.
+`results\double-ladder-prediction-test`; resumable checkpoints are
+kept separately in `results\double-ladder-prediction-test-work`.
 No complete census was run at orders 40, 44, or 48. Consequently these results
 do not establish `M_B(40)`, `M_B(44)`, or `M_B(48)`, and do not prove that the
 three graphs are extremal.
@@ -477,12 +495,12 @@ the precise construction, proof status, hashes, and verification commands.
 
 ```console
 python tools/analyze_double_ladder_packings.py ^
-  --sequence-root E:\barnette-results\barnie-sequence ^
-  --prediction-root E:\barnette-results\double-ladder-prediction-test ^
-  --output-root E:\barnette-results\double-ladder-packing-lift ^
+  --sequence-root results\barnie-sequence ^
+  --prediction-root results\double-ladder-prediction-test ^
+  --output-root results\double-ladder-packing-lift ^
   --repo .
 python tools/verify_double_ladder_packing_lift.py ^
-  E:\barnette-results\double-ladder-packing-lift --check-manifest
+  results\double-ladder-packing-lift --check-manifest
 ```
 
 The producer performs no census generation, graph search, Hamiltonian-cycle

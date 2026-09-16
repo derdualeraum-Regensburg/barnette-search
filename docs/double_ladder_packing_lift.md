@@ -1,7 +1,7 @@
 # Double-ladder packing-certificate lift
 
 This document records the compact, repository-tracked summary of the immutable
-analysis package at `E:\barnette-results\double-ladder-packing-lift`. The large
+analysis package at `results\double-ladder-packing-lift`. The large
 cycle universes and generated JSON reports remain outside the repository.
 
 ## Scope and integrity
@@ -117,13 +117,13 @@ No novelty claim is made.
 
 ```console
 python tools/analyze_double_ladder_packings.py ^
-  --sequence-root E:\barnette-results\barnie-sequence ^
-  --prediction-root E:\barnette-results\double-ladder-prediction-test ^
-  --output-root E:\barnette-results\double-ladder-packing-lift ^
+  --sequence-root results\barnie-sequence ^
+  --prediction-root results\double-ladder-prediction-test ^
+  --output-root results\double-ladder-packing-lift ^
   --repo .
 
 python tools/verify_double_ladder_packing_lift.py ^
-  E:\barnette-results\double-ladder-packing-lift --check-manifest
+  results\double-ladder-packing-lift --check-manifest
 
 python -m pytest tests\test_double_ladder_packing.py ^
   tests\test_double_ladder_prediction_test.py -q

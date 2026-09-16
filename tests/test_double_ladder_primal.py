@@ -1,6 +1,8 @@
 """Focused tests for the symbolic double-ladder separating family."""
 
-from pathlib import Path
+import pytest
+
+from barnette_search.paths import results_root
 
 from barnette_search.double_ladder_prediction_test import connector_edges, cycle_edges
 from barnette_search.double_ladder_primal import (
@@ -18,8 +20,8 @@ from barnette_search.double_ladder_primal import (
 )
 
 
-SEQUENCE_ROOT = Path(r"E:\barnette-results\barnie-sequence")
-PREDICTION_ROOT = Path(r"E:\barnette-results\double-ladder-prediction-test")
+SEQUENCE_ROOT = results_root() / "barnie-sequence"
+PREDICTION_ROOT = results_root() / "double-ladder-prediction-test"
 
 
 def test_symbolic_antichain_on_representative_parameter_pairs() -> None:
@@ -32,7 +34,7 @@ def test_symbolic_antichain_on_representative_parameter_pairs() -> None:
 
 def test_immutable_primals_equal_symbolic_family_and_separate() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        return
+        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
     for dataset in load_primal_chain(SEQUENCE_ROOT, PREDICTION_ROOT):
         normalized = normalize_primal(dataset)
         assert normalized["exactly_equals_symbolic_family"]
@@ -47,7 +49,7 @@ def test_immutable_primals_equal_symbolic_family_and_separate() -> None:
 
 def test_symbolic_incidence_matches_all_selected_certified_cycles() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        return
+        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
     for dataset in load_primal_chain(SEQUENCE_ROOT, PREDICTION_ROOT):
         graph = dataset.graph
         cycle_keys = graph.cycle_keys
@@ -76,7 +78,7 @@ def test_symbolic_incidence_matches_all_selected_certified_cycles() -> None:
 
 def test_certified_square_insertions_have_expected_repair_and_increment_counts() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        return
+        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
     datasets = load_primal_chain(SEQUENCE_ROOT, PREDICTION_ROOT)
     for source, target, axis in zip(datasets, datasets[1:], ("B", "A", "B")):
         certificate = target.graph.graph_directory / "expansion_certificate.json"

@@ -14,3 +14,13 @@ paper/generated/*
 # Externes Zeichenprogramm von Gunnar Brinkmann
 /tools/planar_draw.c
 /tools/planar_draw.exe
+
+# Private publication backups and local preparation state; never publish.
+/.publication-private/
+/tmp/
+/output/
+*.code-workspace
+**/zig-cache/
+**/.zig-cache/
+**/planar_draw.exe
+**/planar_draw.pdb

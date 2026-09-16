@@ -1,6 +1,6 @@
 """Focused tests for the prospective double-ladder construction pipeline."""
 
-from pathlib import Path
+import pytest
 
 import networkx as nx
 
@@ -11,11 +11,10 @@ from barnette_search.double_ladder_prediction_test import (
     normalize_cycle,
 )
 from barnette_search.ladder_analysis import double_ladder_graph
+from barnette_search.paths import results_root
 
 
-LADDER_FAMILY = Path(
-    r"E:\barnette-results\barnie-sequence\ladder-analysis\ladder_family.json"
-)
+LADDER_FAMILY = results_root() / "barnie-sequence" / "ladder-analysis" / "ladder_family.json"
 
 
 def test_cycle_normalization_removes_orientation_and_start() -> None:
@@ -32,7 +31,7 @@ def test_perfect_matching_enumerator_reproduces_small_family_count() -> None:
 
 def test_prediction_chain_uses_three_valid_square_expansions() -> None:
     if not LADDER_FAMILY.exists():
-        return
+        pytest.skip("original ladder-family certificate unavailable; configure BARNETTE_RESULTS_ROOT")
     graphs, certificates = construct_prediction_chain(LADDER_FAMILY)
     assert [(graph.a, graph.b, len(graph.rotation)) for graph in graphs] == [
         (9, 9, 40),

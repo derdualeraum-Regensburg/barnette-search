@@ -1,5 +1,40 @@
 # Editorial revision report
 
+## Proof revision, 2026-09-16
+
+The Hamiltonian-cycle classification proof now states all endpoint and internal
+degree equations, derives the odd-length endpoint compatibility condition, and
+distinguishes fixed nonzero rail differences from the unresolved zero case.
+The two- and four-connector cases include explicit connectivity arguments,
+a terminal-pairing table, and a table of the four exceptional completions.
+The excluded words `1001` and `0110` are correctly ruled out by degree
+incompatibility. The classification and exact hsep formula retain their values
+and parameter ranges.
+
+Added 118 regression cases: local degree enumeration checks the recurrence,
+odd/even controls verify the diagonal-word exclusion, and a counterexample
+guards against inferring fixed rungs from zero rail differences. The independent
+standard-library audit checks 100 parameter pairs, including 25 complete
+Hamiltonian-cycle universes and matching certificates. The regression scope and
+current suite results are recorded in the manuscript's reproducibility section.
+
+The main README now agrees with the manuscript about the proved family formula
+and the still-open global extremality claim. The bibliography uses the source
+directory's `bibliography.bib`; `latexmkrc` includes a relative lookup for Git
+for Windows Perl invoking native MiKTeX BibTeX, so a full rebuild succeeds
+without retaining an old `.bbl` file.
+
+Validation: `python -m pytest -q` passed with 365 passed and 5 environment-gated
+integration skips in 11.37 seconds, without warnings. A full
+`latexmk -gg -pdf main.tex` build with MiKTeX 25.12 and latexmk 4.88 produced
+an 18-page PDF with all 15 bibliography entries. The final LaTeX log has no
+undefined references or citations and no overfull or underfull boxes. All
+18 rendered pages were inspected, with the revised proof on pages 9--10
+also inspected separately. The external census packages and established solver
+and validation modules were not modified.
+
+## Earlier editorial revision
+
 Date: 2026-08-01
 
 ## Scope and result

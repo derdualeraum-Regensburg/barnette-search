@@ -12,7 +12,7 @@ MinGW-w64 can compile the unmodified source as follows (prepend the compiler's
 `bin` directory to `PATH` so that GCC can find its assembler):
 
 ```text
-gcc -O4 -std=gnu11 -I tools/planar_draw_compat -Wl,--stack,67108864 -o E:\barnette-results\barnie-gallery-toolchain\planar_draw.exe tools\planar_draw.c -lm
+gcc -O4 -std=gnu11 -I tools/planar_draw_compat -Wl,--stack,67108864 -o results\barnie-gallery-toolchain\planar_draw.exe tools\planar_draw.c -lm
 ```
 
 The compatibility include is intentionally empty: the external source includes
@@ -33,11 +33,11 @@ Render all certified maximizers, including every member of a tie:
 
 ```text
 python tools/render_all_maximizers.py ^
-  --sequence-root E:\barnette-results\barnie-sequence ^
-  --gallery-root E:\barnette-results\barnie-sequence\gallery ^
-  --engine E:\barnette-results\barnie-gallery-toolchain\planar_draw.exe ^
+  --sequence-root results\barnie-sequence ^
+  --gallery-root results\barnie-sequence\gallery ^
+  --engine results\barnie-gallery-toolchain\planar_draw.exe ^
   --engine-source tools\planar_draw.c ^
-  --compiler E:\barnette-results\barnie-gallery-toolchain\w64devkit-2.9.0\w64devkit\bin\gcc.exe ^
+  --compiler results\barnie-gallery-toolchain\w64devkit-2.9.0\w64devkit\bin\gcc.exe ^
   --compat-include tools\planar_draw_compat
 ```
 

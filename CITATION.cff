@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this software and identify the release and certificate package used. The accompanying manuscript is a draft, not peer-reviewed."
+type: software
+title: "Barnette Search: Hamiltonian Edge Separation and Verifiable Certificates"
+authors:
+  - family-names: Bauer
+    given-names: Thomas
+version: 0.8.0
+date-released: 2026-09-16
+repository-code: "https://github.com/derdualeraum-Regensburg/barnette-search"
+url: "https://github.com/derdualeraum-Regensburg/barnette-search"
+license: MIT
+keywords:
+  - graph theory
+  - Barnette graphs
+  - Hamiltonian cycles
+  - computational certificates

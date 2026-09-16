@@ -1,12 +1,15 @@
 [build-system]
-requires = ["setuptools>=69"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "barnette-search"
-version = "0.1.0"
+version = "0.8.0"
 description = "Reference tools for computational research on Barnette graphs"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Thomas Bauer"}]
 requires-python = ">=3.10"
 dependencies = [
     "networkx>=3.2",
@@ -16,10 +19,19 @@ dependencies = [
 sat = [
     "python-sat>=1.8.dev1,<2",
 ]
+plot = [
+    "matplotlib>=3.8",
+]
 test = [
     "pytest>=8",
     "python-sat>=1.8.dev1,<2",
+    "matplotlib>=3.8",
+    "psutil>=5.9",
 ]
+
+[project.urls]
+Repository = "https://github.com/derdualeraum-Regensburg/barnette-search"
+Issues = "https://github.com/derdualeraum-Regensburg/barnette-search/issues"
 
 [tool.pytest.ini_options]
 addopts = "-ra --basetemp=.pytest-tmp"
