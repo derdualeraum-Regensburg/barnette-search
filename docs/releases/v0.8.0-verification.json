@@ -1,0 +1,804 @@
+{
+  "verified": true,
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "solver": "standard-library exhaustive verification",
+  "seed": null,
+  "seconds": 527.830109100003,
+  "workers": 4,
+  "graphs": [
+    {
+      "order": 32,
+      "generation_index": 9,
+      "canonical_graph_hash": "d59673303c11ece9f7e8a5362be74bda12c02ec368dc0e784391f54125b30bfd",
+      "exact_hsep": 40,
+      "hamiltonian_cycles": 54,
+      "directory": "hsep-benchmark-n32/high_d5967330"
+    },
+    {
+      "order": 32,
+      "generation_index": 1492,
+      "canonical_graph_hash": "9b0a5fdf152f657feba8b0f03f9baa5b3c24bd448ab311438fca7c38dd2618a0",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 60,
+      "directory": "hsep-benchmark-n32/low_9b0a5fdf"
+    },
+    {
+      "order": 32,
+      "generation_index": 288,
+      "canonical_graph_hash": "ff110bf24355a8a309ede06e0206e1b8f72e4709b081dd6a0fe2431e5f3942c1",
+      "exact_hsep": 15,
+      "hamiltonian_cycles": 138,
+      "directory": "hsep-benchmark-n32/median_ff110bf2"
+    },
+    {
+      "order": 26,
+      "generation_index": 0,
+      "canonical_graph_hash": "21519e3d5db2345d3fb58380ca23bf1ecbbf22ac7110e7bc33fd3a63c8687f25",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-n26/n26/00000_21519e3d5db2345d3fb58380ca23bf1ecbbf22ac7110e7bc33fd3a63c8687f25"
+    },
+    {
+      "order": 26,
+      "generation_index": 1,
+      "canonical_graph_hash": "d0f8e6871ea21aa9a8e49061a77cc08b31c9015595f171caa86621cdbe57ac6f",
+      "exact_hsep": 18,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00001_d0f8e6871ea21aa9a8e49061a77cc08b31c9015595f171caa86621cdbe57ac6f"
+    },
+    {
+      "order": 26,
+      "generation_index": 2,
+      "canonical_graph_hash": "e8920d131dcf4a16e779559b94c6a558cd792f19905479dc8bfe3d0d18e32340",
+      "exact_hsep": 18,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00002_e8920d131dcf4a16e779559b94c6a558cd792f19905479dc8bfe3d0d18e32340"
+    },
+    {
+      "order": 26,
+      "generation_index": 3,
+      "canonical_graph_hash": "4362f55a5cdfd1d35922815c62ea0dd9b461355f5622dfda7ebc6c45f996e247",
+      "exact_hsep": 18,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00003_4362f55a5cdfd1d35922815c62ea0dd9b461355f5622dfda7ebc6c45f996e247"
+    },
+    {
+      "order": 26,
+      "generation_index": 4,
+      "canonical_graph_hash": "446bbab5abec53e46c2c050d66067048e5feb5868b989a911c97b5d8655b4f57",
+      "exact_hsep": 13,
+      "hamiltonian_cycles": 44,
+      "directory": "hsep-census-n26/n26/00004_446bbab5abec53e46c2c050d66067048e5feb5868b989a911c97b5d8655b4f57"
+    },
+    {
+      "order": 26,
+      "generation_index": 5,
+      "canonical_graph_hash": "a6472a3484ecd9eb78bcc0c7c327b11d8be78a4ea326f42d94a4eb0611a31dd4",
+      "exact_hsep": 13,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-n26/n26/00005_a6472a3484ecd9eb78bcc0c7c327b11d8be78a4ea326f42d94a4eb0611a31dd4"
+    },
+    {
+      "order": 26,
+      "generation_index": 6,
+      "canonical_graph_hash": "cdeeca9ddff98dcccd4c2a5a9a8d45ead4bee88bf795f323f6b7f052cdc71c11",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-n26/n26/00006_cdeeca9ddff98dcccd4c2a5a9a8d45ead4bee88bf795f323f6b7f052cdc71c11"
+    },
+    {
+      "order": 26,
+      "generation_index": 7,
+      "canonical_graph_hash": "f75233525d649de4fb2c36a99fcef0becdde1ef00d7d4b87035b7677be4b37b0",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 44,
+      "directory": "hsep-census-n26/n26/00007_f75233525d649de4fb2c36a99fcef0becdde1ef00d7d4b87035b7677be4b37b0"
+    },
+    {
+      "order": 26,
+      "generation_index": 8,
+      "canonical_graph_hash": "90f73b1b2acdbaf499338116e605c9e82c287f3fd208c96e362ba72075ff8332",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00008_90f73b1b2acdbaf499338116e605c9e82c287f3fd208c96e362ba72075ff8332"
+    },
+    {
+      "order": 26,
+      "generation_index": 9,
+      "canonical_graph_hash": "9c97728226daaeb151007f607f689963dea70886a8d8e8bf102a8fbd72c37e08",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00009_9c97728226daaeb151007f607f689963dea70886a8d8e8bf102a8fbd72c37e08"
+    },
+    {
+      "order": 26,
+      "generation_index": 10,
+      "canonical_graph_hash": "ca49335726ce4367ff1d4ade7655f94880c0095bc9a3ea1cf515566e5913d329",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 52,
+      "directory": "hsep-census-n26/n26/00010_ca49335726ce4367ff1d4ade7655f94880c0095bc9a3ea1cf515566e5913d329"
+    },
+    {
+      "order": 26,
+      "generation_index": 11,
+      "canonical_graph_hash": "b1536ab7a21b788ff8996cf6b000a4c591b010e6d3bda67886b06346e8b44db5",
+      "exact_hsep": 18,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00011_b1536ab7a21b788ff8996cf6b000a4c591b010e6d3bda67886b06346e8b44db5"
+    },
+    {
+      "order": 26,
+      "generation_index": 12,
+      "canonical_graph_hash": "54e8245d18a4daa14748969386495ef987206d76221689d1b96f1bbfab656b78",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00012_54e8245d18a4daa14748969386495ef987206d76221689d1b96f1bbfab656b78"
+    },
+    {
+      "order": 26,
+      "generation_index": 13,
+      "canonical_graph_hash": "744549a091ffc3ea7b27ed113a4bced18ee5910e629b141d487ae364b1e7f732",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00013_744549a091ffc3ea7b27ed113a4bced18ee5910e629b141d487ae364b1e7f732"
+    },
+    {
+      "order": 26,
+      "generation_index": 14,
+      "canonical_graph_hash": "2f74504eb108776848e0498dea749445ddb4a845638cade06911b160a3c21051",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00014_2f74504eb108776848e0498dea749445ddb4a845638cade06911b160a3c21051"
+    },
+    {
+      "order": 26,
+      "generation_index": 15,
+      "canonical_graph_hash": "970b4c089bb6e9106c30a1d46ff085a3763b580e5ba56973a3da13d55bdf5c2f",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00015_970b4c089bb6e9106c30a1d46ff085a3763b580e5ba56973a3da13d55bdf5c2f"
+    },
+    {
+      "order": 26,
+      "generation_index": 16,
+      "canonical_graph_hash": "5f9b50212dbbf0d6c185dd83c9374c7d774d907d3dbff24c58748f266f3e78ec",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00016_5f9b50212dbbf0d6c185dd83c9374c7d774d907d3dbff24c58748f266f3e78ec"
+    },
+    {
+      "order": 26,
+      "generation_index": 17,
+      "canonical_graph_hash": "f1404ef7c0550a850554b1e01017a78f0ffd1fe2864e7aa485f35855bb3e2dd4",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00017_f1404ef7c0550a850554b1e01017a78f0ffd1fe2864e7aa485f35855bb3e2dd4"
+    },
+    {
+      "order": 26,
+      "generation_index": 18,
+      "canonical_graph_hash": "2047e7d0faefbb7dce56cf718f71242a18fd0349b764b8f01bab12c855be95b6",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00018_2047e7d0faefbb7dce56cf718f71242a18fd0349b764b8f01bab12c855be95b6"
+    },
+    {
+      "order": 26,
+      "generation_index": 19,
+      "canonical_graph_hash": "11e238a2d6aa215c467eec236adc903158548a9f21230669f31103d3ecf838ab",
+      "exact_hsep": 18,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00019_11e238a2d6aa215c467eec236adc903158548a9f21230669f31103d3ecf838ab"
+    },
+    {
+      "order": 26,
+      "generation_index": 20,
+      "canonical_graph_hash": "ba628597094f4be80aa67e6c6a5e58432cbb76fa1ceb8ed5a99c8bc0ab6066e0",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00020_ba628597094f4be80aa67e6c6a5e58432cbb76fa1ceb8ed5a99c8bc0ab6066e0"
+    },
+    {
+      "order": 26,
+      "generation_index": 21,
+      "canonical_graph_hash": "f5ed6dbd23a0446607522dcc70beb7aff739ff8771aa2c5d9211cca0ddca95f6",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00021_f5ed6dbd23a0446607522dcc70beb7aff739ff8771aa2c5d9211cca0ddca95f6"
+    },
+    {
+      "order": 26,
+      "generation_index": 22,
+      "canonical_graph_hash": "6f0a8402f1a6b0eba0d4f24472e4db53fbdd9c37d96a9cc7686bac37361959f3",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 36,
+      "directory": "hsep-census-n26/n26/00022_6f0a8402f1a6b0eba0d4f24472e4db53fbdd9c37d96a9cc7686bac37361959f3"
+    },
+    {
+      "order": 26,
+      "generation_index": 23,
+      "canonical_graph_hash": "d838d417c89707141c5fe8027e93cc06d1691d9e6be107aadeb0e85785b01336",
+      "exact_hsep": 13,
+      "hamiltonian_cycles": 36,
+      "directory": "hsep-census-n26/n26/00023_d838d417c89707141c5fe8027e93cc06d1691d9e6be107aadeb0e85785b01336"
+    },
+    {
+      "order": 26,
+      "generation_index": 24,
+      "canonical_graph_hash": "570eb6fcd2562b99cca27ec7220da56cc24ee6515c5ab470035808f3baec336a",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00024_570eb6fcd2562b99cca27ec7220da56cc24ee6515c5ab470035808f3baec336a"
+    },
+    {
+      "order": 26,
+      "generation_index": 25,
+      "canonical_graph_hash": "65d39d8acfb65b5d00a73f82d653e885021aa8706ce94d4d19bab919d1bc9953",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00025_65d39d8acfb65b5d00a73f82d653e885021aa8706ce94d4d19bab919d1bc9953"
+    },
+    {
+      "order": 26,
+      "generation_index": 26,
+      "canonical_graph_hash": "bdf8cdbdec8988ec909b4383db1dbb076d078ee19c69a9d9d58df2e079c21d6a",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00026_bdf8cdbdec8988ec909b4383db1dbb076d078ee19c69a9d9d58df2e079c21d6a"
+    },
+    {
+      "order": 26,
+      "generation_index": 27,
+      "canonical_graph_hash": "ac526efc81fbd8029724e2b26cb4fc7640634ca2af9cc3c487e82610eb73cf5a",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00027_ac526efc81fbd8029724e2b26cb4fc7640634ca2af9cc3c487e82610eb73cf5a"
+    },
+    {
+      "order": 26,
+      "generation_index": 28,
+      "canonical_graph_hash": "4e3431359fe35a0a840c03ca7d5bf85e0582eb11febf10b91e2728427fedc205",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00028_4e3431359fe35a0a840c03ca7d5bf85e0582eb11febf10b91e2728427fedc205"
+    },
+    {
+      "order": 26,
+      "generation_index": 29,
+      "canonical_graph_hash": "a46b0a6bec87ec944110f322a7645ad19adec8bb6913a6bb59cb73fc75ca99b8",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00029_a46b0a6bec87ec944110f322a7645ad19adec8bb6913a6bb59cb73fc75ca99b8"
+    },
+    {
+      "order": 26,
+      "generation_index": 30,
+      "canonical_graph_hash": "c1f058a9363a82c85780003ebdeaf18cc0c547f16e7685a4e417685c1a98b050",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00030_c1f058a9363a82c85780003ebdeaf18cc0c547f16e7685a4e417685c1a98b050"
+    },
+    {
+      "order": 26,
+      "generation_index": 31,
+      "canonical_graph_hash": "49c8c1899240942e0a015de968be3ab050b8dc5d8abed72343bcd06d8bd651a5",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 56,
+      "directory": "hsep-census-n26/n26/00031_49c8c1899240942e0a015de968be3ab050b8dc5d8abed72343bcd06d8bd651a5"
+    },
+    {
+      "order": 26,
+      "generation_index": 32,
+      "canonical_graph_hash": "5a1153e28f79afe9348670998a037872e57717c9a2a65b0bbf67c3e8d190731c",
+      "exact_hsep": 13,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00032_5a1153e28f79afe9348670998a037872e57717c9a2a65b0bbf67c3e8d190731c"
+    },
+    {
+      "order": 26,
+      "generation_index": 33,
+      "canonical_graph_hash": "65e6e9ff42bb4fecd2cd3ea9e1b5eb777aef8e7f59c547436d8a9e634ab418e0",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-n26/n26/00033_65e6e9ff42bb4fecd2cd3ea9e1b5eb777aef8e7f59c547436d8a9e634ab418e0"
+    },
+    {
+      "order": 26,
+      "generation_index": 34,
+      "canonical_graph_hash": "50fc79713004619a08594d8b9860350919824bdfca920c638b0553235fb0b4bf",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 44,
+      "directory": "hsep-census-n26/n26/00034_50fc79713004619a08594d8b9860350919824bdfca920c638b0553235fb0b4bf"
+    },
+    {
+      "order": 26,
+      "generation_index": 35,
+      "canonical_graph_hash": "b5f64e86764fe3fb966d7948ee988abfb5f3ae6061f3fcfc8eda5a9bc82c0b7b",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 36,
+      "directory": "hsep-census-n26/n26/00035_b5f64e86764fe3fb966d7948ee988abfb5f3ae6061f3fcfc8eda5a9bc82c0b7b"
+    },
+    {
+      "order": 26,
+      "generation_index": 36,
+      "canonical_graph_hash": "12b7ad962f5f6e5409b7aadf56a27151254f2f8e66be412643503fd759d54d18",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-n26/n26/00036_12b7ad962f5f6e5409b7aadf56a27151254f2f8e66be412643503fd759d54d18"
+    },
+    {
+      "order": 26,
+      "generation_index": 37,
+      "canonical_graph_hash": "4db12d0d641e5867d99ff3f298df2ba17f2b9c079950fd55d9d0e30794339f67",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00037_4db12d0d641e5867d99ff3f298df2ba17f2b9c079950fd55d9d0e30794339f67"
+    },
+    {
+      "order": 26,
+      "generation_index": 38,
+      "canonical_graph_hash": "099a9ef4b809751c9eef76b1cda282d73439ba2c2f0c4b8fb2f2c8e8bb813bce",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-n26/n26/00038_099a9ef4b809751c9eef76b1cda282d73439ba2c2f0c4b8fb2f2c8e8bb813bce"
+    },
+    {
+      "order": 8,
+      "generation_index": 0,
+      "canonical_graph_hash": "204b8679f3d0425a4964c1b6574ada41a4aecc186316477cf33fa20be1b301ee",
+      "exact_hsep": 6,
+      "hamiltonian_cycles": 6,
+      "directory": "hsep-census-through-24/n08/00000_204b8679f3d0425a4964c1b6574ada41a4aecc186316477cf33fa20be1b301ee"
+    },
+    {
+      "order": 12,
+      "generation_index": 0,
+      "canonical_graph_hash": "46f6ff56df724f98eef5d7733cd83f18593fcd72358b085b3d6570387472fd09",
+      "exact_hsep": 8,
+      "hamiltonian_cycles": 8,
+      "directory": "hsep-census-through-24/n12/00000_46f6ff56df724f98eef5d7733cd83f18593fcd72358b085b3d6570387472fd09"
+    },
+    {
+      "order": 14,
+      "generation_index": 0,
+      "canonical_graph_hash": "3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 12,
+      "directory": "hsep-census-through-24/n14/00000_3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445"
+    },
+    {
+      "order": 16,
+      "generation_index": 0,
+      "canonical_graph_hash": "ef77955af28d4298a9269a4794f8e9b54516e7341ca79fa9c03bdce294d410ae",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 10,
+      "directory": "hsep-census-through-24/n16/00000_ef77955af28d4298a9269a4794f8e9b54516e7341ca79fa9c03bdce294d410ae"
+    },
+    {
+      "order": 16,
+      "generation_index": 1,
+      "canonical_graph_hash": "4ebda4f88e8ec130e61d08014553b63496f7f014fcfc1909de218915fe6ec7c3",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 14,
+      "directory": "hsep-census-through-24/n16/00001_4ebda4f88e8ec130e61d08014553b63496f7f014fcfc1909de218915fe6ec7c3"
+    },
+    {
+      "order": 18,
+      "generation_index": 0,
+      "canonical_graph_hash": "9a80d55c5422bd241fbb0e117e6ba3e12fd2ab5059f5c7457b0df89076d2bef4",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 16,
+      "directory": "hsep-census-through-24/n18/00000_9a80d55c5422bd241fbb0e117e6ba3e12fd2ab5059f5c7457b0df89076d2bef4"
+    },
+    {
+      "order": 18,
+      "generation_index": 1,
+      "canonical_graph_hash": "2b47f68d4a8cded323e36ad5769e87844599e92773d932939b31dc845eed37fc",
+      "exact_hsep": 9,
+      "hamiltonian_cycles": 20,
+      "directory": "hsep-census-through-24/n18/00001_2b47f68d4a8cded323e36ad5769e87844599e92773d932939b31dc845eed37fc"
+    },
+    {
+      "order": 20,
+      "generation_index": 0,
+      "canonical_graph_hash": "21b069a345afde090a31626cf01b3a77a6213881722033af13ce77b0a73fd79c",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 12,
+      "directory": "hsep-census-through-24/n20/00000_21b069a345afde090a31626cf01b3a77a6213881722033af13ce77b0a73fd79c"
+    },
+    {
+      "order": 20,
+      "generation_index": 1,
+      "canonical_graph_hash": "bc06aac0e71d2079b0328b10b294bff248640b07ba1b4863e1510592285d49f3",
+      "exact_hsep": 17,
+      "hamiltonian_cycles": 20,
+      "directory": "hsep-census-through-24/n20/00001_bc06aac0e71d2079b0328b10b294bff248640b07ba1b4863e1510592285d49f3"
+    },
+    {
+      "order": 20,
+      "generation_index": 2,
+      "canonical_graph_hash": "6e31bb7b37ee0418c15be95234621616684f596ff26708e62eac680d7c22c6b0",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-through-24/n20/00002_6e31bb7b37ee0418c15be95234621616684f596ff26708e62eac680d7c22c6b0"
+    },
+    {
+      "order": 20,
+      "generation_index": 3,
+      "canonical_graph_hash": "853a8e7d8bcbc136eb7f0917fd0383a61e7e9a855772fee5dbd25c1bc3dc95ca",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-through-24/n20/00003_853a8e7d8bcbc136eb7f0917fd0383a61e7e9a855772fee5dbd25c1bc3dc95ca"
+    },
+    {
+      "order": 20,
+      "generation_index": 4,
+      "canonical_graph_hash": "01e55e6418010e5dc9562618213b3be96a8fb40d3d19059411d058300d7fb4f5",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 20,
+      "directory": "hsep-census-through-24/n20/00004_01e55e6418010e5dc9562618213b3be96a8fb40d3d19059411d058300d7fb4f5"
+    },
+    {
+      "order": 20,
+      "generation_index": 5,
+      "canonical_graph_hash": "57c05d43c2f232f0cb7199ee4d9cb07855fa4405566e1319fa6f039d1e8af912",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-through-24/n20/00005_57c05d43c2f232f0cb7199ee4d9cb07855fa4405566e1319fa6f039d1e8af912"
+    },
+    {
+      "order": 20,
+      "generation_index": 6,
+      "canonical_graph_hash": "208ff8d9832e98c0ddfb919098fdc0f19c0ac93ed3a1120d6a5dd6cc19a92f0c",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-through-24/n20/00006_208ff8d9832e98c0ddfb919098fdc0f19c0ac93ed3a1120d6a5dd6cc19a92f0c"
+    },
+    {
+      "order": 20,
+      "generation_index": 7,
+      "canonical_graph_hash": "84255e1284815f819cdb3e01102e6497bcc6702fe99942f26993d50f994e878e",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-through-24/n20/00007_84255e1284815f819cdb3e01102e6497bcc6702fe99942f26993d50f994e878e"
+    },
+    {
+      "order": 22,
+      "generation_index": 0,
+      "canonical_graph_hash": "db40b68e38dc950c5e7210b08706ef79ea9e65c02b0512150fe5b584af8a0225",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 20,
+      "directory": "hsep-census-through-24/n22/00000_db40b68e38dc950c5e7210b08706ef79ea9e65c02b0512150fe5b584af8a0225"
+    },
+    {
+      "order": 22,
+      "generation_index": 1,
+      "canonical_graph_hash": "c810383a3066be3e827930d324a7377877c2723f445fc1fbf7cacf4eb5456b74",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 24,
+      "directory": "hsep-census-through-24/n22/00001_c810383a3066be3e827930d324a7377877c2723f445fc1fbf7cacf4eb5456b74"
+    },
+    {
+      "order": 22,
+      "generation_index": 2,
+      "canonical_graph_hash": "e7b8d71071d83c153fc292c2c4a85c55755278d8a50808e2832d11a168ed322a",
+      "exact_hsep": 13,
+      "hamiltonian_cycles": 28,
+      "directory": "hsep-census-through-24/n22/00002_e7b8d71071d83c153fc292c2c4a85c55755278d8a50808e2832d11a168ed322a"
+    },
+    {
+      "order": 22,
+      "generation_index": 3,
+      "canonical_graph_hash": "48307be5655a8a478c363cc2b63cf53ca7efc6d4ff4a02743e55d1b91cd9f4c3",
+      "exact_hsep": 13,
+      "hamiltonian_cycles": 28,
+      "directory": "hsep-census-through-24/n22/00003_48307be5655a8a478c363cc2b63cf53ca7efc6d4ff4a02743e55d1b91cd9f4c3"
+    },
+    {
+      "order": 22,
+      "generation_index": 4,
+      "canonical_graph_hash": "0f9e37b3f20850697762ebe2da872c3f2dc38917a681a56fb05ce74e078e952c",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n22/00004_0f9e37b3f20850697762ebe2da872c3f2dc38917a681a56fb05ce74e078e952c"
+    },
+    {
+      "order": 22,
+      "generation_index": 5,
+      "canonical_graph_hash": "c6e7725c0b77c75461c8e0586e87f787613ea94396e879efcafe53caf7da7e90",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 20,
+      "directory": "hsep-census-through-24/n22/00005_c6e7725c0b77c75461c8e0586e87f787613ea94396e879efcafe53caf7da7e90"
+    },
+    {
+      "order": 22,
+      "generation_index": 6,
+      "canonical_graph_hash": "a21601cbe8e0c513993821d11cd85776a2658036b5f2fa1f1866ce3b05ef4675",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 28,
+      "directory": "hsep-census-through-24/n22/00006_a21601cbe8e0c513993821d11cd85776a2658036b5f2fa1f1866ce3b05ef4675"
+    },
+    {
+      "order": 22,
+      "generation_index": 7,
+      "canonical_graph_hash": "cd24e1e0a97d2f3ff05e247de58f6366dd4aa5a28d9f86e3bf0353fdda854ad6",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 28,
+      "directory": "hsep-census-through-24/n22/00007_cd24e1e0a97d2f3ff05e247de58f6366dd4aa5a28d9f86e3bf0353fdda854ad6"
+    },
+    {
+      "order": 24,
+      "generation_index": 0,
+      "canonical_graph_hash": "2caa2ca9bcb3b0f68c0fd6ae6775ddb3a1ab069eea04fdea262c3aa64526cc6c",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 14,
+      "directory": "hsep-census-through-24/n24/00000_2caa2ca9bcb3b0f68c0fd6ae6775ddb3a1ab069eea04fdea262c3aa64526cc6c"
+    },
+    {
+      "order": 24,
+      "generation_index": 1,
+      "canonical_graph_hash": "fb1f22bc06d7f5772b68eba53728d450654668c7ab8315422226763dcde5b80d",
+      "exact_hsep": 22,
+      "hamiltonian_cycles": 26,
+      "directory": "hsep-census-through-24/n24/00001_fb1f22bc06d7f5772b68eba53728d450654668c7ab8315422226763dcde5b80d"
+    },
+    {
+      "order": 24,
+      "generation_index": 2,
+      "canonical_graph_hash": "5a3354bd7a56777958901762cb161560b5dc0a7e76ddbf5a3a59405ea7561425",
+      "exact_hsep": 24,
+      "hamiltonian_cycles": 30,
+      "directory": "hsep-census-through-24/n24/00002_5a3354bd7a56777958901762cb161560b5dc0a7e76ddbf5a3a59405ea7561425"
+    },
+    {
+      "order": 24,
+      "generation_index": 3,
+      "canonical_graph_hash": "28a0a7e549df748d10687cb79186c1f714e4ebefc28c67dc077018c02328df4d",
+      "exact_hsep": 14,
+      "hamiltonian_cycles": 34,
+      "directory": "hsep-census-through-24/n24/00003_28a0a7e549df748d10687cb79186c1f714e4ebefc28c67dc077018c02328df4d"
+    },
+    {
+      "order": 24,
+      "generation_index": 4,
+      "canonical_graph_hash": "7ba281d5392df4725f3e7389a34fd8de11e0ab5bb2ead3551b142b42a61a983f",
+      "exact_hsep": 15,
+      "hamiltonian_cycles": 42,
+      "directory": "hsep-census-through-24/n24/00004_7ba281d5392df4725f3e7389a34fd8de11e0ab5bb2ead3551b142b42a61a983f"
+    },
+    {
+      "order": 24,
+      "generation_index": 5,
+      "canonical_graph_hash": "2ce3cb144cff4723eb68280eaef0fe180b1c19f9e935d072ceab9ee24e0e51f8",
+      "exact_hsep": 18,
+      "hamiltonian_cycles": 38,
+      "directory": "hsep-census-through-24/n24/00005_2ce3cb144cff4723eb68280eaef0fe180b1c19f9e935d072ceab9ee24e0e51f8"
+    },
+    {
+      "order": 24,
+      "generation_index": 6,
+      "canonical_graph_hash": "231e8f465b5ef38f8de0e5b28342aa5fc35b08340ee8392b7e3e50ae55930f01",
+      "exact_hsep": 16,
+      "hamiltonian_cycles": 38,
+      "directory": "hsep-census-through-24/n24/00006_231e8f465b5ef38f8de0e5b28342aa5fc35b08340ee8392b7e3e50ae55930f01"
+    },
+    {
+      "order": 24,
+      "generation_index": 7,
+      "canonical_graph_hash": "e62e621660de0faad3c083b667dddcff4861a024995750e2369e2413d8a4a4b0",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 42,
+      "directory": "hsep-census-through-24/n24/00007_e62e621660de0faad3c083b667dddcff4861a024995750e2369e2413d8a4a4b0"
+    },
+    {
+      "order": 24,
+      "generation_index": 8,
+      "canonical_graph_hash": "e4f0537d9f4658e6ac3403e5d7b993391db7d187a9020dfcb179a5a5576d6a96",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 34,
+      "directory": "hsep-census-through-24/n24/00008_e4f0537d9f4658e6ac3403e5d7b993391db7d187a9020dfcb179a5a5576d6a96"
+    },
+    {
+      "order": 24,
+      "generation_index": 9,
+      "canonical_graph_hash": "8fbafddf3f9c6c823eded5def3662e952b541ba1e58f6f865292cecf83c505a9",
+      "exact_hsep": 15,
+      "hamiltonian_cycles": 34,
+      "directory": "hsep-census-through-24/n24/00009_8fbafddf3f9c6c823eded5def3662e952b541ba1e58f6f865292cecf83c505a9"
+    },
+    {
+      "order": 24,
+      "generation_index": 10,
+      "canonical_graph_hash": "9b4a35d4ef34d800a244b3bf12f1a3a8b19ab16fdf63261dbb1c90f8da7a22d0",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 38,
+      "directory": "hsep-census-through-24/n24/00010_9b4a35d4ef34d800a244b3bf12f1a3a8b19ab16fdf63261dbb1c90f8da7a22d0"
+    },
+    {
+      "order": 24,
+      "generation_index": 11,
+      "canonical_graph_hash": "37828cdc8e8aa8c768e8ce0fc69d0f748eebec4b354eb247d79fab5a2a860bd9",
+      "exact_hsep": 12,
+      "hamiltonian_cycles": 42,
+      "directory": "hsep-census-through-24/n24/00011_37828cdc8e8aa8c768e8ce0fc69d0f748eebec4b354eb247d79fab5a2a860bd9"
+    },
+    {
+      "order": 24,
+      "generation_index": 12,
+      "canonical_graph_hash": "be9a679e00b8ebf0a6cead29e4ab572aba6cb402ccc4fc8987ad2abd3030bafd",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 38,
+      "directory": "hsep-census-through-24/n24/00012_be9a679e00b8ebf0a6cead29e4ab572aba6cb402ccc4fc8987ad2abd3030bafd"
+    },
+    {
+      "order": 24,
+      "generation_index": 13,
+      "canonical_graph_hash": "c724b53617edeb991760b1a0ff662477d883d161eba873849047f3b004c249b3",
+      "exact_hsep": 15,
+      "hamiltonian_cycles": 34,
+      "directory": "hsep-census-through-24/n24/00013_c724b53617edeb991760b1a0ff662477d883d161eba873849047f3b004c249b3"
+    },
+    {
+      "order": 24,
+      "generation_index": 14,
+      "canonical_graph_hash": "2f3c49d25d6f553bcfda3e33c1b74950327d72db2f51c4045da3bdfb19c6ccbf",
+      "exact_hsep": 18,
+      "hamiltonian_cycles": 26,
+      "directory": "hsep-census-through-24/n24/00014_2f3c49d25d6f553bcfda3e33c1b74950327d72db2f51c4045da3bdfb19c6ccbf"
+    },
+    {
+      "order": 24,
+      "generation_index": 15,
+      "canonical_graph_hash": "d64a6f81c51a69b43832cb77341f8254a054c7b7d1036e07f73358191e40dfe6",
+      "exact_hsep": 16,
+      "hamiltonian_cycles": 30,
+      "directory": "hsep-census-through-24/n24/00015_d64a6f81c51a69b43832cb77341f8254a054c7b7d1036e07f73358191e40dfe6"
+    },
+    {
+      "order": 24,
+      "generation_index": 16,
+      "canonical_graph_hash": "3976eda4e918b29ec19f595649ba34ab30b052e2fbac56a1b626d88ad882b178",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00016_3976eda4e918b29ec19f595649ba34ab30b052e2fbac56a1b626d88ad882b178"
+    },
+    {
+      "order": 24,
+      "generation_index": 17,
+      "canonical_graph_hash": "7bdcab1161a0578b67d8dd3db1f6115cdbde649e7c11e3c610219f32c3f57c89",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00017_7bdcab1161a0578b67d8dd3db1f6115cdbde649e7c11e3c610219f32c3f57c89"
+    },
+    {
+      "order": 24,
+      "generation_index": 18,
+      "canonical_graph_hash": "6b376e7a89dcd93ca94b9ca0bf9f0ca20c38f52adeb3d0b30db5f0629ac94e2b",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00018_6b376e7a89dcd93ca94b9ca0bf9f0ca20c38f52adeb3d0b30db5f0629ac94e2b"
+    },
+    {
+      "order": 24,
+      "generation_index": 19,
+      "canonical_graph_hash": "32b10ba6e3e513b743992ec6e20c720ed114a93a432f7fb143238c5e71e8b587",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00019_32b10ba6e3e513b743992ec6e20c720ed114a93a432f7fb143238c5e71e8b587"
+    },
+    {
+      "order": 24,
+      "generation_index": 20,
+      "canonical_graph_hash": "01f1099c933285b61e8a8e53c40ee4c3f3d40bb46b2b3e448534308de89b61d9",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00020_01f1099c933285b61e8a8e53c40ee4c3f3d40bb46b2b3e448534308de89b61d9"
+    },
+    {
+      "order": 24,
+      "generation_index": 21,
+      "canonical_graph_hash": "c415324be681c79cd5e88b468d092d763cf6b4385a52a8f9911435dc4c1b8722",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00021_c415324be681c79cd5e88b468d092d763cf6b4385a52a8f9911435dc4c1b8722"
+    },
+    {
+      "order": 24,
+      "generation_index": 22,
+      "canonical_graph_hash": "e077b4284657b9a9448de1e63e5f9e223b0e7fd65e12697fb1e63dbd85bc95ad",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 48,
+      "directory": "hsep-census-through-24/n24/00022_e077b4284657b9a9448de1e63e5f9e223b0e7fd65e12697fb1e63dbd85bc95ad"
+    },
+    {
+      "order": 24,
+      "generation_index": 23,
+      "canonical_graph_hash": "02732dab949a17b1e5e820e917d7066846b38965547fdd4625cb5703cba17123",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00023_02732dab949a17b1e5e820e917d7066846b38965547fdd4625cb5703cba17123"
+    },
+    {
+      "order": 24,
+      "generation_index": 24,
+      "canonical_graph_hash": "615a0c7c5cbb6d0f9b29cb585302b857aa1b3f6682bb5185020658e1885bc33f",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00024_615a0c7c5cbb6d0f9b29cb585302b857aa1b3f6682bb5185020658e1885bc33f"
+    },
+    {
+      "order": 24,
+      "generation_index": 25,
+      "canonical_graph_hash": "2f4ab220fa4d4eff592080cf6d221f687a49573035a2a09c7ee94eeeed141728",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00025_2f4ab220fa4d4eff592080cf6d221f687a49573035a2a09c7ee94eeeed141728"
+    },
+    {
+      "order": 24,
+      "generation_index": 26,
+      "canonical_graph_hash": "ad3d24827d0108e8dd78743bc45ed17e9034a85581afc027986ebcb13657574b",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-through-24/n24/00026_ad3d24827d0108e8dd78743bc45ed17e9034a85581afc027986ebcb13657574b"
+    },
+    {
+      "order": 24,
+      "generation_index": 27,
+      "canonical_graph_hash": "751706191cc07ed3772fe53e1e82fbc866b7565decdd3b61620dfdfd064237a4",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00027_751706191cc07ed3772fe53e1e82fbc866b7565decdd3b61620dfdfd064237a4"
+    },
+    {
+      "order": 24,
+      "generation_index": 28,
+      "canonical_graph_hash": "4e9899c6b56fdcdaf2891c0f2707b80c5e54114f1af925840a34d93fdaa82084",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00028_4e9899c6b56fdcdaf2891c0f2707b80c5e54114f1af925840a34d93fdaa82084"
+    },
+    {
+      "order": 24,
+      "generation_index": 29,
+      "canonical_graph_hash": "fe2cf357a9119e30fd8c3c0575489c5264ea6d5346493c5b880a5c87084b28f2",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 40,
+      "directory": "hsep-census-through-24/n24/00029_fe2cf357a9119e30fd8c3c0575489c5264ea6d5346493c5b880a5c87084b28f2"
+    },
+    {
+      "order": 24,
+      "generation_index": 30,
+      "canonical_graph_hash": "34a28f1785189eb78b768c8e4959586b2de7f5904f9fef1873dceade6a89204a",
+      "exact_hsep": 10,
+      "hamiltonian_cycles": 32,
+      "directory": "hsep-census-through-24/n24/00030_34a28f1785189eb78b768c8e4959586b2de7f5904f9fef1873dceade6a89204a"
+    },
+    {
+      "order": 24,
+      "generation_index": 31,
+      "canonical_graph_hash": "3e2b762e283b2370a4adf0f5e1570667f82292254243ea52b3ba59883be89302",
+      "exact_hsep": 11,
+      "hamiltonian_cycles": 44,
+      "directory": "hsep-census-through-24/n24/00031_3e2b762e283b2370a4adf0f5e1570667f82292254243ea52b3ba59883be89302"
+    }
+  ],
+  "scope": "All 55 classes through order 24 against reference census counts; 39/57 classes at 26; three graph-specific results at 32. No complete census claim above 24.",
+  "command": "python verify_reconstructed_release.py . --workers 4",
+  "executed_command": "python .publication-private/reconstructed-package/verify_reconstructed_release.py .publication-private/reconstructed-package --workers 4",
+  "verification_date": "2026-09-16",
+  "verifier_sha256": {
+    "verify_reconstructed_release.py": "aec6f82349b9ccd21f16dfc90e919e45da8af8529067565aed59a3859778d69f",
+    "verify_barnie_sequence.py": "8638da2a1528a3a85a7a7842f1bb537bb540c720dc4586dc050f2313d28d1f64"
+  },
+  "software_tests": {
+    "command": "python -m pytest -q",
+    "passed": 368,
+    "skipped": 10,
+    "seconds": 13.93,
+    "platform": "Windows",
+    "python": "3.12.10"
+  },
+  "manuscript_pdf_sha256": "4f72afc0dca8af6c566a1b59180ab4812ba8422f886c6d8fb1b1ebb8bf77a8f5"
+}

@@ -38,6 +38,11 @@ python verify_reconstructed_release.py . --workers 4
 
 The verifier and adjacent `verify_barnie_sequence.py` use only the Python 3.10+
 standard library. The release records the verification runtime and file hashes.
+All 97 supplied graphs passed this independent check on 2026-09-16 in 527.83
+seconds with four workers on Windows and Python 3.12.10. The
+[verification report](releases/v0.8.0-verification.json) records each exact value,
+the command, environment, and verifier hashes. The archive also includes this
+report as `release_verification.json`.
 Verification reads the package without overwriting its original records.
 Use `--workers 1` for a serial check. The allowed range is one to four workers;
 result order remains deterministic. Exhaustive lower proofs for a few graphs
