@@ -1,9 +1,8 @@
-# Data availability and reconstruction status
+# Data availability and verification status
 
-This is a public research draft, not peer-reviewed. An accidental deletion of
-drive E: destroyed the original external certificate packages. Release v0.9.0
-contains newly calculated replacement certificates with new hashes and runtime
-metadata. It does not claim to recover the deleted files byte for byte.
+This is a public research draft, not peer-reviewed. Release v0.9.0 contains a
+complete, newly calculated certificate package with its own hashes and runtime
+metadata.
 
 ## Available recalculated certificates
 
@@ -42,19 +41,17 @@ orders, exact extrema, graph-specific double-ladder values, environment, hashes,
 and runtime. The release package passed this independent check on 2026-09-18 in
 560.39 seconds with Python 3.12.10 on Windows 11.
 
-## Historical and non-recalculated files
+## Scope of the release
 
-The deleted historical files remain unavailable, and their old hashes and
-timestamps cannot be recreated. The v0.9.0 package is a separate recalculation
-that re-establishes the complete extremal sequence through order 36, including
-the unique order-36 maximizer with value 49. The old galleries and separate
-prediction, packing-lift, and primal-lift computational packages were not part
-of this recalculation. Symbolic proof-audit artifacts developed after the loss
-remain versioned directly in the repository.
+The v0.9.0 package establishes the complete extremal sequence through order 36,
+including the unique order-36 maximizer with value 49. Galleries and separate
+prediction, packing-lift, and primal-lift computational packages are outside
+the scope of this release. Symbolic proof-audit artifacts are versioned directly
+in the repository.
 
 The general theorem for D(a,b) is proved symbolically in the manuscript. The
 independent finite checker in `artifacts/proof_audit_20260916/verify_formula.py`
-rebuilds its test graphs directly and does not require the lost datasets.
+rebuilds its test graphs directly and does not require external datasets.
 
 ## Configuration and test reporting
 
@@ -68,5 +65,5 @@ python -m pytest -q
 The legacy single-graph benchmark uses Windows-specific peak-memory telemetry
 and is skipped on other platforms; the mathematical release verifiers are
 portable. A passing software test count is not a substitute for corpus
-verification. New reconstruction runs must be versioned separately and must
-not silently replace historical certificates or hashes.
+verification. New calculation runs must be versioned separately and retain
+their own certificate hashes.

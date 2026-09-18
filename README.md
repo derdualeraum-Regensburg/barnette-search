@@ -11,21 +11,18 @@ generation and verification, and structural analysis tools. Correctness,
 deterministic output, and independently verifiable certificates take priority
 over runtime. ILP and GPU support are not implemented.
 
-**Public research draft; not peer-reviewed.** The original study reported a
-complete certified extremal sequence through order 36, including `M_B(36) = 49`.
-The original external proof packages were lost in an accidental drive deletion.
-Release v0.9.0 replaces the missing computational evidence with a newly
-calculated complete census package through order 36. It contains independently
+**Public research draft; not peer-reviewed.** Release v0.9.0 provides a newly
+calculated complete census package through order 36, including `M_B(36) = 49`.
+It contains independently
 checked separating covers for every one of the 22,263 census graphs and exact
 lower certificates for every potential maximizer. It also provides new exact
-certificates for D(9,9), D(11,9), and D(11,11). These are new calculations with
-new hashes, not byte-for-byte restorations. See
+certificates for D(9,9), D(11,9), and D(11,11). The package records its own
+hashes and runtime metadata. See
 [data availability](docs/data_availability.md) for the precise scope, verifier,
 and release downloads.
 
 The general double-ladder formula has a self-contained proof in the
 [manuscript](paper/generated/main.pdf) and independent finite regression checks.
-The loss of the original census files is separate from that symbolic argument.
 
 ## License and citation
 

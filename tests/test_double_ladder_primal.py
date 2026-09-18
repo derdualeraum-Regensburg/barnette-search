@@ -34,7 +34,7 @@ def test_symbolic_antichain_on_representative_parameter_pairs() -> None:
 
 def test_immutable_primals_equal_symbolic_family_and_separate() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
+        pytest.skip("external certificate package not configured; set BARNETTE_RESULTS_ROOT")
     for dataset in load_primal_chain(SEQUENCE_ROOT, PREDICTION_ROOT):
         normalized = normalize_primal(dataset)
         assert normalized["exactly_equals_symbolic_family"]
@@ -49,7 +49,7 @@ def test_immutable_primals_equal_symbolic_family_and_separate() -> None:
 
 def test_symbolic_incidence_matches_all_selected_certified_cycles() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
+        pytest.skip("external certificate package not configured; set BARNETTE_RESULTS_ROOT")
     for dataset in load_primal_chain(SEQUENCE_ROOT, PREDICTION_ROOT):
         graph = dataset.graph
         cycle_keys = graph.cycle_keys
@@ -78,7 +78,7 @@ def test_symbolic_incidence_matches_all_selected_certified_cycles() -> None:
 
 def test_certified_square_insertions_have_expected_repair_and_increment_counts() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
+        pytest.skip("external certificate package not configured; set BARNETTE_RESULTS_ROOT")
     datasets = load_primal_chain(SEQUENCE_ROOT, PREDICTION_ROOT)
     for source, target, axis in zip(datasets, datasets[1:], ("B", "A", "B")):
         certificate = target.graph.graph_directory / "expansion_certificate.json"

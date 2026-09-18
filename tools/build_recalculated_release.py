@@ -72,8 +72,7 @@ def build(repository: Path, run_root: Path, output: Path, version: str) -> tuple
 
 This package contains a newly calculated complete Barnette-graph census for
 orders 8 through 36 and exact graph-specific hsep certificates for D(9,9),
-D(11,9), and D(11,11). It replaces the missing computational evidence; it is
-not a byte-for-byte restoration of the deleted historical files.
+D(11,9), and D(11,11). The package has its own hashes and runtime metadata.
 
 Verify after extraction with Python 3.10 or newer:
 

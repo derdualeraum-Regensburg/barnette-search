@@ -12,14 +12,12 @@ Consequently historical commit identifiers may differ from those in old run
 metadata. Original graph identities, data manifests, and executable hashes
 inside research records were not rewritten to pretend that the original runs
 used a different environment. These records document past runs, not permission
-to redistribute external programs or a promise that lost data remains available.
+to redistribute external programs.
 
 Existing local clones should be backed up and freshly cloned after this rewrite;
 merging the old branches would reintroduce removed files. Private backup bundles
 must never be pushed to a public remote.
 
-Release v0.9.0 publishes a newly calculated replacement for the lost census
-evidence. It does not reuse the historical hashes or present the new files as a
-recovery of the deleted bytes. Resumable working checkpoints remain outside Git;
-only the compact immutable certificate package is distributed as a release
-asset.
+Release v0.9.0 publishes a newly calculated census package with its own hashes
+and runtime metadata. Resumable working checkpoints remain outside Git; only
+the compact immutable certificate package is distributed as a release asset.

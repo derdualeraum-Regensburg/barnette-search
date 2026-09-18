@@ -1,7 +1,7 @@
 """Resumable reconstruction driver; established solvers/verifiers stay unchanged.
 
 Run with a frozen source snapshot and PYTHONPATH pointing to its src directory.
-Outputs are new calculations, not byte-for-byte restorations of lost packages.
+Outputs are new calculations with their own hashes and runtime metadata.
 """
 from __future__ import annotations
 
@@ -47,8 +47,7 @@ def produce_order(root, order, plantri, workers):
     if order % 2:
         sequence._write_empty_order(target, order, "cubic graphs have even order", workers)
     else:
-        # The generic exact-order producer also supports order 36, without
-        # importing the lost historical order-36 source package.
+        # The generic exact-order producer makes the order-36 run self-contained.
         sequence.process_exact_order(target, order, plantri, workers, True)
 
 

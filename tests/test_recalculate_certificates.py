@@ -1,4 +1,4 @@
-"""Reconstruction orchestration must not require the lost order-36 package."""
+"""Reconstruction orchestration must keep the order-36 run self-contained."""
 import importlib.util
 import json
 from pathlib import Path
@@ -6,7 +6,7 @@ import pytest
 
 
 def driver():
-    path = Path(__file__).parents[1] / "tools" / "rebuild_lost_certificates.py"
+    path = Path(__file__).parents[1] / "tools" / "recalculate_certificates.py"
     spec = importlib.util.spec_from_file_location("rebuild_driver", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -17,7 +17,7 @@ def test_order36_is_regenerated_instead_of_imported(tmp_path, monkeypatch):
     from barnette_search import barnie_sequence
     calls = []
     monkeypatch.setattr(barnie_sequence, "process_exact_order", lambda *args: calls.append(args))
-    monkeypatch.setattr(barnie_sequence, "import_order36", lambda *args: (_ for _ in ()).throw(AssertionError("lost source imported")))
+    monkeypatch.setattr(barnie_sequence, "import_order36", lambda *args: (_ for _ in ()).throw(AssertionError("external source imported")))
     plantri = tmp_path / "plantri.exe"
     driver().produce_order(tmp_path, 36, plantri, 2)
     assert calls == [(tmp_path / "barnie-sequence", 36, plantri, 2, True)]

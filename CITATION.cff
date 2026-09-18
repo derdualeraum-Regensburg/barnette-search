@@ -5,7 +5,7 @@ title: "Barnette Search: Hamiltonian Edge Separation and Verifiable Certificates
 authors:
   - family-names: Bauer
     given-names: Thomas
-version: 0.9.1
+version: 0.9.2
 date-released: 2026-09-18
 repository-code: "https://github.com/derdualeraum-Regensburg/barnette-search"
 url: "https://github.com/derdualeraum-Regensburg/barnette-search"

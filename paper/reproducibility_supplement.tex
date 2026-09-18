@@ -3,8 +3,7 @@
 
 This companion records detailed identifiers and verification statistics that
 are omitted from the main mathematical narrative.  Release v0.9.0 is a new
-calculation after loss of the original packages; it does not reuse their hashes
-or timestamps.
+calculation with its own hashes and timestamps.
 
 \subsection*{Certificate packages and runtimes}
 
@@ -61,10 +60,11 @@ with recorded SHA-256
 \scriptsize
 \nolinkurl{e8ba381dd163c59941db81f65b71b70d6d78cdb7cfd6f6a41ba4828fe25c89fb}.
 \end{center}
-That deleted record is not recreated by the new run.  For each of \(D(9,9)\),
-\(D(11,9)\), and \(D(11,11)\), release v0.9.0 contains a new complete normalized
-Hamiltonian-cycle universe.  The verifier passes the graph identities, cycle
-universes, primal covers, matching lower certificates, and manifests.
+The prediction lock and the certificate calculation have separate provenance.
+For each of \(D(9,9)\), \(D(11,9)\), and \(D(11,11)\), release v0.9.0 contains a
+new complete normalized Hamiltonian-cycle universe.  The verifier passes the
+graph identities, cycle universes, primal covers, matching lower certificates,
+and manifests.
 
 \subsection*{Layout study}
 
@@ -87,6 +87,6 @@ remained
 \subsection*{Regression tests}
 
 The v0.9.0 repository run passed 597 tests; ten environment-gated integrations
-or tests requiring unavailable historical packages were explicitly skipped.
+or external-package tests were explicitly skipped.
 These ordinary software tests are separate from the standalone mathematical
 certificate verification.

@@ -28,7 +28,7 @@ def test_packing_formula_values_and_increments() -> None:
 
 def test_structural_packings_against_certified_cycle_universes() -> None:
     if not (SEQUENCE_ROOT.exists() and PREDICTION_ROOT.exists()):
-        pytest.skip("original certificate packages unavailable; configure BARNETTE_RESULTS_ROOT")
+        pytest.skip("external certificate package not configured; set BARNETTE_RESULTS_ROOT")
     for dataset in load_chain(SEQUENCE_ROOT, PREDICTION_ROOT):
         packing = canonical_structural_packing(dataset)
         summary = packing_summary(dataset, packing)

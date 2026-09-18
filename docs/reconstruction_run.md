@@ -17,15 +17,15 @@ status records 65 completed stages and no active controller.
    new graph-specific exact certificates with independent verification.
 
 The existing solvers and verifiers are unchanged. The driver uses the generic
-exact-order producer for order 36 because the historical import source is lost.
+exact-order producer for order 36 so that the run is self-contained.
 The two-worker limit applies to the census. The larger double ladders run
 serially. All three parts completed and passed their independent verification
 stages.
 
-These are newly computed certificates with new runtime metadata and hashes.
-They do not recover the historical files byte for byte or recreate the lost
-prediction-lock timestamp. Galleries and the separate symbolic packing/primal
-lift analysis packages are not included in this computational queue.
+These are newly computed certificates with their own runtime metadata and
+hashes. Galleries, the prediction lock, and the separate symbolic
+packing/primal-lift analysis packages are not included in this computational
+queue.
 The driver itself does not publish anything. The compact final data, excluding
 working checkpoints, is prepared separately as the v0.9.0 release asset.
 

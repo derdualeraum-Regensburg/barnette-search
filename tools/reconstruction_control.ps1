@@ -51,7 +51,7 @@ foreach ($line in Get-Content -LiteralPath (Join-Path $RunRoot 'PREPARATION_SHA2
     $actual = (Get-FileHash -LiteralPath (Join-Path $RunRoot $parts[1]) -Algorithm SHA256).Hash
     if ($actual -ne $parts[0]) { throw ('Vorbereitungsdatei veraendert: ' + $parts[1]) }
 }
-$driver = Join-Path $RunRoot 'source/tools/rebuild_lost_certificates.py'
+$driver = Join-Path $RunRoot 'source/tools/recalculate_certificates.py'
 $plantriExe = Join-Path $RunRoot 'toolchain/plantri.exe'
 $runArguments = @('-u', $driver, '--root', $workRoot, '--plantri', $plantriExe, '--workers', [string]$plan.workers)
 if ($Action -eq 'Resume') { $runArguments += '--resume' }

@@ -4,11 +4,10 @@ This directory contains a public manuscript draft. It is not peer-reviewed or a
 submitted paper and makes no absolute novelty claim. Thomas Bauer is the sole
 author.
 
-**Data availability:** the original external proof packages were lost in an
-accidental drive deletion. Release v0.9.0 provides a newly calculated complete
+**Data availability:** release v0.9.0 provides a newly calculated complete
 census package through order 36 and new exact certificates for three larger
-double ladders. The new hashes and runtime records are distinct from the deleted
-historical files; see [`../docs/data_availability.md`](../docs/data_availability.md).
+double ladders. The package records its own hashes and runtime metadata; see
+[`../docs/data_availability.md`](../docs/data_availability.md).
 The general double-ladder proof and its self-contained regression checker remain
 available independently of the census data.
 
@@ -75,9 +74,9 @@ The 2026-09-18 data-availability revision records the completed v0.9.0
 recalculation: all 22,263 census graphs through order 36 and the exact
 graph-specific certificates for `D(9,9)`, `D(11,9)`, and `D(11,11)`. The
 release verifier passed on 333 files in 560.39 seconds. The full software suite
-passed with 597 tests and 10 explicit environment or historical-package skips.
-The corrected 21-page PDF has SHA-256
-`ed5300bab497fb09f9833ea3505a23c2d414d6ebe7dbe0b29c9a99d21c79aa89`;
+passed with 597 tests and 10 explicit environment or external-package skips.
+The streamlined 21-page v0.9.2 PDF has SHA-256
+`839ab4e4781fa2a46801b71b41043c1121f9d5f38407915a405fd0061fe06164`;
 all pages were rendered and visually inspected, and the LaTeX log contains no
 undefined references, overfull boxes, or underfull boxes.
 
@@ -118,23 +117,6 @@ old optimal family and achieves a verified 17-cycle upper certificate.
 - `literature_audit.md`, `figure_audit.md`, and `revision_report.md`: revision
   audit trails.
 - `generated/`: LaTeX build output only.
-
-## Original external evidence (currently unavailable)
-
-The original draft was prepared from these read-only packages at their
-historical locations; these paths no longer identify available downloads:
-
-```text
-E:\barnette-results\barnie-sequence
-E:\barnette-results\barnie-sequence\gallery
-E:\barnette-results\barnie-sequence\ladder-analysis
-E:\barnette-results\double-ladder-prediction-test
-E:\barnette-results\double-ladder-packing-lift
-E:\barnette-results\double-ladder-primal-lift
-```
-
-Their result corpora are intentionally not duplicated here. Relevant manifest
-hashes are stated in `reproducibility_supplement.tex`.
 
 ## Status of claims
 

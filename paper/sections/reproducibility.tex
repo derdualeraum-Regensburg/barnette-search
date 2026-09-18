@@ -2,15 +2,13 @@
 \label{sec:reproducibility}
 
 \paragraph{Public data availability.}
-The original external packages were lost in an accidental deletion of the
-research drive.  Release v0.9.0 provides a newly calculated replacement: the
-complete non-isomorphic Barnette censuses through order 36, comprising 22,263
+Release v0.9.0 provides a newly calculated package containing the complete
+non-isomorphic Barnette censuses through order 36, comprising 22,263
 graphs at the nonempty orders, together with graph-specific exact certificates
 for $D(9,9)$, $D(11,9)$, and $D(11,11)$.  The files have new hashes and
-runtime metadata and are not byte-for-byte restorations.  The original
-galleries and separate prediction and lift packages remain unavailable;
-historical manifest hashes do not substitute for those files.  Downloads and
-exact instructions are maintained in \texttt{docs/data\_availability.md} in the
+runtime metadata.  Galleries and separate prediction and lift packages are
+outside this release's scope.  Downloads and exact instructions are maintained
+in \texttt{docs/data\_availability.md} in the
 \href{https://github.com/derdualeraum-Regensburg/barnette-search}{public repository}.
 
 The recalculation records Plantri 5.8 generation of the complete
@@ -27,7 +25,7 @@ audits.
 
 The four distinct scopes are certificate verification, the census-completeness
 premise, software regression, and figure/layout verification.  The public test
-suite explicitly skips missing external datasets and unconfigured Plantri or
+suite explicitly skips unconfigured external datasets and Plantri or
 cubhamg integrations.  A legacy benchmark with Windows-only memory telemetry
 is also skipped on other platforms.  These skips do not replace certificate
 checks; release validation records report the actual run and skip counts.

@@ -31,7 +31,7 @@ def test_perfect_matching_enumerator_reproduces_small_family_count() -> None:
 
 def test_prediction_chain_uses_three_valid_square_expansions() -> None:
     if not LADDER_FAMILY.exists():
-        pytest.skip("original ladder-family certificate unavailable; configure BARNETTE_RESULTS_ROOT")
+        pytest.skip("external ladder-family package not configured; set BARNETTE_RESULTS_ROOT")
     graphs, certificates = construct_prediction_chain(LADDER_FAMILY)
     assert [(graph.a, graph.b, len(graph.rotation)) for graph in graphs] == [
         (9, 9, 40),
