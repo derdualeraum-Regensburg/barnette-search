@@ -1,0 +1,62 @@
+{
+  "command": "python artifacts/four_port_step1_20260917/analyze.py",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "networkx": "3.6.1",
+  "solver": "exhaustive finite subsets; no external optimization solver",
+  "random_seed": null,
+  "random_choices": false,
+  "runtime_seconds": 0.38567109999712557,
+  "source_sha256": "1638839f946f42d56e461c885ccf3ed4d8617d44e575dbebbb43378be4aee0ba",
+  "scope": "four labelled representations, one isomorphism class D(3,3)",
+  "certificates": [
+    {
+      "certificate": "certificate_02.json",
+      "sha256": "c5eb6bf523d6e22198b66758382c11b993fd341a77e79c7416ff522c5ffee4e6",
+      "full_cycles": 14,
+      "upper": 12,
+      "private_requirement_lower": 12,
+      "minimum_with_state_union_rectangles": 13,
+      "omitted_indices": [
+        1,
+        6
+      ]
+    },
+    {
+      "certificate": "certificate_10.json",
+      "sha256": "46e30675d8c9ac3ed6c97e08df191507250bdb723d304915913b5853da5c9062",
+      "full_cycles": 14,
+      "upper": 12,
+      "private_requirement_lower": 12,
+      "minimum_with_state_union_rectangles": 13,
+      "omitted_indices": [
+        1,
+        6
+      ]
+    },
+    {
+      "certificate": "certificate_13.json",
+      "sha256": "59f5ffbd4ab987c48c4fe13b066046d0ebc027afeb80505ee43d50e17ac99d1c",
+      "full_cycles": 14,
+      "upper": 12,
+      "private_requirement_lower": 12,
+      "minimum_with_state_union_rectangles": 13,
+      "omitted_indices": [
+        1,
+        6
+      ]
+    },
+    {
+      "certificate": "certificate_21.json",
+      "sha256": "05d92912402e3f225a5ef19590609c74f8d41a681134abf0c9bf962cf2c0a873",
+      "full_cycles": 14,
+      "upper": 12,
+      "private_requirement_lower": 12,
+      "minimum_with_state_union_rectangles": 13,
+      "omitted_indices": [
+        1,
+        6
+      ]
+    }
+  ]
+}

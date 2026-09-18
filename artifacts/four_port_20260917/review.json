@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-17",
+  "proof_source": "paper/four_port_induction.tex",
+  "proof_source_sha256": "35ea78a0f36ad22d942eb7b57378b95a811d5b29d45fceec62b28b310a08839f",
+  "pdf": "output/pdf/four_port_induction.pdf",
+  "pdf_sha256": "adc266e3c5aebdd4dbe688812cd19600b928da7c056deb8618f3ad161d366974",
+  "pages": 5,
+  "build_command": "latexmk -pdf four_port_induction.tex",
+  "build_cwd": "paper",
+  "final_latex_warnings": [],
+  "visual_review": "All five final rendered pages individually inspected; no clipping or overlap.",
+  "render_command": "pdftoppm -r 95 -png paper/generated/four_port_induction.pdf tmp/pdfs/four-port-review/page",
+  "combined_regression": {
+    "command": "python -m pytest -q tests/test_four_port_lemma.py tests/test_splice_lemma.py tests/test_double_ladder_manuscript_proof.py",
+    "passed": 280,
+    "seconds": 8.93
+  },
+  "final_new_suite": {
+    "command": "python -m pytest -q tests/test_four_port_lemma.py",
+    "passed": 132,
+    "seconds": 1.09
+  },
+  "test_source_sha256": "24fbf18eb4d39c633a62baaf0fcc370b0bcb0b374a3332e013209b79f15c627f",
+  "audit_report_sha256": "53fe6de1c3069b9e4b8a01110a9d6ccafb0328b4b831308d7dd90b001f107af3",
+  "standalone_verifier_command": "python -I artifacts/four_port_20260917/verify.py artifacts/four_port_20260917/examples/ladder4_ladder4_02.json",
+  "example_manifest_checked": true,
+  "large_reconstruction_started": false,
+  "claim_scope": "Proof draft of requirement preservation and conditional induction; no global reduction theorem, exact hsep, or novelty claim."
+}

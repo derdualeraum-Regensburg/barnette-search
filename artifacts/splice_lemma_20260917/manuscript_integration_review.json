@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-17",
+  "operation": "Integrate quantitative splice lemma into the main manuscript",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "pdf": "output/pdf/barnette_hsep_manuscript.pdf",
+  "pdf_pages": 21,
+  "pdf_sha256": "5c6088d2abaad6eea4c185a04bf7b2d5b1bff9fb69f5267471e1f2a69528372b",
+  "source_sha256": {
+    "paper/main.tex": "8ffa9bbed7833d4c74fe19ed24fffc5bc9300292a0891ca1e8e7451eaf29dfbd",
+    "paper/bibliography.bib": "9bab75d32a40dbc0997625e81432e2c76a8c04b3a31e66773f19f4958be13560",
+    "paper/latexmkrc": "896e3b73211c701bbb4b71f1e21c2e377efc4479ba6c14b873a83a91a14f8bb2",
+    "paper/sections/abstract.tex": "63485a63e8a0b5f3a800b6119f16c953a2243ee9a1bc834676fd87113434aaeb",
+    "paper/sections/acknowledgments.tex": "3a1222df77794f3b62c78d9b0b6a44da68cb0e9045f7aeb7c570cd147fac7590",
+    "paper/sections/computational_method.tex": "4f86aa9611eac867415ae34c882f117e8b233cc169829fbac4918b203b041be5",
+    "paper/sections/conclusion.tex": "6b3ca3cebfb1ee93837e1824cbbdd3c25fcf6af7576eb9aae6ae2032a2dab19d",
+    "paper/sections/conjectures.tex": "595e4b4fde7634d0160e3290ed34aa9f4008e5d8145397918c35eb748db1f1da",
+    "paper/sections/double_ladders.tex": "59db8259b765dbbea85cfa8b126596a69102dc63b58829f3756a93d01124b47c",
+    "paper/sections/exact_hsep.tex": "8279633e7dee04411f59f6acf8d0d787207365341bb1ee2f66a6fd28b9f31e89",
+    "paper/sections/extremal_sequence.tex": "4df55bcbb7674b640f643453b8e97d3ba5a64bb54056c90aa0e546a913bc57a3",
+    "paper/sections/hamiltonian_cycles.tex": "c56a900018d7af74166427ca4ccdfdb1df61de0b78e2d6a9e2d84baf93d328bc",
+    "paper/sections/introduction.tex": "b129dc8e1a00520928adeea605b90ba9c1539f7ba4c3bb9a9f9c2d4ad6a69442",
+    "paper/sections/preliminaries.tex": "8933cfec374eab2f999a8dd1056301c66dfd3609356194bca8ee816f54bbb7e2",
+    "paper/sections/prospective.tex": "1bf45211153b4c9dd27e8601b331eba4971ce7db888c15cfc182e15abe290044",
+    "paper/sections/quantitative_splice.tex": "bb3d095f8dec5cff7138becafd72e045f8778d0d1f19e388d6b2074aa68be885",
+    "paper/sections/related_work.tex": "903411335db71d8356634d805fd275bb28bccc28fdf252e306d42dd07d987cce",
+    "paper/sections/reproducibility.tex": "529dc21e12602b7cd5e6befc1586482a6eb0ea38a6b3f07a60a77b6a028ddc77",
+    "tests/test_splice_lemma.py": "94e7bd049fc2920edde361732f07740f25162ffcd482dd2b112ae0b79ae5af07"
+  },
+  "tests": {
+    "command": "python -m pytest -q tests/test_splice_lemma.py tests/test_double_ladder_manuscript_proof.py",
+    "passed": 148,
+    "seconds": 8.36,
+    "scope": "30 splice checks, including printed cube table; 118 existing double-ladder proof checks"
+  },
+  "build": {
+    "command": "latexmk -pdf main.tex",
+    "cwd": "paper",
+    "log_sha256": "a19cac46727c669dcaaaa543d4b6e7c495b54477443bc4dc7eb1acba9ee1ea1a",
+    "latex_warnings": []
+  },
+  "references": {
+    "section": "10",
+    "lemma": "10.1",
+    "scalar_corollary": "10.2",
+    "cube_corollary": "10.3",
+    "extremal_conjecture": "11.2",
+    "duplicate_labels": false,
+    "unresolved_references": false
+  },
+  "visual_review": "All 21 rendered pages inspected in overview; new section on pages 15-17 additionally inspected individually. No clipping or overlap observed.",
+  "render_command": "pdftoppm -r 75 -png paper/generated/main.pdf tmp/pdfs/integrated-splice/page",
+  "renderer_diagnostics": [
+    "No display font for Symbol",
+    "No display font for ArialUnicode"
+  ],
+  "claim_scope": "Conditional constructive bounds; no quantitative priority or general extremal proof claimed.",
+  "large_reconstruction_started": false
+}

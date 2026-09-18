@@ -1,0 +1,280 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[margin=1in,includefoot]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}[lemma]{Corollary}
+\newcommand{\hsep}{\operatorname{hsep}}
+\newcommand{\Hcal}{\mathcal H}
+\title{Quantitative Hamiltonian Edge Separation\\Across a Three-Edge Cut}
+\author{Thomas Bauer\\\small Research note for the Barnette Search project}
+\date{Draft of September 17, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a constructive bound for Hamiltonian strong edge separation under
+vertex splicing of cubic graphs. Separating cycle families with three-state
+profiles $(a_1,a_2,a_3)$ and $(b_1,b_2,b_3)$ yield a separating family of size
+$\sum_i a_i b_i$. Smaller edge-covering subfamilies within each state give the
+refinement $\sum_i(p_i b_i+a_i q_i-p_i q_i)$. The result applies to arbitrary
+simple cubic graphs with finite separation number, including Barnette graphs
+outside the double-ladder family. It is a quantitative consequence of the
+same gluing mechanism underlying the known qualitative $H^{+-}$ decomposition
+theorem. Priority for the quantitative bounds is not asserted.
+\end{abstract}
+
+\section{Setting and relation to existing work}
+A family $\mathcal F$ of Hamiltonian cycles strongly separates the edges of
+$G$ if, for every ordered pair of distinct edges $(e,f)$, some $C\in\mathcal F$
+contains $e$ and avoids $f$. Write $\hsep(G)$ for the minimum family size,
+with value $\infty$ if no such family exists. Cycles are undirected edge sets;
+families contain no repetitions.
+
+Let $G_1,G_2$ be vertex-disjoint finite simple cubic graphs. Choose vertices
+$v_1,v_2$ with incident edges
+\[
+ s_{1i}=v_1x_i,\qquad s_{2i}=v_2y_i\qquad (i=1,2,3).
+\]
+The indexing specifies a bijection between their neighbours. Delete $v_1,v_2$
+and add $t_i=x_iy_i$ for $i=1,2,3$. Denote the resulting graph by $G$, and its
+three-edge cut by $T=\{t_1,t_2,t_3\}$. Put
+$I_j=E(G_j)\setminus\delta(v_j)$ and $n_j=|V(G_j)|$.
+
+Gorsky, Steiner and Wiederrecht prove preservation of the qualitative
+$H^{+-}$ property under the corresponding tight-cut decomposition of cubic,
+3-connected bipartite graphs \cite[Lemma 4.5(iv) and Theorem 1.7(iv)]{gsw}.
+That property is exactly the assertion $\hsep(G)<\infty$. The present note
+counts explicit glued cycles and then reduces the number of selected pairs.
+It does not claim a new qualitative decomposition theorem. The proof below
+is self-contained and needs neither planarity nor bipartiteness.
+
+\section{The quantitative gluing lemma}
+For separating families $\mathcal F_1,\mathcal F_2$, define their three states
+by the omitted incident edge:
+\[
+ \mathcal A_i=\{C\in\mathcal F_1:s_{1i}\notin C\},\qquad
+ \mathcal B_i=\{D\in\mathcal F_2:s_{2i}\notin D\}.
+\]
+Every Hamiltonian cycle belongs to exactly one state. Write
+$a_i=|\mathcal A_i|$ and $b_i=|\mathcal B_i|$.
+
+\begin{samepage}
+\begin{lemma}[Quantitative three-edge gluing]\label{lem:splice}
+Suppose $\mathcal F_1,\mathcal F_2$ strongly separate the edges of $G_1,G_2$.
+For each $i$, choose subfamilies
+$\mathcal U_i\subseteq\mathcal A_i$ and
+$\mathcal V_i\subseteq\mathcal B_i$ whose edge unions contain $I_1$ and $I_2$,
+respectively. Such subfamilies always exist. Set $p_i=|\mathcal U_i|$ and
+$q_i=|\mathcal V_i|$. Then
+\begin{equation}\label{eq:refined}
+ \hsep(G)\ \le\ \sum_{i=1}^3
+       \bigl(p_i b_i+a_i q_i-p_iq_i\bigr)
+ \ \le\ \sum_{i=1}^3 a_i b_i.
+\end{equation}
+The first bound is realized by an explicit separating family obtained from
+\begin{equation}\label{eq:pairs}
+ \bigcup_{i=1}^3
+ \left[(\mathcal U_i\times\mathcal B_i)
+       \cup(\mathcal A_i\times\mathcal V_i)\right].
+\end{equation}
+The subfamilies may be chosen so that
+\begin{equation}\label{eq:statecovers}
+ 2\le p_i\le\min\{a_i,n_1/2\},\qquad
+ 2\le q_i\le\min\{b_i,n_2/2\}.
+\end{equation}
+In particular, $a_i,b_i\ge2$ for every state.
+\end{lemma}
+\end{samepage}
+
+\begin{proof}
+\emph{State coverage.}
+For every $e\in I_1$ and each $i$, separation of $(e,s_{1i})$ supplies a
+cycle in $\mathcal A_i$ containing $e$. Thus $\mathcal A_i$ covers $I_1$;
+the same argument applies to $\mathcal B_i$. Each state is nonempty, also
+directly by separation of $(s_{1j},s_{1i})$ for $j\ne i$.
+A Hamiltonian cycle in $G_1$ contains $n_1-2$ internal edges, whereas
+$|I_1|=3n_1/2-3$. It therefore misses exactly $n_1/2-1\ge1$ internal edges.
+No single cycle covers $I_1$. Starting with any cycle in $\mathcal A_i$,
+add a cycle containing one still-uncovered internal edge until all are covered.
+At most $n_1/2-1$ further cycles are needed. No cycle needs to be chosen twice.
+This proves the bounds for $p_i$, and the argument for $q_i$ is identical.
+
+\emph{Gluing and projection.}
+If $C\in\mathcal A_i$ and $D\in\mathcal B_i$, deleting the splice vertices
+from the cycles gives two spanning paths. Both have terminal indices
+$\{1,2,3\}\setminus\{i\}$. Join their corresponding ends with the two
+cut edges $t_j$, $j\ne i$. The result, denoted $C\star D$, is one Hamiltonian
+cycle of $G$. Its restriction to the two sides, together with the omitted
+vertices restored, recovers $C,D$. Thus distinct compatible pairs produce
+distinct cycles, even across different states.
+
+The family $\mathcal K$ obtained from \eqref{eq:pairs} has exactly the first
+sum in \eqref{eq:refined}: in state $i$ the two products intersect in
+$\mathcal U_i\times\mathcal V_i$. Since $p_i\le a_i$ and $q_i\le b_i$,
+the saving from the full product is
+$(a_i-p_i)(b_i-q_i)\ge0$.
+
+\emph{Separation within a side and at the cut.}
+Replace each incident edge $s_{ji}$ by $t_i$ and leave every internal edge
+unchanged. This embeds the edge set of each factor injectively into $E(G)$.
+Every cycle of $\mathcal F_1$ occurs as the first factor of a pair in
+\eqref{eq:pairs}, because every $\mathcal V_i$ is nonempty. Similarly, every
+cycle of $\mathcal F_2$ occurs as a second factor. Consequently $\mathcal K$
+separates any ordered pair lying in the image of one factor. This includes
+all pairs involving at least one cut edge.
+
+\emph{Separation across the two sides.}
+Let $e\in I_1$ and $f\in I_2$. Some $D\in\mathcal F_2$ avoids $f$:
+for example, separate $(s_{21},f)$. Let $D\in\mathcal B_i$.
+Because $\mathcal U_i$ covers $I_1$, it contains a cycle $C$ using $e$.
+The selected pair $(C,D)\in\mathcal U_i\times\mathcal B_i$ therefore
+separates $(e,f)$. For the reverse direction, choose a cycle in
+$\mathcal F_1$ avoiding $e$, identify its state $i$, and use
+$\mathcal V_i$ to supply a cycle containing $f$. This pair belongs to
+$\mathcal A_i\times\mathcal V_i$. All ordered edge pairs are covered.
+\end{proof}
+
+\section{Consequences and explicit scope}
+\begin{corollary}[Projection and a bound using only the two separation numbers]
+\label{cor:scalar}
+If $h_1=\hsep(G_1)$ and $h_2=\hsep(G_2)$ are finite, then
+\begin{equation}\label{eq:scalar}
+ \max\{h_1,h_2\}\le\hsep(G)\le(h_1-4)(h_2-4)+8.
+\end{equation}
+More generally, $\hsep(G)$ is finite if and only if both factor values are finite.
+\end{corollary}
+\begin{proof}
+Any Hamiltonian cycle of $G$ crosses the nonempty proper cut $T$ a positive
+even number of times, hence exactly twice. Its restriction to each side is
+one spanning path: a further component would be a cycle disconnected from
+the Hamiltonian cycle. Closing each path through $v_j$ gives Hamiltonian
+cycles in both factors. Projection preserves membership of all corresponding
+edges. Projecting a separating family and removing duplicates gives separating
+families in both factors, proving the lower bound and the necessity of finiteness.
+Lemma~\ref{lem:splice} proves sufficiency.
+
+Choose minimum families in the two factors. Put $x_i=a_i-2\ge0$ and
+$y_i=b_i-2\ge0$. Since $\sum_i a_i=h_1$ and $\sum_i b_i=h_2$,
+\begin{align*}
+ \sum_i a_i b_i
+ &=12+2\sum_i x_i+2\sum_i y_i+\sum_i x_i y_i\\
+ &\le12+2(h_1-6)+2(h_2-6)+(h_1-6)(h_2-6)\\
+ &=(h_1-4)(h_2-4)+8.
+\end{align*}
+The middle inequality follows from nonnegativity of the omitted cross terms.
+\end{proof}
+
+\begin{corollary}[One cube insertion]\label{cor:cube}
+If $G^+$ is obtained by splicing a cubic graph $G$ with a cube and
+$\hsep(G)<\infty$, then
+\[
+ \hsep(G)\le\hsep(G^+)\le2\hsep(G).
+\]
+\end{corollary}
+\begin{proof}
+Label the cube as $C_4\square K_2$, with bottom cycle $01230$, top cycle
+$45674$, and vertical edges $04,15,26,37$. The following six cycles form a
+separating family; every edge has a distinct four-element incidence signature.
+Each displayed vertex sequence is closed by returning to 0.
+\[
+\begin{array}{c|l}
+\text{omitted edge at 0}&\text{cycles}\\\hline
+01&03215674,\quad03762154\\
+03&01237654,\quad01562374\\
+04&01265473,\quad01547623
+\end{array}
+\]
+There are two cycles in each state. Lemma~\ref{lem:splice}, using a minimum
+family in $G$ and the full cube family, gives $2\sum_i a_i=2\hsep(G)$.
+Projection gives the lower bound. Cube symmetry allows any splice vertex.
+\end{proof}
+
+\paragraph{Application to Barnette graphs.}
+If both factors are Barnette graphs, their splice is again a Barnette graph.
+Simplicity and cubicity follow from the construction. For bipartiteness, swap
+one factor's color names if necessary so that the new joining edges have
+oppositely colored endpoints. Planarity follows by placing the vertex-deleted
+embeddings in two disks and matching their three boundary terminals. Every
+bijection of three terminals is realizable after choosing their cyclic order
+and orientation.
+
+For completeness, consider deletion of at most two vertices in the splice.
+If one is deleted on each side, each remaining side is connected by
+3-connectivity of the factor, and at least one joining edge survives.
+If both deleted vertices lie on one side, each component on that side contains
+a surviving splice terminal: in the corresponding factor with just those
+vertices deleted, every vertex can still reach the splice vertex.
+The other side is connected and joins all these components. With fewer
+deletions the same argument applies. Thus the splice is 3-connected.
+
+\paragraph{What this does not establish.}
+Finiteness of the factor separation numbers is a hypothesis. The lemma does
+not supply Hamiltonian cycles for an unknown factor. It gives no reduction
+for graphs without a nontrivial three-edge cut, and its scalar bound is not
+the conjectured sharp extremal bound $\lfloor n(n+8)/32\rfloor$.
+In particular, it does not prove extremal continuation or Barnette's conjecture.
+The smaller state subfamilies need not be minimum edge covers; the construction
+uses verified upper bounds and never identifies them with exact $\hsep$ values.
+
+\clearpage
+\section{Independent finite checks}
+The directory \texttt{artifacts/splice\_lemma\_20260917/} contains a separate
+constructor and a standard-library-only verifier. The constructor enumerates
+cycles by path search. The verifier independently enumerates perfect matchings,
+retaining exactly those whose complements are connected spanning 2-factors.
+It checks the input families, splice graph, state covers, every emitted cycle,
+all ordered edge pairs, pair provenance, and both cardinality formulas.
+
+The audit checks all six terminal bijections for five input pairs and also
+proper separating subfamilies for the nested example, giving 36 labelled
+examples. They are not asserted to be 36 different isomorphism classes.
+The largest example has 30 vertices; no census reconstruction is started.
+The regression suite has 29 tests, including rejection of damaged cycles,
+empty state covers, and a Hamiltonian graph lacking strong separation.
+
+Let $P_r=C_r\square K_2$ be the prism on $2r$ vertices, and let $S$ be the
+splice of two cubes. For the natural terminal matching, representative bounds
+are as follows. The input sizes are sizes of supplied families, not asserted
+optimal values.
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Factors & Output order & Input sizes & Full product & Refined\\
+\midrule
+$P_4,P_4$ &14&$6,6$&12&12\\
+$P_4,P_6$ &18&$6,8$&16&16\\
+$P_6,P_6$ &22&$8,8$&24&23\\
+$P_8,P_8$ &30&$10,10$&44&40\\
+$S,P_4$ &20&$10,6$&20&20\\
+\bottomrule
+\end{tabular}
+\end{center}
+The first four output orders are $2$ modulo $4$, so these Barnette graphs
+are outside the odd-parameter double-ladder family in the main manuscript.
+The bounds in the last two columns are only upper certificates. The symbolic
+proof of Lemma~\ref{lem:splice} does not depend on these finite checks.
+
+\paragraph{Reproduction and status.}
+Regenerate the examples from the repository root with:
+\begin{quote}\small\ttfamily
+python artifacts/splice\_lemma\_20260917/build\_examples.py
+\end{quote}
+The adjacent \texttt{verify.py} checks any example JSON without installing
+project dependencies. The report records
+commands, source and certificate hashes, versions, runtime, and the absence
+of random choices. This is an unreviewed research note; its quantitative
+priority has not been established by an exhaustive literature review or
+expert confirmation. The author remains responsible for the claims.
+The note was developed with AI assistance for derivation, drafting and checks.
+
+\begin{thebibliography}{1}
+\bibitem{gsw}
+M. Gorsky, R. Steiner, and S. Wiederrecht.
+\emph{Matching theory and Barnette's conjecture}.
+Discrete Mathematics 346(2), 113249, 2023.
+\href{https://doi.org/10.1016/j.disc.2022.113249}{doi:10.1016/j.disc.2022.113249}.
+Author manuscript: \url{https://arxiv.org/abs/2202.11641}.
+\end{thebibliography}
+\end{document}

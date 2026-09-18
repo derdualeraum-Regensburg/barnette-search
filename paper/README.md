@@ -13,6 +13,16 @@ double-ladder proof and its self-contained regression checker remain available.
 
 ## Build
 
+Section 10 integrates the quantitative three-edge splice lemma with its
+complete proof, state-dependent refinement, scalar bound, cube-insertion
+corollary, and limits. The former Conjecture 10.2 is now Conjecture 11.2.
+The separate unreviewed note [`quantitative_splice.tex`](quantitative_splice.tex)
+is retained as the original derivation; the integrated manuscript is the
+current presentation. The [independent audit](../artifacts/splice_lemma_20260917/README.md)
+checks 36 small labelled examples. Neither the audit nor manuscript compilation
+starts the paused census reconstruction. Build the separate note with
+`latexmk -pdf quantitative_splice.tex`.
+
 A current TeX Live or MiKTeX installation with `latexmk`, `pdflatex`, BibTeX,
 and the packages listed in `main.tex` is required. From this directory run:
 
@@ -53,12 +63,39 @@ and its source hashes describe the pre-revision manuscript; they are retained
 as a historical record. The revision is an argument-based review with finite
 checks, not an external expert endorsement or a machine-formalized proof.
 
+The 2026-09-17 splice integration produces a 21-page PDF. The 148 targeted
+mathematical regression tests pass, including independent verification of the
+cube cycles printed in the manuscript. All rendered pages were inspected;
+the final LaTeX log has no undefined references or citations and no overfull
+or underfull boxes. Sources, PDF hash, commands and results are recorded in
+[`manuscript_integration_review.json`](../artifacts/splice_lemma_20260917/manuscript_integration_review.json).
+
 ## Structure
+
+The separate research note [`four_port_induction.tex`](four_port_induction.tex)
+develops nine-state four-port composition, a requirement-preserving reduction
+of compatible products, and a conditional lift-and-repair induction criterion.
+Its [bounded audit](../artifacts/four_port_20260917/README.md) includes positive
+and negative separation cases. The note does not prove Conjecture 11.2 and is
+not inserted into the main manuscript. Build with
+`latexmk -pdf four_port_induction.tex` from this directory.
+
+The subsequent [16-vertex diagnosis](../artifacts/four_port_step1_20260917/README.md)
+certifies hsep 12 for the four labelled D(3,3) examples where the original
+four-port construction gave 13. It identifies redundancy across entire
+state blocks as the missing ingredient; it does not settle Conjecture 11.2.
+
+The [square-reduction follow-up](../artifacts/square_reduction_20260918/README.md)
+gives a conditional inverse criterion, a complete local lifting table, and
+an exact description of the missing separation requirements after lifting.
+Its bounded 16-to-20-vertex example needs a reserve witness from outside the
+old optimal family and achieves a verified 17-cycle upper certificate.
 
 - `main.tex`: document setup and section order.
 - `sections/`: abstract, definitions, related work, computational method, certified
   extremal sequence, double ladders, Hamiltonian structure, exact symbolic
-  bounds, prospective confirmations, open conjectures, reproducibility, and
+  bounds, prospective confirmations, quantitative three-edge splicing, open
+  conjectures, reproducibility, and
   conclusion.
 - `tables/`: compact data copied from certified summaries.
 - `figures/`: the single complete Bauer-family plate used by the manuscript,
@@ -96,7 +133,9 @@ hashes are stated in `reproducibility_supplement.tex`.
   for `D(a,b)` with positive odd parameters; the complete Hamiltonian-cycle
   classification `|H(D(a,b))|=ab+5`; the symbolic packing lower bound; the
   signature-antichain upper bound; and therefore
-  `hsep(D(a,b))=((a+2)(b+2)-1)/2` for odd `a,b >= 3`.
+  `hsep(D(a,b))=((a+2)(b+2)-1)/2` for odd `a,b >= 3`; quantitative
+  three-edge gluing for finite separating families, its projection lower
+  bound, scalar upper bound, and cube-insertion corollary.
 - **Historically reported finite results (see data availability above):** the complete extremal sequence on
   nonempty orders 8--36, all maximizers and ties, the eight census-range
   double-ladder identifications, seven exact family expansions, the finite
@@ -119,7 +158,8 @@ hashes are stated in `reproducibility_supplement.tex`.
    embedding convention in the face proposition.
 2. Have the parameterized rail/rung recurrence, packing construction, and
    eight signature cases independently audited.
-3. Classify the tied branch by finite boundary states.
+3. Independently audit the quantitative splice proof and investigate the
+   literature priority of its bounds; classify the tied branch by finite boundary states.
 4. Develop an order-level method for the open balanced-double-ladder extremal
    conjecture.
 5. Obtain and inspect the full text of sources, especially Cai (1984), before

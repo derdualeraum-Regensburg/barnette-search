@@ -1,0 +1,356 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[margin=1in,includefoot]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\hsep}{\operatorname{hsep}}
+\newcommand{\Req}{\operatorname{Req}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Four-Port Composition for Hamiltonian Edge Separation\\
+and a Certificate-Based Induction Criterion}
+\author{Thomas Bauer\\\small Barnette Search research note}
+\date{Draft of September 17, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We describe the nine boundary states of a cubic fragment with four distinct
+degree-two terminals. Compatible pairs of spanning path covers generate
+Hamiltonian cycles across a matching four-edge cut. Selecting edge-union covers
+within each state reduces the compatible product while preserving exactly its
+set of covered ordered edge requirements. We also give a conditional
+lift-and-repair criterion for an induction towards the conjectured extremal
+bound. The boundary compatibility formalism is established in the literature;
+priority is not asserted for the quantitative statements. The structural
+existence and budget conditions needed for the extremal conjecture remain open.
+\end{abstract}
+
+\section{Fragments and the nine states}
+A four-port fragment $X$ is a finite simple graph with four distinct labelled
+terminals $x_1,x_2,x_3,x_4$, each of degree two, and every other vertex of degree
+three. Let $Y$ be a vertex-disjoint fragment with terminals $y_1,\ldots,y_4$.
+The indexing fixes the matching cut $T=\{t_i=x_i y_i:1\le i\le4\}$ of the
+cubic graph $G=X\cup Y\cup T$. Write $I_X=E(X)$, $I_Y=E(Y)$ and
+$n_X=|V(X)|$, $n_Y=|V(Y)|$; both orders are even. No planarity, bipartiteness
+or connectivity premise is imposed on the fragments. Not every resulting
+cubic graph is a Barnette graph.
+
+An admissible path cover $F$ of $X$ is an acyclic spanning subgraph whose
+degrees are two except at the terminals indexed by a set $S$, where they
+are one. We require $|S|=2$ or $4$. Consequently $F$ consists of $|S|/2$
+vertex-disjoint paths, has $n_X-|S|/2$ edges, and pairs the indices in $S$
+according to the endpoints of these paths. Its state is $\alpha=(S,\pi)$.
+There are nine possible formal states: six choices of a two-element $S$,
+each with its unique pairing, and the three states
+\[
+ ([4],12|34),\qquad ([4],13|24),\qquad ([4],14|23).
+\]
+A fragment need not realize every state. In a disk embedding with terminals
+in the order $1,2,3,4$, for example, the crossing pairing $13|24$ is impossible.
+
+\begin{lemma}[Compatibility]\label{lem:compatibility}
+Two covers with states $\alpha=(S,\pi)$ and $\beta=(S',\rho)$ glue to a
+Hamiltonian cycle, using their selected cut edges, if and only if $S=S'$ and
+either $|S|=2$, or $|S|=4$ and $\pi\ne\rho$.
+Every Hamiltonian cycle of $G$ has a unique such representation.
+\end{lemma}
+\begin{proof}
+Equal used-port sets are necessary for degree two at every terminal. With
+two used ports, the two spanning paths join into one cycle. With four used
+ports, contract each path to its terminal pairing and identify corresponding
+terminals across the cut. Equal pairings give two components, hence two
+cycles. Distinct perfect matchings on four indices form a single alternating
+cycle, so the glued subgraph is connected and therefore Hamiltonian.
+
+Conversely, a Hamiltonian cycle meets the nonempty proper cut $T$ an even,
+positive number of times, hence twice or four times. Its restriction to
+either side cannot contain a cycle component, which would disconnect it
+from the other side. The restrictions are therefore admissible path covers.
+Their edge sets and the used cut edges are recovered uniquely by restriction.
+\end{proof}
+
+Let $M_{\alpha\beta}$ denote this compatibility indicator. In the order with
+the six two-port states first, its matrix is
+\[
+ M=\begin{pmatrix}I_6&0\\0&J_3-I_3\end{pmatrix}.
+\]
+Thus there are twelve compatible ordered state pairs. The matching
+connectivity matrix is an established device for Hamiltonian-cycle
+algorithms; see, for example, Curticapean, Lindzey and Nederlof~\cite{cln}.
+This elementary four-port case is not claimed as a new connectivity method.
+
+\section{A quantitative lemma preserving all covered requirements}
+Choose finite families $\mathcal A_\alpha$ and $\mathcal B_\beta$ of admissible
+covers in their indicated states, with no repetitions. Empty states are
+allowed. Put $a_\alpha=|\mathcal A_\alpha|$ and $b_\beta=|\mathcal B_\beta|$.
+For each nonempty state choose subfamilies $\mathcal U_\alpha$ and
+$\mathcal V_\beta$ with the same edge union as their parent family:
+\[
+ \bigcup\mathcal U_\alpha=\bigcup\mathcal A_\alpha,\qquad
+ \bigcup\mathcal V_\beta=\bigcup\mathcal B_\beta.
+\]
+Set $p_\alpha=|\mathcal U_\alpha|$ and $q_\beta=|\mathcal V_\beta|$;
+the values for empty states are zero. These are covers of the edges that
+actually occur in that state, not necessarily of every edge of the fragment.
+
+For a family $\mathcal C$ of Hamiltonian cycles define
+\[
+ \Req(\mathcal C)=\{(e,f)\in E(G)^2:e\ne f,\ 
+                    e\in C,\ f\notin C\text{ for some }C\in\mathcal C\}.
+\]
+The family strongly separates the edges precisely when this is the full set
+of ordered distinct edge pairs. As in the main manuscript, $\hsep(G)=\infty$
+when no such family exists.
+
+\begin{theorem}[Requirement-preserving four-port composition]\label{thm:fourport}
+Let $\mathcal K$ contain all gluings from compatible products
+$\mathcal A_\alpha\times\mathcal B_\beta$. Let $\mathcal K'$ instead use,
+in each compatible product, only
+\[
+ (\mathcal U_\alpha\times\mathcal B_\beta)
+ \ \cup\ (\mathcal A_\alpha\times\mathcal V_\beta).
+\]
+Then
+\begin{align}
+ |\mathcal K|&=\sum_{\alpha,\beta}M_{\alpha\beta}a_\alpha b_\beta,
+       \label{eq:full}\\
+ |\mathcal K'|&=\sum_{\alpha,\beta}M_{\alpha\beta}
+       (p_\alpha b_\beta+a_\alpha q_\beta-p_\alpha q_\beta)
+       \le |\mathcal K|,\label{eq:refined}\\
+ \Req(\mathcal K')&=\Req(\mathcal K).\label{eq:preservation}
+\end{align}
+For each nonempty state $\alpha=(S,\pi)$ the cover can be chosen with
+\begin{equation}\label{eq:coverbound}
+ 1\le p_\alpha\le
+ \min\{a_\alpha,n_X/2-1+|S|/2\},
+\end{equation}
+and similarly on $Y$. If $\mathcal K$ separates all edges, equation
+\eqref{eq:refined} is an upper bound for $\hsep(G)$.
+\end{theorem}
+\begin{proof}
+Lemma~\ref{lem:compatibility} gives Hamiltonicity and injectivity of gluing.
+Within one product the intersection of the two selected rectangles is
+$\mathcal U_\alpha\times\mathcal V_\beta$, proving both counts. The saving
+in that block is $(a_\alpha-p_\alpha)(b_\beta-q_\beta)\ge0$.
+
+We prove preservation one ordered pair at a time. Suppose $(e,f)$ has a
+witness $C\star D\in\mathcal K$, with $C\in\mathcal A_\alpha$ and
+$D\in\mathcal B_\beta$.
+If both edges lie in $I_X\cup T$, retain $C$ and replace $D$ by any member
+of $\mathcal V_\beta$. Such a member exists because the original block
+is nonempty. Membership of both edges is preserved: the $X$ cover is
+unchanged and cut-edge membership depends only on the state. The pair is
+selected in $\mathcal A_\alpha\times\mathcal V_\beta$.
+The symmetric argument treats pairs in $I_Y\cup T$. Together these cases
+include every pair involving a cut edge.
+
+If $e\in I_X$ and $f\in I_Y$, choose $C'\in\mathcal U_\alpha$ containing
+$e$; it exists because the union agrees with that of $\mathcal A_\alpha$.
+Keep $D$, which avoids $f$. The pair $(C',D)$ is selected and remains
+compatible, so it witnesses $(e,f)$. For the reverse orientation, keep
+the avoiding cover on $X$ and choose an edge-containing cover in
+$\mathcal V_\beta$. Hence every previously covered requirement survives.
+The reverse inclusion in \eqref{eq:preservation} follows from
+$\mathcal K'\subseteq\mathcal K$.
+
+Finally, $|I_X|=3n_X/2-2$. Start the union cover with one member of the
+state, which has $n_X-|S|/2$ edges. At most
+$n_X/2-2+|S|/2$ edges of the state's union are still uncovered. Add a member
+containing a still-uncovered edge until none remain. Each step covers a new
+edge and never repeats a member, proving \eqref{eq:coverbound}.
+\end{proof}
+
+\paragraph{Scope of the conclusion.}
+The theorem preserves failures as well as successes: it does not establish
+$\Req(\mathcal K)=\{(e,f):e\ne f\}$. If both input collections contain all
+admissible covers, Lemma~\ref{lem:compatibility} identifies $\mathcal K$ with
+the full Hamiltonian-cycle universe. Even then, finiteness of $\hsep$ is an
+additional assertion. Nonempty compatible states alone do not suffice.
+For instance, a family using all four cut edges in every cycle cannot
+separate any two cut edges.
+
+\section{An explicit criterion for separation}
+The remaining existence condition can be stated using local data. For an
+internal edge $e\in I_X$, define
+\[
+ A^+(e)=\{\alpha:\exists F\in\mathcal A_\alpha, e\in F\},\qquad
+ A^-(e)=\{\alpha:\exists F\in\mathcal A_\alpha, e\notin F\},
+\]
+and define $B^+(f),B^-(f)$ similarly. Call a state active if it is nonempty
+and has a compatible nonempty state on the other side. Represent a cover on
+$X$ on the local ground set $I_X\cup\{t_1,t_2,t_3,t_4\}$ by adjoining
+the formal cut edges indexed by its used-port set.
+
+\begin{proposition}[Local and cross-edge criterion]\label{prop:criterion}
+The full product $\mathcal K$ separates all edges if and only if:
+\begin{enumerate}
+\item The augmented covers in active states on $X$ separate every ordered
+pair on $I_X\cup T$, and likewise for $Y$ on $I_Y\cup T$.
+\item For every $e\in I_X$ and $f\in I_Y$, there is a compatible state pair
+in $A^+(e)\times B^-(f)$ and a compatible state pair in
+$A^-(e)\times B^+(f)$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Every active cover extends using any member of one compatible state. Thus
+its local incidence information appears in $\mathcal K$, and every projected
+global cycle is an active augmented cover. This proves equivalence for the
+first set of requirements. For a cross-edge pair, independent choices of
+an edge-containing cover and an edge-avoiding cover in compatible states
+give exactly the witnesses described in the second condition. The cases
+exhaust all ordered pairs.
+\end{proof}
+
+This criterion is checkable from local covers, but it is not asserted to
+hold automatically for all Barnette fragments. It separates the structural
+existence problem from the counting reduction in Theorem~\ref{thm:fourport}.
+
+\section{Replacing a fragment: lift, repair and budget}
+Let $H=X\cup Y_0\cup T_0$ and $G=X\cup Y_1\cup T_1$ share the same exterior
+fragment $X$. Identify the four cut-edge labels, so that
+$J=I_X\cup\{t_1,t_2,t_3,t_4\}$ is a common abstract edge set. Assume
+$|V(H)|=m$, $|V(G)|=n>m$. Replacing a fragment need not preserve Barnette
+properties; membership of both graphs in the chosen induction class must
+be established separately.
+
+\begin{lemma}[Lift and repair]\label{lem:lift}
+Let $\mathcal C$ be a separating family of $H$, of size $k$. Suppose that
+for each $C\in\mathcal C$, its exterior cover $C\cap I_X$ has a compatible
+cover in $Y_1$, using the same cut-edge labels. Choose one such lift for
+each $C$, and remove duplicates to obtain $\mathcal L$.
+Let $\mathcal R$ be a family of $r$ Hamiltonian cycles of $G$ covering every
+ordered requirement not covered by $\mathcal L$. Then
+\[
+ \hsep(G)\le|\mathcal L\cup\mathcal R|\le k+r.
+\]
+Every requirement needing repair involves at least one edge of $I_{Y_1}$.
+\end{lemma}
+\begin{proof}
+The lifts exist by the stated compatibility hypothesis and are Hamiltonian
+by Lemma~\ref{lem:compatibility}. For each old witness, all incidences on
+$J$ remain unchanged. Hence all ordered pairs on $J$ remain separated,
+even after duplicates are removed. The only remaining requirements have
+an edge in $I_{Y_1}$. Adding their witnesses establishes separation, and
+there are at most $k+r$ cycles.
+\end{proof}
+
+The repair family is a concrete upper certificate. It can be chosen from a
+compatible product, or its reduced version in Theorem~\ref{thm:fourport},
+provided that family covers the residual requirements. Neither existence
+of a lift nor existence of the required repairs follows merely from the
+number of available states. A greedy repair count is not an optimum.
+
+Write $B(t)=\lfloor t(t+8)/32\rfloor$. If a known certificate in $H$ has
+size $k\le B(m)$, its \emph{certified slack} is $s=B(m)-k\ge0$. This
+quantity is computed from an explicit family, not from the unknown optimum.
+Lemma~\ref{lem:lift} proves the desired bound whenever
+\begin{equation}\label{eq:budget}
+ r\le B(n)-B(m)+s.
+\end{equation}
+If this inequality is strict, then $\hsep(G)<B(n)$, which also excludes
+$G$ from equality cases.
+
+\begin{proposition}[Conditional induction criterion]\label{prop:induction}
+Let $\mathcal G$ be a class of Barnette graphs whose orders are divisible
+by four. For each $G\in\mathcal G$ let $\mathfrak A(G)$ specify the allowed
+separating certificates, including any boundary-profile invariant required
+by the reductions. Suppose:
+\begin{enumerate}
+\item There is a threshold $N_0$ such that every graph of the class with at
+most $N_0$ vertices has a certificate in $\mathfrak A(G)$ of size at most
+$B(|V(G)|)$.
+\item Every larger $G\in\mathcal G$ has a smaller reduction
+$H\in\mathcal G$ as above. For every certificate in $\mathfrak A(H)$ of
+size $k\le B(m)$, a lift and repair as in Lemma~\ref{lem:lift} can be
+chosen satisfying \eqref{eq:budget}, with resulting family in
+$\mathfrak A(G)$.
+\end{enumerate}
+Then every $G\in\mathcal G$ has $\hsep(G)\le B(|V(G)|)$.
+\end{proposition}
+\begin{proof}
+Induct on the order. The first condition supplies all base cases. The
+induction hypothesis supplies an allowed certificate for the chosen smaller
+graph. The second condition applies to that certificate; its output has
+size at most $k+B(n)-B(m)+B(m)-k=B(n)$ and remains allowed.
+\end{proof}
+
+The universal quantifier over allowed certificates prevents a circular
+argument that assumes a specially favorable smaller certificate without
+showing that induction supplies one. An alternative is to track a stronger,
+explicitly preserved boundary invariant. The proposition is elementary
+bookkeeping; it is not a structural reduction theorem for Barnette graphs.
+For the main manuscript's conjecture, one must still prove that an appropriate
+class and reductions cover every order divisible by four from 40 onward.
+Smaller orders cannot be silently used with this $B$: the cube already has
+$\hsep=6>B(8)=4$, and the order-12 extremal value is $8>B(12)=7$.
+
+\paragraph{Why a fixed increment is too restrictive.}
+The proved double-ladder formula in the main manuscript gives
+\[
+ \hsep(D(3,15))=42,\qquad \hsep(D(5,15))=59.
+\]
+This square insertion increases the order from 40 to 44 and the exact value
+by 17, although $B(44)-B(40)=71-60=11$. Thus a claim that \emph{every}
+square insertion increases $\hsep$ by at most this difference is false.
+The starting value leaves slack $60-42=18$, so no contradiction to the
+extremal conjecture follows. These identities do not themselves construct
+a lift with 17 repair cycles; that would require the separate lifting
+and incidence checks in Lemma~\ref{lem:lift}.
+
+\section{Independent checks and remaining research}
+The bounded audit in \texttt{artifacts/four\_port\_20260917/} uses local
+edge-subset enumeration to construct path covers. A separate standard-library
+verifier checks the paths, pairings and edge-union covers, reconstructs global
+cycles by actual connectivity, and independently enumerates the global
+Hamiltonian universe through perfect-matching complements. It checks equality
+of the full and reduced covered-requirement sets, including unsuccessful
+separation cases. It imports neither the constructor nor the project solvers.
+
+The audit covers all 24 terminal bijections for four pairs of fragments and
+24 further examples with incomplete local families: 120 labelled cases,
+not 120 isomorphism classes. Fragment orders are at most eight; resulting
+graphs have at most 16 vertices. There are 16 Barnette cases, all separating,
+and 16 strict reductions among all 120 cases. Four Barnette cases on 16
+vertices have full-product size 14 and reduced upper certificates of size 13.
+These bounds do not establish an exact value or the conjectured bound
+$B(16)=12$. The fragments include a cube with two independent edges removed,
+so the setup is not confined to pairs of ladders.
+
+The regression suite additionally checks invalid pairings, empty union
+covers, corrupted cycle certificates, failure to separate the cut when all
+four cut edges are always used, and the fixed-increment obstruction. Commands,
+versions, runtimes, labelled graph6 strings and SHA-256 hashes are recorded.
+No random choices, optimization solver, or large census reconstruction is used.
+Run from the repository root:
+\begin{quote}\small\ttfamily
+python artifacts/four\_port\_20260917/build\_examples.py\\
+python -m pytest -q tests/test\_four\_port\_lemma.py
+\end{quote}
+
+The next substantive obligations are to find reductions preserving the
+relevant graph class, prove lift availability and the local separation
+criterion, and control repair costs with a preserved certificate invariant.
+To establish uniqueness in Conjecture 11.2, a further analysis must show that
+equality forces the balanced or nearly balanced double-ladder structure.
+Neither the current state matrix nor the counting lemma supplies those
+structural results. This note is an unreviewed proof draft, not a proof of
+Conjecture 11.2 or Barnette's conjecture. AI tools assisted with derivation,
+drafting and finite checks; the author remains responsible for the claims.
+
+\begin{thebibliography}{9}
+\bibitem{cln}
+R. Curticapean, N. Lindzey, and J. Nederlof.
+\emph{A Tight Lower Bound for Counting Hamiltonian Cycles via Matrix Rank}.
+Author manuscript, 2017. \url{https://arxiv.org/abs/1709.02311}.
+\bibitem{gsw}
+M. Gorsky, R. Steiner, and S. Wiederrecht.
+\emph{Matching theory and Barnette's conjecture}.
+Discrete Mathematics 346(2), 113249, 2023.
+\href{https://doi.org/10.1016/j.disc.2022.113249}{doi:10.1016/j.disc.2022.113249}.
+The qualitative three-edge-cut context is developed in this work.
+\end{thebibliography}
+\end{document}

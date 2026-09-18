@@ -1,0 +1,16 @@
+{
+  "proof_source": "paper/quantitative_splice.tex",
+  "proof_source_sha256": "4ef424986de90191e765e77d02707acd81337550697babc28d6723154f9de461",
+  "pdf_sha256": "090d3dd4377c1cda6ba81561b02e270b77a4eceb2ea3e4fb602391c2d91a8981",
+  "pages": 4,
+  "latex_warnings": [],
+  "visual_review": "all four final pages inspected",
+  "example_audit": "artifacts/splice_lemma_20260917/results.json",
+  "example_audit_sha256": "ec6c68f85e78fa4b742890cba224e5764157cf262d0d92286f2ae25c667e918f",
+  "test_command": "python -m pytest -q tests/test_splice_lemma.py",
+  "tests_passed": 29,
+  "test_seconds": 0.45,
+  "claim_scope": "conditional symbolic upper bounds; no general extremal or novelty claim",
+  "cube_table_checked_against_independent_enumeration": true,
+  "cube_edge_signatures": "12 distinct incidence signatures, each of size 4; two cycles per omitted-port state"
+}

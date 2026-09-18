@@ -1,0 +1,991 @@
+{
+  "verified": true,
+  "scope": "bounded examples, not a census or proof of the general theorem",
+  "command": "python artifacts/splice_lemma_20260917/build_examples.py",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "networkx": "3.6.1",
+  "solver": "none; path DFS and independent exhaustive perfect matchings",
+  "seed": null,
+  "finished_utc": "2026-09-17T04:54:03.794698+00:00",
+  "seconds": 0.8776969999889843,
+  "source_sha256": {
+    "build_examples.py": "20889c0fdcd7e29e83d83f6e28fad1b0f495ea41b16b07b518fd07196eb06e81",
+    "construct.py": "30ef60ca6c7c2a6da067918d258ae6dd83f59b70b31ee6c420f0cc60d4416dea",
+    "verify.py": "508d88ead3a816f01b2da2b6163e4582a384c8b034ca8baa85dfde5832cb1b6f"
+  },
+  "examples": [
+    {
+      "verified": true,
+      "order": 14,
+      "input_family_sizes": [
+        6,
+        6
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 12,
+      "reduced_upper_bound": 12,
+      "complete_output_cycle_count": 12,
+      "ordered_requirements_verified": 420,
+      "exact_hsep_claimed": false,
+      "example": "cube_cube_0_complete.json",
+      "certificate_sha256": "0e30f1868d182ed954ecaea500050f77df73420bb6787bd3f3fdc547a1fa8643"
+    },
+    {
+      "verified": true,
+      "order": 14,
+      "input_family_sizes": [
+        6,
+        6
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 12,
+      "reduced_upper_bound": 12,
+      "complete_output_cycle_count": 12,
+      "ordered_requirements_verified": 420,
+      "exact_hsep_claimed": false,
+      "example": "cube_cube_1_complete.json",
+      "certificate_sha256": "37c36d7fe17584e1a9c0d34830ff808ecb83dd5b7fdd2e3c943e131d581f80ee"
+    },
+    {
+      "verified": true,
+      "order": 14,
+      "input_family_sizes": [
+        6,
+        6
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 12,
+      "reduced_upper_bound": 12,
+      "complete_output_cycle_count": 12,
+      "ordered_requirements_verified": 420,
+      "exact_hsep_claimed": false,
+      "example": "cube_cube_2_complete.json",
+      "certificate_sha256": "93a1c0c20767d1231d1c7a7a8ce8f31274deba8574d9061ea7d7c5592eab999d"
+    },
+    {
+      "verified": true,
+      "order": 14,
+      "input_family_sizes": [
+        6,
+        6
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 12,
+      "reduced_upper_bound": 12,
+      "complete_output_cycle_count": 12,
+      "ordered_requirements_verified": 420,
+      "exact_hsep_claimed": false,
+      "example": "cube_cube_3_complete.json",
+      "certificate_sha256": "5765e5f98de40e499dea0a039ab664ac18c70549dcb897480198c489a10aab57"
+    },
+    {
+      "verified": true,
+      "order": 14,
+      "input_family_sizes": [
+        6,
+        6
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 12,
+      "reduced_upper_bound": 12,
+      "complete_output_cycle_count": 12,
+      "ordered_requirements_verified": 420,
+      "exact_hsep_claimed": false,
+      "example": "cube_cube_4_complete.json",
+      "certificate_sha256": "f0571026964515617a61cef5b812b959ac0b6b911abe7a81481e01872d00ad01"
+    },
+    {
+      "verified": true,
+      "order": 14,
+      "input_family_sizes": [
+        6,
+        6
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 12,
+      "reduced_upper_bound": 12,
+      "complete_output_cycle_count": 12,
+      "ordered_requirements_verified": 420,
+      "exact_hsep_claimed": false,
+      "example": "cube_cube_5_complete.json",
+      "certificate_sha256": "fc4486649e7152e75be292f961b137d5082ab4b9ffa4a87b2cf89d5d2b6d9b2d"
+    },
+    {
+      "verified": true,
+      "order": 18,
+      "input_family_sizes": [
+        6,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          4
+        ]
+      ],
+      "product_upper_bound": 16,
+      "reduced_upper_bound": 16,
+      "complete_output_cycle_count": 16,
+      "ordered_requirements_verified": 702,
+      "exact_hsep_claimed": false,
+      "example": "cube_prism6_0_complete.json",
+      "certificate_sha256": "8f6070106c6e11fdbbc64af1b8190463fa14f65ee7ac825ba7dd5f8cd0e91609"
+    },
+    {
+      "verified": true,
+      "order": 18,
+      "input_family_sizes": [
+        6,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          2
+        ]
+      ],
+      "product_upper_bound": 16,
+      "reduced_upper_bound": 16,
+      "complete_output_cycle_count": 16,
+      "ordered_requirements_verified": 702,
+      "exact_hsep_claimed": false,
+      "example": "cube_prism6_1_complete.json",
+      "certificate_sha256": "d2099fcdf2d8a21653ea6fc67084ea4715fb5c43e348426bf3ad5aa0dd3d6b9b"
+    },
+    {
+      "verified": true,
+      "order": 18,
+      "input_family_sizes": [
+        6,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          4
+        ]
+      ],
+      "product_upper_bound": 16,
+      "reduced_upper_bound": 16,
+      "complete_output_cycle_count": 16,
+      "ordered_requirements_verified": 702,
+      "exact_hsep_claimed": false,
+      "example": "cube_prism6_2_complete.json",
+      "certificate_sha256": "bab67799053a034d170f76972bf1192b95e6c265343ae8550283ce53e21592e8"
+    },
+    {
+      "verified": true,
+      "order": 18,
+      "input_family_sizes": [
+        6,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          4,
+          2
+        ]
+      ],
+      "product_upper_bound": 16,
+      "reduced_upper_bound": 16,
+      "complete_output_cycle_count": 16,
+      "ordered_requirements_verified": 702,
+      "exact_hsep_claimed": false,
+      "example": "cube_prism6_3_complete.json",
+      "certificate_sha256": "9c1d27919a419abe2a970a5fdcffcac33925f7258cd7d076a8f1e484ca8c75a0"
+    },
+    {
+      "verified": true,
+      "order": 18,
+      "input_family_sizes": [
+        6,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 16,
+      "reduced_upper_bound": 16,
+      "complete_output_cycle_count": 16,
+      "ordered_requirements_verified": 702,
+      "exact_hsep_claimed": false,
+      "example": "cube_prism6_4_complete.json",
+      "certificate_sha256": "c8aa46576ddfcbb8c66840f5834575a11eafebb3c6424ea37cd9ed8b7d9357ef"
+    },
+    {
+      "verified": true,
+      "order": 18,
+      "input_family_sizes": [
+        6,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          4,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 16,
+      "reduced_upper_bound": 16,
+      "complete_output_cycle_count": 16,
+      "ordered_requirements_verified": 702,
+      "exact_hsep_claimed": false,
+      "example": "cube_prism6_5_complete.json",
+      "certificate_sha256": "20643444f7ce035a988a778887190d955c7562160df67fbc370ac0897bd82d7e"
+    },
+    {
+      "verified": true,
+      "order": 22,
+      "input_family_sizes": [
+        8,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          4
+        ],
+        [
+          2,
+          2,
+          4
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 23,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 1056,
+      "exact_hsep_claimed": false,
+      "example": "prism6_prism6_0_complete.json",
+      "certificate_sha256": "555a37806df3e65de72293cd77ec2505140e449b2844a906367e842c179d7e76"
+    },
+    {
+      "verified": true,
+      "order": 22,
+      "input_family_sizes": [
+        8,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          4
+        ],
+        [
+          2,
+          4,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 20,
+      "ordered_requirements_verified": 1056,
+      "exact_hsep_claimed": false,
+      "example": "prism6_prism6_1_complete.json",
+      "certificate_sha256": "e68cbc0f8964824e101b5a4ca1b2957a4d10a337f61c3ebea18d1bd76f281ed2"
+    },
+    {
+      "verified": true,
+      "order": 22,
+      "input_family_sizes": [
+        8,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          4
+        ],
+        [
+          2,
+          2,
+          4
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 23,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 1056,
+      "exact_hsep_claimed": false,
+      "example": "prism6_prism6_2_complete.json",
+      "certificate_sha256": "fb4a38653313a25c2a60c9f2b6bcdcd84116aa1126c3779d61a0dc49ea0fcd06"
+    },
+    {
+      "verified": true,
+      "order": 22,
+      "input_family_sizes": [
+        8,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          4
+        ],
+        [
+          2,
+          4,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 20,
+      "ordered_requirements_verified": 1056,
+      "exact_hsep_claimed": false,
+      "example": "prism6_prism6_3_complete.json",
+      "certificate_sha256": "c96c861404d7166d705f28a008a6d4442331cde5f93d880c1498a1d460114bcc"
+    },
+    {
+      "verified": true,
+      "order": 22,
+      "input_family_sizes": [
+        8,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          4
+        ],
+        [
+          4,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 20,
+      "ordered_requirements_verified": 1056,
+      "exact_hsep_claimed": false,
+      "example": "prism6_prism6_4_complete.json",
+      "certificate_sha256": "380ad751c28a7a75e798c20ea760f2614b2b2d41ac29ffe69771db3016a8a20c"
+    },
+    {
+      "verified": true,
+      "order": 22,
+      "input_family_sizes": [
+        8,
+        8
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          4
+        ],
+        [
+          4,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 20,
+      "ordered_requirements_verified": 1056,
+      "exact_hsep_claimed": false,
+      "example": "prism6_prism6_5_complete.json",
+      "certificate_sha256": "8fa5e13e5ddd83e95851d74ae7bde912050a07c8f782f235cb983de0e585d864"
+    },
+    {
+      "verified": true,
+      "order": 30,
+      "input_family_sizes": [
+        10,
+        10
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          2,
+          2,
+          6
+        ]
+      ],
+      "product_upper_bound": 44,
+      "reduced_upper_bound": 40,
+      "complete_output_cycle_count": 44,
+      "ordered_requirements_verified": 1980,
+      "exact_hsep_claimed": false,
+      "example": "prism8_prism8_0_complete.json",
+      "certificate_sha256": "324f000d11c8d1b92f9a52499c8e404ad0af68dee12f1619f3febd67a0cc1274"
+    },
+    {
+      "verified": true,
+      "order": 30,
+      "input_family_sizes": [
+        10,
+        10
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          2,
+          6,
+          2
+        ]
+      ],
+      "product_upper_bound": 28,
+      "reduced_upper_bound": 28,
+      "complete_output_cycle_count": 28,
+      "ordered_requirements_verified": 1980,
+      "exact_hsep_claimed": false,
+      "example": "prism8_prism8_1_complete.json",
+      "certificate_sha256": "839a3604891ad6c639a0e6fe391b930b92dd847cd4501a3bfaab9b0e6a33107a"
+    },
+    {
+      "verified": true,
+      "order": 30,
+      "input_family_sizes": [
+        10,
+        10
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          2,
+          2,
+          6
+        ]
+      ],
+      "product_upper_bound": 44,
+      "reduced_upper_bound": 40,
+      "complete_output_cycle_count": 44,
+      "ordered_requirements_verified": 1980,
+      "exact_hsep_claimed": false,
+      "example": "prism8_prism8_2_complete.json",
+      "certificate_sha256": "e4628c4c7dc78c4782c8efb5772ad5b4727923afb950242560b3f7a5e497412f"
+    },
+    {
+      "verified": true,
+      "order": 30,
+      "input_family_sizes": [
+        10,
+        10
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          2,
+          6,
+          2
+        ]
+      ],
+      "product_upper_bound": 28,
+      "reduced_upper_bound": 28,
+      "complete_output_cycle_count": 28,
+      "ordered_requirements_verified": 1980,
+      "exact_hsep_claimed": false,
+      "example": "prism8_prism8_3_complete.json",
+      "certificate_sha256": "529c48c9102a1790d4fcd22c66c97da8142755511bd6d1c65a28e0a0ea67be38"
+    },
+    {
+      "verified": true,
+      "order": 30,
+      "input_family_sizes": [
+        10,
+        10
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          6,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 28,
+      "reduced_upper_bound": 28,
+      "complete_output_cycle_count": 28,
+      "ordered_requirements_verified": 1980,
+      "exact_hsep_claimed": false,
+      "example": "prism8_prism8_4_complete.json",
+      "certificate_sha256": "48444e0dc31cd5be1b6d17b502894785c0eb3638af726efdb946ac7634c3ec4f"
+    },
+    {
+      "verified": true,
+      "order": 30,
+      "input_family_sizes": [
+        10,
+        10
+      ],
+      "state_sizes": [
+        [
+          2,
+          2,
+          6
+        ],
+        [
+          6,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 28,
+      "reduced_upper_bound": 28,
+      "complete_output_cycle_count": 28,
+      "ordered_requirements_verified": 1980,
+      "exact_hsep_claimed": false,
+      "example": "prism8_prism8_5_complete.json",
+      "certificate_sha256": "9b89fbc68dd6c46e2996fc4df4b64b4e129ecad748e504a4f1e6b6b1b6778b80"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        12,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 24,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_0_complete.json",
+      "certificate_sha256": "657887ec925dcfc0d2d109db394c21f5b6cfc81b2a9c8fc176729b5bef02d504"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        10,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_0_irredundant.json",
+      "certificate_sha256": "061efdc9cde8e9fbdb4687e2eda0f75b94ee02d47d63b9bc60743849e35fa43f"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        12,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 24,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_1_complete.json",
+      "certificate_sha256": "a93387b6216ba102d6eef6e98577ac9e5abf1eb10b16627c4608bed101f04b7d"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        10,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_1_irredundant.json",
+      "certificate_sha256": "f818f81feb55ad63b6683f7e0015db4b920572d13635567421e450dea5adda1f"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        12,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 24,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_2_complete.json",
+      "certificate_sha256": "427506a8f59c1c30b46e088588b17c03b83614c5fe7d19ca025eda80d44a889a"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        10,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_2_irredundant.json",
+      "certificate_sha256": "4c7668a1dcab8c1aa0ad82fc684c8b869fc0e4b37b4c3a937c4f57a9aea20401"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        12,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 24,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_3_complete.json",
+      "certificate_sha256": "42bc46f755151741a215fac00da932064b916585e729d9159f4552bae53af481"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        10,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_3_irredundant.json",
+      "certificate_sha256": "28f00c8481bbe3e0c444ea097b7a3cea0480768dd420c02124441a9f1ae2977d"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        12,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 24,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_4_complete.json",
+      "certificate_sha256": "c3d985f38127af839e9dce7dea57915365df458b69eca3854ce51f6791cc8f5c"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        10,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_4_irredundant.json",
+      "certificate_sha256": "b0a937d77f74a11222db0c762de2c5489fe96039cf1e0f3d489385e5b720cd26"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        12,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 24,
+      "reduced_upper_bound": 24,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_5_complete.json",
+      "certificate_sha256": "dd04f09d406495bf577544756ef45eaf50ea25215c853a46bdb98740af27242b"
+    },
+    {
+      "verified": true,
+      "order": 20,
+      "input_family_sizes": [
+        10,
+        6
+      ],
+      "state_sizes": [
+        [
+          4,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "product_upper_bound": 20,
+      "reduced_upper_bound": 20,
+      "complete_output_cycle_count": 24,
+      "ordered_requirements_verified": 870,
+      "exact_hsep_claimed": false,
+      "example": "nested_cube_cube_5_irredundant.json",
+      "certificate_sha256": "408138ecf1216a6b6c80d38ab85459177b100b5f3871e89548889eb2afb93d33"
+    }
+  ]
+}
