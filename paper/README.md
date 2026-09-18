@@ -5,11 +5,12 @@ submitted paper and makes no absolute novelty claim. Thomas Bauer is the sole
 author.
 
 **Data availability:** the original external proof packages were lost in an
-accidental drive deletion. The public release provides reconstructed certificates
-through order 24 and selected larger graphs. Original census claims above order
-24 remain historical reports pending restoration of the full evidence; see
-[`../docs/data_availability.md`](../docs/data_availability.md). The general
-double-ladder proof and its self-contained regression checker remain available.
+accidental drive deletion. Release v0.9.0 provides a newly calculated complete
+census package through order 36 and new exact certificates for three larger
+double ladders. The new hashes and runtime records are distinct from the deleted
+historical files; see [`../docs/data_availability.md`](../docs/data_availability.md).
+The general double-ladder proof and its self-contained regression checker remain
+available independently of the census data.
 
 ## Build
 
@@ -20,7 +21,7 @@ The separate unreviewed note [`quantitative_splice.tex`](quantitative_splice.tex
 is retained as the original derivation; the integrated manuscript is the
 current presentation. The [independent audit](../artifacts/splice_lemma_20260917/README.md)
 checks 36 small labelled examples. Neither the audit nor manuscript compilation
-starts the paused census reconstruction. Build the separate note with
+depends on the completed census reconstruction. Build the separate note with
 `latexmk -pdf quantitative_splice.tex`.
 
 A current TeX Live or MiKTeX installation with `latexmk`, `pdflatex`, BibTeX,
@@ -69,6 +70,16 @@ cube cycles printed in the manuscript. All rendered pages were inspected;
 the final LaTeX log has no undefined references or citations and no overfull
 or underfull boxes. Sources, PDF hash, commands and results are recorded in
 [`manuscript_integration_review.json`](../artifacts/splice_lemma_20260917/manuscript_integration_review.json).
+
+The 2026-09-18 data-availability revision records the completed v0.9.0
+recalculation: all 22,263 census graphs through order 36 and the exact
+graph-specific certificates for `D(9,9)`, `D(11,9)`, and `D(11,11)`. The
+release verifier passed on 333 files in 560.39 seconds. The full software suite
+passed with 597 tests and 10 explicit environment or historical-package skips.
+The corrected 21-page PDF has SHA-256
+`ed5300bab497fb09f9833ea3505a23c2d414d6ebe7dbe0b29c9a99d21c79aa89`;
+all pages were rendered and visually inspected, and the LaTeX log contains no
+undefined references, overfull boxes, or underfull boxes.
 
 ## Structure
 
@@ -136,18 +147,17 @@ hashes are stated in `reproducibility_supplement.tex`.
   `hsep(D(a,b))=((a+2)(b+2)-1)/2` for odd `a,b >= 3`; quantitative
   three-edge gluing for finite separating families, its projection lower
   bound, scalar upper bound, and cube-insertion corollary.
-- **Historically reported finite results (see data availability above):** the complete extremal sequence on
-  nonempty orders 8--36, all maximizers and ties, the eight census-range
-  double-ladder identifications, seven exact family expansions, the finite
-  Hamiltonian-cycle counts, the tied-order structural classification, and the
-  graph-specific prospective certificates for `D(9,9)`, `D(11,9)`, and
+- **Recalculated finite results (see data availability above):** the complete
+  extremal sequence on nonempty orders 8--36, all maximizers and ties, the eight
+  census-range double-ladder identifications, the finite Hamiltonian-cycle
+  counts, and exact graph-specific certificates for `D(9,9)`, `D(11,9)`, and
   `D(11,11)`.
 - **Structurally verified observations:** strict ladder components, the local
   tile-state classification on the emitted complete universes, and the 25 tied
   expansion links.
-- **Historically reported prospective confirmations:** the prediction-locked values for
-  `D(9,9)`, `D(11,9)`, and `D(11,11)`. They agree with the general theorems
-  but make no order-level extremal claim.
+- **Historical prediction lock and new confirmations:** the originally frozen
+  values for `D(9,9)`, `D(11,9)`, and `D(11,11)` agree with the new exact
+  certificates and the general theorems but make no order-level extremal claim.
 - **Open or conjectural:** extremality and uniqueness beyond order 36, the
   structure of the tied branch, and the order-38 linear extrapolation. In
   particular, the paper does not claim `M_B(40)=60`.

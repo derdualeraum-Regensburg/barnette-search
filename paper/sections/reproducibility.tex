@@ -3,19 +3,18 @@
 
 \paragraph{Public data availability.}
 The original external packages were lost in an accidental deletion of the
-research drive.  Release v0.8.0 provides reconstructed graph packages for all
-55 graphs in the nonempty censuses through order 24, 39 of the 57 graphs at
-order 26, and three graphs at order 32.  Its standard-library release verifier
-checks hashes, graph structure, complete Hamiltonian universes, and matching
-upper and lower proofs.  The order-26 and order-32 sets are incomplete and
-support graph-specific results only.  The original complete evidence through
-order 36 and the prospective and lift packages remain unavailable; historical
-manifest hashes do not substitute for those files.  Downloads and exact
-instructions are maintained in \texttt{docs/data\_availability.md} in the
+research drive.  Release v0.9.0 provides a newly calculated replacement: the
+complete non-isomorphic Barnette censuses through order 36, comprising 22,263
+graphs at the nonempty orders, together with graph-specific exact certificates
+for $D(9,9)$, $D(11,9)$, and $D(11,11)$.  The files have new hashes and
+runtime metadata and are not byte-for-byte restorations.  The original
+galleries and separate prediction and lift packages remain unavailable;
+historical manifest hashes do not substitute for those files.  Downloads and
+exact instructions are maintained in \texttt{docs/data\_availability.md} in the
 \href{https://github.com/derdualeraum-Regensburg/barnette-search}{public repository}.
 
-The original audit recorded Plantri 5.8 generation of the complete non-isomorphic Barnette censuses through
-order 36: 22,263 graphs across the nonempty orders.  Retained artifacts include
+The recalculation records Plantri 5.8 generation of the complete
+non-isomorphic Barnette censuses through order 36.  Its artifacts include
 canonical graph records, planar embeddings, cycle universes where required,
 separating families, and lower certificates.
 
@@ -49,9 +48,10 @@ sets were independently verified.  Use of the program does not imply
 endorsement, collaboration, or coauthorship.
 
 The accompanying repository contains the producer, structural analysis, tests,
-standalone verifier, and manuscript.  Large immutable packages remain external;
-their identifiers, runtimes, manifest statistics, prediction lock, layout
-audit, and order-36 identifier are recorded in
+standalone verifier, and manuscript.  Large immutable packages remain external
+to Git and are distributed as release assets; their identifiers, runtimes,
+manifest statistics, historical prediction lock, layout audit, and order-36
+identifier are recorded in
 \texttt{reproducibility\_supplement.tex}.
 
 \subsection*{Draft AI-assistance disclosure}

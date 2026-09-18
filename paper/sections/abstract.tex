@@ -5,9 +5,10 @@ Hamiltonian-cycle hypergraph of \(G\): for every ordered pair of distinct edges
 computation reported an exhaustive certificate audit of all 22,263
 non-isomorphic Barnette graphs through order 36, identifying every maximizer
 using exact upper and lower certificates and excluding competitors by strict
-upper certificates.  Following loss of the original external data, the current
-release reconstructs complete certificates only through order 24 and for
-selected larger graphs; higher-order census claims remain historical reports.
+upper certificates.  Following loss of the original external data, release
+v0.9.0 newly recalculates the complete censuses through order 36, checks a
+separating cover for every graph, and supplies exact lower certificates for
+every potential maximizer.
 At orders divisible by four in this range, the unique maximizers
 form a double-ladder family related by a four-vertex square insertion.  We
 define this family, classify its Hamiltonian cycles, and prove for all odd
@@ -18,8 +19,8 @@ define this family, classify its Hamiltonian cycles, and prove for all odd
 Matching symbolic constructions prove the two bounds: a packing of ordered
 edge requirements gives the lower bound, while a boundary-plus-parity family
 of Hamiltonian cycles gives the upper bound through an antichain of incidence
-signatures.  The original prediction-locked computations reported confirmations
-on three larger family members.  Those checks did not establish order-level
+signatures.  New exact graph-specific certificates confirm three larger family
+members at orders 40, 44, and 48.  Those checks do not establish order-level
 extremality beyond the census range; whether balanced double ladders remain
 globally extremal after order 36 is open.
 

@@ -1,23 +1,21 @@
-\section{The reported finite extremal sequence}
+\section{The certified finite extremal sequence}
 \label{sec:sequence}
 
-\begin{computationalresult}[Original computation through order 36]
+\begin{computationalresult}[Recalculated complete census through order 36]
 \label{res:sequence}
-The original complete Plantri 5.8 censuses and certificate audit reported
-the values in \cref{tab:extremal-sequence}.  Across the nonempty orders, 22,263
-non-isomorphic graphs were reported audited, with exact maximum and tie counts
-and strict upper certificates for all nonmaximizers.  The current public
-reconstruction verifies the complete censuses through order 24; the lost
-original evidence above that order has not been fully restored.
+The release v0.9.0 Plantri 5.8 censuses and certificate audit give the values in
+\cref{tab:extremal-sequence}.  Across the nonempty orders, 22,263
+non-isomorphic graphs are audited, with exact maximum and tie counts and strict
+upper certificates for all nonmaximizers.  A standalone verifier checks the
+complete package independently of the producer.
 \end{computationalresult}
 
 \begin{table}[htbp]
 \centering
-\caption{Originally reported Barnette Hamiltonian edge-separation extrema.
-Entries above order 24 are historical census claims whose complete original
-certificates are currently unavailable.  The last
-column is the number of undirected Hamiltonian cycles in each maximizer; within
-every tied order all maximizers have the displayed count.}
+\caption{Recalculated Barnette Hamiltonian edge-separation extrema through
+order 36.  The last column is the number of undirected Hamiltonian cycles in
+each maximizer; within every tied order all maximizers have the displayed
+count.}
 \label{tab:extremal-sequence}
 \input{tables/extremal_sequence}
 \end{table}
@@ -27,12 +25,11 @@ Every cubic graph has even order, since the degree-sum identity gives
 complete order-10 Plantri census is empty.  These undefined entries are not
 optimization failures.
 
-The originally reported unique order-36 maximizer has \(\hsep=49\) and 68
+The unique order-36 maximizer has \(\hsep=49\) and 68
 Hamiltonian cycles, consistent with the general double-ladder theorem below.
-The original audit recorded a 49-cycle primal certificate, a matching packing,
-and covers of size at most 48 for all 15,373 competitors.  Those complete
-order-level certificates are currently unavailable.  Its canonical identifier
-is recorded in the reproducibility supplement.
+The recalculation supplies a 49-cycle primal certificate, a matching packing,
+and covers of size at most 48 for all 15,373 competitors.  Its canonical
+identifier is recorded in the reproducibility supplement.
 
 Matching packings certify the displayed maximizers at orders
 \(8,12,16,20,24,28,32,36\).  At orders \(14,18,22,26,30,34\), at least one
@@ -41,8 +38,7 @@ complete cycle universe instead.  This distinction concerns the form of the
 lower certificate, not the exactness of the result.
 
 \begin{statusnote}
-Computational Result~\ref{res:sequence} records the scope claimed by the
-original finite computation.  Current independent public verification covers
-the complete censuses only through order 24; see Section~\ref{sec:reproducibility}.
-No formula for arbitrary \(n\), or census result at orders 38 or 40, follows.
+Computational Result~\ref{res:sequence} is supported by the recalculated public
+package through order 36; see Section~\ref{sec:reproducibility}.  No formula for
+arbitrary \(n\), or census result at orders 38 or 40, follows.
 \end{statusnote}

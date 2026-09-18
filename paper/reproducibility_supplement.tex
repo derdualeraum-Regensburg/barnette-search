@@ -2,47 +2,47 @@
 \section*{Reproducibility supplement}
 
 This companion records detailed identifiers and verification statistics that
-are omitted from the main mathematical narrative.  The immutable result
-packages were read but not modified during the editorial revision.
+are omitted from the main mathematical narrative.  Release v0.9.0 is a new
+calculation after loss of the original packages; it does not reuse their hashes
+or timestamps.
 
 \subsection*{Certificate packages and runtimes}
 
-The global standard-library verifier checked all 29 order packages from 8
-through 36, including the 14 nonempty orders, every cycle certificate, every
-ordered edge-pair cover, all lower certificates, and the global summaries.  Its
-recorded runtime was 655.989 seconds.  Producer runtimes across the orders sum
-to 5,186.661 seconds; this mixes fresh production with the imported order-36
-workflow and is audit metadata rather than a hardware-independent benchmark.
+The release standard-library verifier checked 333 files, all 29 order packages
+from 8 through 36, the 14 nonempty censuses, every ordered edge-pair cover, all
+lower certificates needed for the maxima, the global summaries, and the three
+larger double ladders.  Its recorded runtime was 560.388 seconds on Windows 11
+with Python 3.12.10.  This is audit metadata rather than a
+hardware-independent benchmark.
 
 \begin{center}
 \scriptsize
 \begin{tabular}{lll}
 \toprule
-package & entries & SHA-256 of \texttt{SHA256SUMS.txt} \\
+package & entries & SHA-256 identifier \\
 \midrule
-certified sequence & 266 &
-\nolinkurl{2a0a27cbb2c5dcefca3173293dc1fbfb21b55a69cdd366da3ab3b30a2842affa}\\
-order-36 subpackage & 9 &
-\nolinkurl{6aaa43a275ecbbedd25586fc244140ddfb7f107e14025b2bfd1da34af417d00d}\\
-ladder analysis & 30 &
-\nolinkurl{17b1a8219321fc70ac8146f17e29d8b836c90862ec96248429141869e252a67e}\\
-prospective test & 50 &
-\nolinkurl{6bd843dfbe9f3eb1aa3213511ce28091efc7567f7d7565f0aa980943b05713a1}\\
-packing-lift output & 25 &
-\nolinkurl{188800bd2a8b0835216f6fa9c78eb4673e5b3bc24d1dc216bc3a7d619986f31e}\\
-primal-lift output & 13 &
-\nolinkurl{bd5fdc3e3a160b8339fa412d4c1decf2113919cf1f4f6c2dc8856b474aeb37d1}\\
-layout-study output & 215 &
-\nolinkurl{65b2b4fc671c8889a38edf6188e46a63259a81b0d00a949f81fcee89e3e0d79c}\\
+release archive & 333 &
+\nolinkurl{4c8d92a63d3180448bdbe372f41a10a5aa333cc2b40002e52084eb3cd5c08dfe}\\
+release manifest & 333 &
+\nolinkurl{f91aec24fea9653aeefc4ae013f0d62a5e5accb69cce6905ebefa66adbd99ec1}\\
+certified sequence & 235 &
+\nolinkurl{ca14800cb49c9a14ba578812671274be40efc780dd2b385cbcd5d4c565d42560}\\
+order-36 subpackage & 8 &
+\nolinkurl{a7e893a8ed4b7efb8c415ab60fcf0cfd5ddae36635aa4b9be94d9d0ff702d8c4}\\
+$D(9,9)$ certificate & 9 &
+\nolinkurl{2761749b6bac422236546dedaececbb28c678bebe9cc6a271e53a5566accce74}\\
+$D(11,9)$ certificate & 9 &
+\nolinkurl{fc37fa381dbe441eb8b90a99b68c9cfaacf46124c25b8ff4333c13e45e782f07}\\
+$D(11,11)$ certificate & 9 &
+\nolinkurl{474500eef0971a70440309b4b2378b7fa514bea862d5aa120f145c00da5fa22e}\\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Every listed digest was rechecked without modifying its package.  The packing-
-and primal-lift source inventories bind their outputs to the order-36,
-ladder-analysis, and prospective artifacts.  Both independent-verification
-results are \texttt{pass}.  The primal package checks 2,862, 3,540, 4,290, and
-5,112 ordered edge requirements for its four finite double ladders.
+Every listed digest was rechecked without modifying its package.  The release
+manifest covers the nested manifests as ordinary files, while the verifier also
+checks their entries and mathematical contents.  The three graph-specific
+certificates cover 3,540, 4,290, and 5,112 ordered edge requirements.
 
 \subsection*{Order 36 and prediction lock}
 
@@ -55,16 +55,16 @@ Its complete universe has 68 Hamiltonian cycles.  A 49-cycle primal certificate
 and a 49-requirement packing certificate prove \(\hsep=49\); all 15,373
 competitors have verified covers of size at most 48.
 
-The prospective predictions are locked in a read-only JSON record with SHA-256
+The historical prospective predictions were locked in a read-only JSON record
+with recorded SHA-256
 \begin{center}
 \scriptsize
 \nolinkurl{e8ba381dd163c59941db81f65b71b70d6d78cdb7cfd6f6a41ba4828fe25c89fb}.
 \end{center}
-For each of \(D(9,9)\), \(D(11,9)\), and \(D(11,11)\), a path-based enumerator
-and an independent perfect-matching/complement enumerator produced the same
-complete normalized Hamiltonian-cycle universe.  The verifier passed the three
-constructions, cycle universes, structural classifications, primal covers,
-matching lower certificates, and local and global manifests.
+That deleted record is not recreated by the new run.  For each of \(D(9,9)\),
+\(D(11,9)\), and \(D(11,11)\), release v0.9.0 contains a new complete normalized
+Hamiltonian-cycle universe.  The verifier passes the graph identities, cycle
+universes, primal covers, matching lower certificates, and manifests.
 
 \subsection*{Layout study}
 
@@ -86,7 +86,7 @@ remained
 
 \subsection*{Regression tests}
 
-The latest repository run collected 203 tests: 198 passed and five
-environment-gated Plantri or cubhamg integrations were skipped.  These ordinary
-software tests are separate from the standalone mathematical certificate
-verification.
+The v0.9.0 repository run passed 597 tests; ten environment-gated integrations
+or tests requiring unavailable historical packages were explicitly skipped.
+These ordinary software tests are separate from the standalone mathematical
+certificate verification.
