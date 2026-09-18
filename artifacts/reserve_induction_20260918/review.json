@@ -1,0 +1,24 @@
+{
+  "status": "bounded audit passed; general induction open",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tests": [
+    {
+      "command": "python -m pytest -q tests/test_reserve_induction.py",
+      "passed": 234,
+      "skipped": 0,
+      "runtime_seconds": 11.25
+    },
+    {
+      "command": "python -m pytest -q",
+      "passed": 831,
+      "skipped": 10,
+      "runtime_seconds": 25.44
+    }
+  ],
+  "test_source_sha256": "3d91942b180de04508852b6e49bd874e1dfa472d740f50c7d9678cd34ec9dcbe",
+  "independent_verification_sha256": "0aea8ebc797f70521d548c39f3004a64c66dfe12acb1e21a703255c9d9c6b3e1",
+  "new_exact_hsep_claim": false,
+  "general_closure_claim": false,
+  "main_manuscript_changed": false
+}

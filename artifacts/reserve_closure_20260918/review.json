@@ -1,0 +1,26 @@
+{
+  "status": "general conditional preservation proof with local and finite regression checks",
+  "scope": "full lifting under the specified facial square insertion",
+  "reserve_bound": "2*s*(n-1) <= (n+4)*(n-1), conditional on an available robust family",
+  "sharp_core_budget_proved": false,
+  "conjecture_11_2_proved": false,
+  "external_peer_review": false,
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tests": [
+    {
+      "command": "python -m pytest -q tests/test_reserve_closure.py",
+      "passed": 214,
+      "runtime_seconds": 3.0
+    },
+    {
+      "command": "python -m pytest -q",
+      "passed": 1045,
+      "skipped": 10,
+      "runtime_seconds": 28.44
+    }
+  ],
+  "test_source_sha256": "95d2c7f55ecd5bbe3d90ebf5e2584067b8b9b46d994149197dc2adbfe7a3cd21",
+  "verification_sha256": "66f797f427dbb0001c7b1cd517dd5ad1bce278ddad8feb697df0eb1f79ac990a",
+  "main_manuscript_changed": false
+}

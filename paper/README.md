@@ -101,6 +101,25 @@ an exact description of the missing separation requirements after lifting.
 Its bounded 16-to-20-vertex example needs a reserve witness from outside the
 old optimal family and achieves a verified 17-cycle upper certificate.
 
+The subsequent [reserve-induction note](../artifacts/reserve_induction_20260918/README.md)
+formulates a stronger square-reserve invariant and proves a conditional repair
+bound of one additional lifted cycle per reserve witness. Its bounded audit
+checks 206 marked expansions on 15 census representatives through order 20,
+including graphs outside the double-ladder family. A support-inclusion test
+checks preservation for every separating, square-robust source family on
+these fixed graphs. Quantitative transition certificates use selected source
+families; general preservation, reserve budgets, and Conjecture 11.2 remain open.
+This research note is separate from the main manuscript.
+
+The [square-reserve preservation proof](../artifacts/reserve_closure_20260918/README.md)
+then establishes general preservation under full lifting for this facial
+square insertion. It treats new and surviving quadrilateral faces explicitly
+and gives a coarse reserve bound of `2s(n-1) <= (n+4)(n-1)`, where `s` is
+the number of quadrilateral faces. The sharp separating-family budget and
+the complete reduction theory remain open. Its independent local-table
+checker also verifies 97,648 explicit witness implications on the earlier
+206 marked expansions. This proof note is not yet integrated into the paper.
+
 - `main.tex`: document setup and section order.
 - `sections/`: abstract, definitions, related work, computational method, certified
   extremal sequence, double ladders, Hamiltonian structure, exact symbolic

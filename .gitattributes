@@ -5,6 +5,8 @@ artifacts/splice_lemma_20260917/** -text whitespace=cr-at-eol
 artifacts/four_port_20260917/** -text whitespace=cr-at-eol
 artifacts/four_port_step1_20260917/** -text whitespace=cr-at-eol
 artifacts/square_reduction_20260918/** -text whitespace=cr-at-eol
+artifacts/reserve_induction_20260918/** -text whitespace=cr-at-eol
+artifacts/reserve_closure_20260918/** -text whitespace=cr-at-eol
 
 # Preserve the associated new proof sources and regression-source fingerprints.
 paper/quantitative_splice.tex -text whitespace=cr-at-eol
@@ -14,3 +16,5 @@ tests/test_splice_lemma.py -text whitespace=cr-at-eol
 tests/test_four_port_lemma.py -text whitespace=cr-at-eol
 tests/test_four_port_step1.py -text whitespace=cr-at-eol
 tests/test_square_reduction.py -text whitespace=cr-at-eol
+tests/test_reserve_induction.py -text whitespace=cr-at-eol
+tests/test_reserve_closure.py -text whitespace=cr-at-eol
