@@ -1,0 +1,346 @@
+{
+  "census": {
+    "global_manifest_files_verified": 235,
+    "orders": [
+      {
+        "M_B": 6,
+        "graph_count": 1,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "204b8679f3d0425a4964c1b6574ada41a4aecc186316477cf33fa20be1b301ee"
+        ],
+        "number_of_maximizers": 1,
+        "order": 8,
+        "ordered_edge_pairs_per_graph": 132,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 9,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 10,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 11,
+        "verified": true
+      },
+      {
+        "M_B": 8,
+        "graph_count": 1,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "46f6ff56df724f98eef5d7733cd83f18593fcd72358b085b3d6570387472fd09"
+        ],
+        "number_of_maximizers": 1,
+        "order": 12,
+        "ordered_edge_pairs_per_graph": 306,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 13,
+        "verified": true
+      },
+      {
+        "M_B": 10,
+        "graph_count": 1,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "3b52365d8f69db960762343efece3b7510b943660d0fbd6353bb4f4cd7c0f445"
+        ],
+        "number_of_maximizers": 1,
+        "order": 14,
+        "ordered_edge_pairs_per_graph": 420,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 15,
+        "verified": true
+      },
+      {
+        "M_B": 12,
+        "graph_count": 2,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "4ebda4f88e8ec130e61d08014553b63496f7f014fcfc1909de218915fe6ec7c3"
+        ],
+        "number_of_maximizers": 1,
+        "order": 16,
+        "ordered_edge_pairs_per_graph": 552,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 17,
+        "verified": true
+      },
+      {
+        "M_B": 10,
+        "graph_count": 2,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "9a80d55c5422bd241fbb0e117e6ba3e12fd2ab5059f5c7457b0df89076d2bef4"
+        ],
+        "number_of_maximizers": 1,
+        "order": 18,
+        "ordered_edge_pairs_per_graph": 702,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 19,
+        "verified": true
+      },
+      {
+        "M_B": 17,
+        "graph_count": 8,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "bc06aac0e71d2079b0328b10b294bff248640b07ba1b4863e1510592285d49f3"
+        ],
+        "number_of_maximizers": 1,
+        "order": 20,
+        "ordered_edge_pairs_per_graph": 870,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 21,
+        "verified": true
+      },
+      {
+        "M_B": 13,
+        "graph_count": 8,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "48307be5655a8a478c363cc2b63cf53ca7efc6d4ff4a02743e55d1b91cd9f4c3",
+          "e7b8d71071d83c153fc292c2c4a85c55755278d8a50808e2832d11a168ed322a"
+        ],
+        "number_of_maximizers": 2,
+        "order": 22,
+        "ordered_edge_pairs_per_graph": 1056,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 23,
+        "verified": true
+      },
+      {
+        "M_B": 24,
+        "graph_count": 32,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "5a3354bd7a56777958901762cb161560b5dc0a7e76ddbf5a3a59405ea7561425"
+        ],
+        "number_of_maximizers": 1,
+        "order": 24,
+        "ordered_edge_pairs_per_graph": 1260,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 25,
+        "verified": true
+      },
+      {
+        "M_B": 18,
+        "graph_count": 57,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "11e238a2d6aa215c467eec236adc903158548a9f21230669f31103d3ecf838ab",
+          "4362f55a5cdfd1d35922815c62ea0dd9b461355f5622dfda7ebc6c45f996e247",
+          "b1536ab7a21b788ff8996cf6b000a4c591b010e6d3bda67886b06346e8b44db5",
+          "d0f8e6871ea21aa9a8e49061a77cc08b31c9015595f171caa86621cdbe57ac6f",
+          "e8920d131dcf4a16e779559b94c6a558cd792f19905479dc8bfe3d0d18e32340"
+        ],
+        "number_of_maximizers": 5,
+        "order": 26,
+        "ordered_edge_pairs_per_graph": 1482,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 27,
+        "verified": true
+      },
+      {
+        "M_B": 31,
+        "graph_count": 185,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "4db90650869fa9d6842087677c7a277a5650c866e81c35656e0adff4bf92c301"
+        ],
+        "number_of_maximizers": 1,
+        "order": 28,
+        "ordered_edge_pairs_per_graph": 1722,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 29,
+        "verified": true
+      },
+      {
+        "M_B": 25,
+        "graph_count": 466,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "994c331864f1ece085c30a8bcf4c5e340b83f965157c2cb72966a857fd21ae32",
+          "d2946e16da2e38f85990563fa0242bf5bdc15b72840aeb17b4b9e5530f893b35",
+          "e7c6f56487522a08223559c153bac6372691f469ac2e43a94572e5b9f7b8e8cd"
+        ],
+        "number_of_maximizers": 3,
+        "order": 30,
+        "ordered_edge_pairs_per_graph": 1980,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 31,
+        "verified": true
+      },
+      {
+        "M_B": 40,
+        "graph_count": 1543,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "d59673303c11ece9f7e8a5362be74bda12c02ec368dc0e784391f54125b30bfd"
+        ],
+        "number_of_maximizers": 1,
+        "order": 32,
+        "ordered_edge_pairs_per_graph": 2256,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 33,
+        "verified": true
+      },
+      {
+        "M_B": 32,
+        "graph_count": 4583,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "030640c521659bbb8bf5b80f4d6a307407d91293ebb70c860079d5777801fa57",
+          "949c1aab9cae3ed1416c9b5af331f07f4ab8029e60d674a7791a64b4b43b560f",
+          "97414a891964529335045560e9ffa8e7c607bc7d3d06de49189aca2ea4d1b823",
+          "a8ef7c290e2e222f9411955ca33ff292cbe5c03e20c0b2e2434bbd36d93fb8e7",
+          "c944de0c605f91509e6d8129443a4477da8a4c0160ff16ff36f60aa9c9f83c15",
+          "e0562b9cc1acbe13b484ec7494cef2dce0d7dd3e35b4a3a1c3f882e581ff9ccc",
+          "e1811f1910a393c14ef6a4d4a71ed2a0b62849e7d9d9ef0e3039211b03d1a8ae"
+        ],
+        "number_of_maximizers": 7,
+        "order": 34,
+        "ordered_edge_pairs_per_graph": 2550,
+        "verified": true
+      },
+      {
+        "M_B": null,
+        "graph_count": 0,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [],
+        "order": 35,
+        "verified": true
+      },
+      {
+        "M_B": 49,
+        "graph_count": 15374,
+        "manifest_files_verified": 8,
+        "maximizer_hashes": [
+          "2f96ada16c46cd2bd038b97d5af44f46ed14522cba1edf3fa041d66e02107bcc"
+        ],
+        "number_of_maximizers": 1,
+        "order": 36,
+        "ordered_edge_pairs_per_graph": 2862,
+        "verified": true
+      }
+    ],
+    "runtime_seconds": 558.9634086000151,
+    "schema": "barnie-sequence-independent-verification-v1",
+    "verified": true
+  },
+  "double_ladders": [
+    {
+      "canonical_graph_hash": "dafd27f31c9e2fc0aa19e8c82786bd4679509f82b6835703c784046b22e0b201",
+      "exact_hsep": 60,
+      "hamiltonian_cycle_count": 86,
+      "name": "D_9_9",
+      "order": 40,
+      "verified": true
+    },
+    {
+      "canonical_graph_hash": "296435b31ef80b1811ea6fc31d6d513ed9edbf1d245343d208dac14388c8928f",
+      "exact_hsep": 71,
+      "hamiltonian_cycle_count": 104,
+      "name": "D_11_9",
+      "order": 44,
+      "verified": true
+    },
+    {
+      "canonical_graph_hash": "8848c2d7817bd238837b07b97054802e6f968a04e0c70ec6b142c12e9ed28c28",
+      "exact_hsep": 84,
+      "hamiltonian_cycle_count": 126,
+      "name": "D_11_11",
+      "order": 48,
+      "verified": true
+    }
+  ],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "release_manifest_files_verified": 333,
+  "runtime_seconds": 560.3878014000074,
+  "schema": "barnette-recalculated-release-verification-v1",
+  "scope": "Complete Barnette census certificates for orders 8 through 36 and exact graph-specific certificates for D(9,9), D(11,9), and D(11,11).",
+  "seed": null,
+  "solver": "standard-library exhaustive certificate verification",
+  "verified": true
+}

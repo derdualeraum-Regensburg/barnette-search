@@ -14,11 +14,14 @@ over runtime. ILP and GPU support are not implemented.
 **Public research draft; not peer-reviewed.** The original study reported a
 complete certified extremal sequence through order 36, including `M_B(36) = 49`.
 The original external proof packages were lost in an accidental drive deletion.
-This release provides reconstructed certificates for all 55 graphs through
-order 24, 39 of the 57 graphs at order 26, and three individual graphs at order
-32. Results above order 24 do not currently constitute a publicly reproducible
-complete census. See [data availability](docs/data_availability.md) for the
-precise scope, independent verifier, and release downloads.
+Release v0.9.0 replaces the missing computational evidence with a newly
+calculated complete census package through order 36. It contains independently
+checked separating covers for every one of the 22,263 census graphs and exact
+lower certificates for every potential maximizer. It also provides new exact
+certificates for D(9,9), D(11,9), and D(11,11). These are new calculations with
+new hashes, not byte-for-byte restorations. See
+[data availability](docs/data_availability.md) for the precise scope, verifier,
+and release downloads.
 
 The general double-ladder formula has a self-contained proof in the
 [manuscript](paper/generated/main.pdf) and independent finite regression checks.
@@ -45,8 +48,8 @@ python -m pip install -e ".[test]"
 External research data defaults to the ignored `results/` directory. Set
 `BARNETTE_RESULTS_ROOT` to another directory, or use the relevant tool's explicit
 `--sequence-root`, `--prediction-root`, `--census`, or `--output-root` option.
-Examples below use `results/`; tools needing the lost original packages require
-those packages to be recovered or reconstructed first.
+Examples below use `results/`; download and extract the v0.9.0 certificate asset
+there when a tool needs the complete recalculated census.
 
 ## Usage
 

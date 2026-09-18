@@ -1,62 +1,56 @@
 # Data availability and reconstruction status
 
 This is a public research draft, not peer-reviewed. An accidental deletion of
-drive E: destroyed the original external certificate packages. The current
-release distinguishes the reconstructed files from historical claims based on
-the original computation. Original hashes in historical reports are retained;
-they do not imply that the corresponding lost files can currently be downloaded.
+drive E: destroyed the original external certificate packages. Release v0.9.0
+contains newly calculated replacement certificates with new hashes and runtime
+metadata. It does not claim to recover the deleted files byte for byte.
 
-## Available reconstructed certificates
+## Available recalculated certificates
 
 | Scope | Graphs provided | What this supports |
 |---|---:|---|
-| Nonempty orders 8 through 24 | 55 | Complete small censuses against the recorded plantri reference counts |
-| Order 26 | 39 of 57 | Individual exact values for the supplied graphs; incomplete census |
-| Order 32 | 3 of 1,543 | Individual exact values only; no maximum or uniqueness claim |
+| Nonempty even orders 8 through 36 | 22,263 | Complete censuses and certified extremal values against the recorded Plantri 5.8 reference counts |
+| D(9,9), D(11,9), D(11,11) | 3 | Exact graph-specific hsep values 60, 71, and 84 |
 
-Each graph package retains its graph6/planar_code representation, complete
-Hamiltonian universe, upper and lower certificates, original manifests, and
-recorded solver metadata. A release-level verifier checks all hashes,
-re-enumerates Hamiltonian cycles independently, verifies both bounds, rejects
-duplicate graph identities, and checks the stated inventory. Completeness of
-the small graph censuses rests on the reference class counts; the verifier
-does not independently prove plantri's enumeration theorem.
+The census package retains canonical graph certificates and separating covers
+for every graph. At orders through 24 every hsep value is exact. At larger
+orders, exact lower certificates are included for every potential maximizer;
+the remaining graphs have independently checked covers strictly below the
+certified maximum. A release-level verifier checks the complete file inventory,
+nested hashes, graph identities, covers, lower certificates, and stated maxima.
+Census completeness rests on the recorded Plantri 5.8 reference class counts;
+the verifier does not independently prove Plantri's enumeration theorem.
 
 The public release assets are at
-<https://github.com/derdualeraum-Regensburg/barnette-search/releases/tag/v0.8.0>:
+<https://github.com/derdualeraum-Regensburg/barnette-search/releases/tag/v0.9.0>:
 
-- `barnette-reconstructed-certificates-v0.8.0.zip`
-- `barnette-manuscript-v0.8.0.pdf`
+- `barnette-recalculated-certificates-v0.9.0.zip`
+- `barnette-manuscript-v0.9.0.pdf`
 - `SHA256SUMS.txt`
 
 Download the certificate archive and checksum file, check the archive's SHA-256,
 extract it, and run from the extracted directory:
 
 ```console
-python verify_reconstructed_release.py . --workers 4
+python verify_recalculated_release.py . --report verification.json
 ```
 
 The verifier and adjacent `verify_barnie_sequence.py` use only the Python 3.10+
-standard library. The release records the verification runtime and file hashes.
-All 97 supplied graphs passed this independent check on 2026-09-16 in 527.83
-seconds with four workers on Windows and Python 3.12.10. The
-[verification report](releases/v0.8.0-verification.json) records each exact value,
-the command, environment, and verifier hashes. The archive also includes this
-report as `release_verification.json`.
-Verification reads the package without overwriting its original records.
-Use `--workers 1` for a serial check. The allowed range is one to four workers;
-result order remains deterministic. Exhaustive lower proofs for a few graphs
-take several minutes, so full verification can take substantially longer than
-the software regression suite.
+standard library. Verification reads the package without modifying its records.
+The [verification report](releases/v0.9.0-verification.json) records the checked
+orders, exact extrema, graph-specific double-ladder values, environment, hashes,
+and runtime. The release package passed this independent check on 2026-09-18 in
+560.39 seconds with Python 3.12.10 on Windows 11.
 
-## Unavailable original packages
+## Historical and non-recalculated files
 
-The original `barnie-sequence` package through order 36, its gallery and
-ladder-analysis packages, and the double-ladder prediction, packing-lift, and
-primal-lift packages are not part of the recovered data. Their historical
-summaries remain in the manuscript and audit reports, explicitly subject to
-this limitation. In particular, the public reconstruction does not currently
-re-establish the claimed order-36 global maximum and uniqueness.
+The deleted historical files remain unavailable, and their old hashes and
+timestamps cannot be recreated. The v0.9.0 package is a separate recalculation
+that re-establishes the complete extremal sequence through order 36, including
+the unique order-36 maximizer with value 49. The old galleries and separate
+prediction, packing-lift, and primal-lift computational packages were not part
+of this recalculation. Symbolic proof-audit artifacts developed after the loss
+remain versioned directly in the repository.
 
 The general theorem for D(a,b) is proved symbolically in the manuscript. The
 independent finite checker in `artifacts/proof_audit_20260916/verify_formula.py`
@@ -71,9 +65,8 @@ $env:BARNETTE_RESULTS_ROOT = 'C:/research/barnette-results'
 python -m pytest -q
 ```
 
-Tests requiring lost packages use explicit skips. The legacy single-graph
-benchmark uses Windows-specific peak-memory telemetry and is skipped on other
-platforms; the underlying mathematical verifiers and this release verifier are
+The legacy single-graph benchmark uses Windows-specific peak-memory telemetry
+and is skipped on other platforms; the mathematical release verifiers are
 portable. A passing software test count is not a substitute for corpus
 verification. New reconstruction runs must be versioned separately and must
-not silently replace original historical certificates or hashes.
+not silently replace historical certificates or hashes.
