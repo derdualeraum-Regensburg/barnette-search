@@ -117,6 +117,9 @@ def test_witness_cover_is_deterministic_except_for_timings(tmp_path: Path) -> No
     for key in (
         "total_sat_time_seconds",
         "maximum_single_query_sat_time_seconds",
+        # This identifies the call with the largest measured runtime and is
+        # therefore timing-dependent even when every solver result is equal.
+        "hardest_ordered_pair",
         "backtracking_runtime_seconds",
         "sat_calls",
     ):
