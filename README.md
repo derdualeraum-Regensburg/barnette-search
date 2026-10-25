@@ -1,5 +1,71 @@
 # Barnette Search
 
+**A physicist, a 57-year-old mathematical conjecture, and a slightly overambitious experiment with AI.**
+
+## The story behind this project
+
+On **July 29, 2026**, I asked ChatGPT to suggest a long-standing, unsolved mathematical conjecture that might be approachable by searching for a counterexample with Codex.
+
+It suggested **Barnette's conjecture**, a problem in graph theory dating back to 1969.
+
+I am a physicist, not a graph theorist. Still, I was curious: how far could I get with AI as a research and coding partner?
+
+What began as a rather crazy idea grew into weeks of experiments with graph generation, Hamiltonian cycles, SAT solvers, computational certificates, and even a mathematical manuscript draft. Along the way, a graph I called **"Barnie 49"** became one of the memorable results.
+
+Here is the honest part: **I did not understand every mathematical proof Codex helped produce.** I could follow the motivation and many computational results, but parts of the mathematics went well beyond my own expertise. I cannot claim to have independently verified every argument in the manuscript.
+
+Then, on **October 6, 2026** — just 69 days after my original question — OpenAI published an [AI-generated manuscript reporting a proof of Barnette's conjecture](https://github.com/openai/math/blob/main/preprints/Paired-states-and-Hamiltonian-cycles-in-cubic-bipartite-planar-graphs-September-24-2026/paper.pdf), along with a Lean formalization. The manuscript is a separate effort using an internal model, not this Codex project; its wider mathematical review is distinct from its reported formalization. See [OpenAI's announcement](https://openai.com/index/sharing-ai-progress-in-mathematics/).
+
+So, **did I disprove Barnette's conjecture? No.** But I was fascinated by how far the experiment took me into a field I knew so little about.
+
+That is what this repository documents: an AI-assisted exploration, its code and checkable computational results, and the boundaries of what I can confidently claim.
+
+## Barnette's conjecture, in plain English
+
+Imagine a network of dots connected by lines. In the particular networks covered by Barnette's conjecture:
+
+- each dot has exactly **three** connections;
+- the dots can be split into two groups, with connections only going between groups;
+- the network can be drawn on a flat surface **without lines crossing**; and
+- it stays connected even if you remove any one or two dots.
+
+The conjecture says that in **every** such network, there is a closed route that visits each dot **exactly once** before returning to the start. Mathematicians call that a *Hamiltonian cycle*.
+
+I originally hoped to find a network that breaks this rule. I did not find one.
+
+## What actually came out of the experiment?
+
+The work evolved into a **related but different** question: *Hamiltonian edge separation*. Roughly speaking, it asks how many Hamiltonian cycles are needed to distinguish all pairs of edges in a graph.
+
+The repository now contains:
+
+- **Computational tools:** graph validators, independent backtracking and SAT-based Hamiltonian-cycle solvers, enumeration, and structural analyses.
+- **A finite census:** a documented study of **22,263 Barnette graphs through 36 vertices**, with computational certificates and a separate verifier for the published data package.
+- **"Barnie 49":** a 36-vertex graph associated with the certified census maximum `M_B(36) = 49` for Hamiltonian edge separation. **It is not a counterexample to Barnette's conjecture.**
+- **A research manuscript:** a draft discussing the computations, a double-ladder graph family, proofs, further observations, and open questions.
+
+The full certificate package is available in [release v0.9.0](https://github.com/derdualeraum-Regensburg/barnette-search/releases/tag/v0.9.0). See [data availability and verification status](docs/data_availability.md) for exactly what is checked and what is not.
+
+## About AI assistance and scientific status
+
+**This is an AI-assisted personal research project, not peer-reviewed mathematical research.** Codex was used extensively for programming, experimental workflows, mathematical exploration, and drafting. I am the named author and project initiator, but I do **not** represent every AI-produced mathematical argument as something I have independently established or fully understood.
+
+The computational work prioritizes reproducible methods, independent checks, and verifiable certificates. Those checks support precisely specified *finite* results; they do **not** by themselves establish the general Barnette conjecture, independently validate every manuscript proof, or replace expert review.
+
+Software, data, and manuscript have different license scopes; see [license details](LICENSES/README.md).
+
+## Where to start
+
+**Just curious?** Read the [story above](#the-story-behind-this-project) and browse the [research manuscript (PDF)](paper/generated/main.pdf).
+
+**Interested in the mathematical question?** Start with the [definition of Hamiltonian edge separation](docs/hsep.md) and the [data and verification overview](docs/data_availability.md).
+
+**Want to reproduce the experiments?** See [installation](#installation), [usage](#usage), [tests](#running-tests), and the [v0.9.0 release](https://github.com/derdualeraum-Regensburg/barnette-search/releases/tag/v0.9.0).
+
+---
+
+## Technical overview
+
 This Python research project studies finite **Barnette graphs**: undirected,
 simple, cubic, bipartite, planar, and 3-vertex-connected graphs. Its main
 computational invariant is Hamiltonian edge separation, described precisely in
